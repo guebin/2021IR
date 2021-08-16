@@ -6,7 +6,7 @@
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 
-title: fastpages
+title: R입문 (전북대학교 2021년 2학기)
 description: An easy to use blogging platform with support for Jupyter Notebooks.
 github_username: guebin
 # you can comment the below line out if your repo name is not different than your baseurl
