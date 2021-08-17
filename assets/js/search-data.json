@@ -1,11 +1,22 @@
 {
   
+    
+        "post0": {
+            "title": "(A1) 깃허브와 fastpages를 이용하여 블로그 개설하기",
+            "content": "About this doc . - 본 포스트는 2021년 1학기 Python 입문 강의내용중 일부를 업로드 하였음. . - Github, fastpages를 사용하여 블로그를 개설하고 관리하는 방법에 대한 설명임. . .",
+            "url": "https://guebin.github.io/2021IR/2021/08/17/(A1)-%EA%B9%83%ED%97%88%EB%B8%8C%EC%99%80-fastpages%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B0%9C%EC%84%A4%ED%95%98%EA%B8%B0.html",
+            "relUrl": "/2021/08/17/(A1)-%EA%B9%83%ED%97%88%EB%B8%8C%EC%99%80-fastpages%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B0%9C%EC%84%A4%ED%95%98%EA%B8%B0.html",
+            "date": " • Aug 17, 2021"
+        }
+        
+    
+  
 
   
   
 
   
-      "page1": {
+      ,"page1": {
           "title": "About Me",
           "content": "최규빈 . guebin@jbnu.ac.kr | 자연과학대학교 본관 205호 | 카카오톡 오픈채널 1 | . 2021년 2학기 종료후 폐쇄예정 &#8617; . |",
           "url": "https://guebin.github.io/2021IR/about/",
