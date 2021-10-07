@@ -1,0 +1,2014 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>(5주차) 10월7일 | R입문 (전북대학교 2021년 2학기)</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="(5주차) 10월7일" />
+<meta name="author" content="최규빈" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="while, break, ifelse, repeat, next, switch" />
+<meta property="og:description" content="while, break, ifelse, repeat, next, switch" />
+<link rel="canonical" href="https://guebin.github.io/2021IR/2021/10/06/Untitled.html" />
+<meta property="og:url" content="https://guebin.github.io/2021IR/2021/10/06/Untitled.html" />
+<meta property="og:site_name" content="R입문 (전북대학교 2021년 2학기)" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-10-06T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"while, break, ifelse, repeat, next, switch","url":"https://guebin.github.io/2021IR/2021/10/06/Untitled.html","@type":"BlogPosting","headline":"(5주차) 10월7일","dateModified":"2021-10-06T00:00:00-05:00","datePublished":"2021-10-06T00:00:00-05:00","author":{"@type":"Person","name":"최규빈"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://guebin.github.io/2021IR/2021/10/06/Untitled.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/2021IR/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://guebin.github.io/2021IR/feed.xml" title="R입문 (전북대학교 2021년 2학기)" /><link rel="shortcut icon" type="image/x-icon" href="/2021IR/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/2021IR/">R입문 (전북대학교 2021년 2학기)</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/2021IR/about/">About Me</a><a class="page-link" href="/2021IR/search/">Search</a><a class="page-link" href="/2021IR/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">(5주차) 10월7일</h1><p class="page-description">while, break, ifelse, repeat, next, switch</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-10-06T00:00:00-05:00" itemprop="datePublished">
+        Oct 6, 2021
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">최규빈</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      3 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/guebin/2021IR/tree/master/_notebooks/Untitled.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/2021IR/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/guebin/2021IR/master?filepath=_notebooks%2FUntitled.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/2021IR/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/guebin/2021IR/blob/master/_notebooks/Untitled.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/2021IR/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h3"><a href="#while">while </a></li>
+<li class="toc-entry toc-h3"><a href="#break">break </a></li>
+<li class="toc-entry toc-h3"><a href="#ifelse">ifelse </a></li>
+<li class="toc-entry toc-h3"><a href="#switch">switch </a></li>
+<li class="toc-entry toc-h3"><a href="#repeat">repeat </a></li>
+<li class="toc-entry toc-h3"><a href="#next">next </a></li>
+<li class="toc-entry toc-h3"><a href="#요약">요약 </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/Untitled.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="while">
+<a class="anchor" href="#while" aria-hidden="true"><span class="octicon octicon-link"></span></a>while<a class="anchor-link" href="#while"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 예제1</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">tot</span> <span class="o">=</span> <span class="m">0</span> 
+<span class="n">i</span> <span class="o">=</span> <span class="m">1</span> 
+<span class="nf">while</span><span class="p">(</span><span class="n">i</span><span class="o">&lt;=</span><span class="m">100</span><span class="p">){</span>
+    <span class="n">tot</span><span class="o">=</span><span class="n">tot</span><span class="o">+</span><span class="n">i</span> 
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="m">+1</span> 
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">tot</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 5050</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 예제1의 다른구현(1)</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">tot</span><span class="o">=</span><span class="m">0</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">)</span> <span class="n">tot</span> <span class="o">=</span> <span class="n">tot</span> <span class="o">+</span><span class="n">i</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">tot</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 5050</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 예제1의 다른구현(2)</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">tot</span> <span class="o">=</span> <span class="m">0</span> 
+<span class="n">i</span> <span class="o">=</span> <span class="m">1</span> 
+<span class="nf">while</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">){</span>
+    <span class="n">tot</span> <span class="o">=</span> <span class="n">tot</span><span class="o">+</span><span class="n">i</span> 
+    <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="m">+1</span> 
+    <span class="nf">if </span><span class="p">(</span><span class="n">i</span><span class="o">&gt;</span><span class="m">100</span><span class="p">)</span> <span class="n">break</span> 
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">tot</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 5050</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 예제1의 다른구현(3)</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">tot</span> <span class="o">=</span> <span class="m">0</span> 
+<span class="n">i</span> <span class="o">=</span> <span class="m">1</span> 
+<span class="nf">while</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">){</span>
+    <span class="n">tot</span> <span class="o">=</span> <span class="n">tot</span><span class="o">+</span><span class="n">i</span> 
+    <span class="nf">if </span><span class="p">(</span><span class="n">i</span><span class="o">&gt;=</span><span class="m">100</span><span class="p">)</span> <span class="n">break</span> 
+    <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="m">+1</span> 
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">tot</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 5050</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 저는 while을 싫어합니다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 어쩔수 없이 써야할때가 있어서 알고있는 것입니다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="break">
+<a class="anchor" href="#break" aria-hidden="true"><span class="octicon octicon-link"></span></a>break<a class="anchor-link" href="#break"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 예제1</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">){</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nf">if</span><span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="m">3</span><span class="p">)</span> <span class="n">break</span> 
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 1
+[1] 2
+[1] 3
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 예제2</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">){</span>
+    <span class="nf">for </span><span class="p">(</span><span class="n">j</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">){</span>
+        <span class="nf">print</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">))</span>
+        <span class="nf">if</span><span class="p">(</span><span class="n">j</span><span class="o">==</span><span class="m">3</span><span class="p">)</span> <span class="n">break</span> 
+    <span class="p">}</span>
+    <span class="nf">if</span><span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="m">5</span><span class="p">)</span> <span class="n">break</span> 
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 1 1
+[1] 1 2
+[1] 1 3
+[1] 2 1
+[1] 2 2
+[1] 2 3
+[1] 3 1
+[1] 3 2
+[1] 3 3
+[1] 4 1
+[1] 4 2
+[1] 4 3
+[1] 5 1
+[1] 5 2
+[1] 5 3
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="ifelse">
+<a class="anchor" href="#ifelse" aria-hidden="true"><span class="octicon octicon-link"></span></a>ifelse<a class="anchor-link" href="#ifelse"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 예제1</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">x</span><span class="o">=</span> <span class="m">-2</span><span class="o">:</span><span class="m">2</span> 
+<span class="n">x</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] -2 -1  0  1  2</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">ifelse</span><span class="p">(</span><span class="n">x</span><span class="o">&gt;</span><span class="m">0</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 2 1 0 1 2</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 예제1의 다른구현</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 5</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">y_</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="m">0</span>
+<span class="n">y_</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 0 0 0 0 0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)){</span>
+    <span class="nf">if </span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&gt;</span><span class="m">0</span><span class="p">)</span> <span class="n">y_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="n">else</span> 
+        <span class="n">y_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> 
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">y_</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 2 1 0 1 2</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 예제2</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">x</span><span class="o">=</span> <span class="m">-5</span><span class="o">:</span><span class="m">5</span> 
+<span class="n">x</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre> [1] -5 -4 -3 -2 -1  0  1  2  3  4  5</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">y</span><span class="o">=</span><span class="nf">ifelse</span><span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">x</span><span class="o">&gt;</span><span class="m">2</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="m">1</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">y</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre> [1] 0 0 0 0 0 1 1 1 3 4 5</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="nf">points</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="m">2</span><span class="p">,</span><span class="n">pch</span><span class="o">=</span><span class="m">16</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABwgAAAcICAIAAACn8QLRAAAACXBIWXMAAC4jAAAuIwF4pT92%0AAAAgAElEQVR4nOzdaXBVhdnA8ZtFsEhRQQRBWqLiRqmt4EJdKlqnuAUlg9VaxQV0bDogyiII%0A1jJgdCiKlGit2xSXSjGKULCDG8iiYNEWBJ0KBh0TQEVQK1gh5P1w581Y3Ehyw83J8/t9Ojn3%0A3CfP+MHRf865N6e6ujoFAAAAABBJbrYXAAAAAADY3YRRAAAAACAcYRQAAAAACEcYBQAAAADC%0AEUYBAAAAgHCEUQAAAAAgHGEUAAAAAAhHGAUAAAAAwhFGAQAAAIBwhFEAAAAAIBxhFAAAAAAI%0ARxgFAAAAAMIRRgEAAACAcIRRAAAAACAcYRQAAAAACEcYBQAAAADCEUYBAAAAgHCEUQAAAAAg%0AHGEUAAAAAAhHGAUAAAAAwhFGAQAAAIBwhFEAAAAAIBxhFAAAAAAIRxgFAAAAAMIRRgEAAACA%0AcIRRAAAAACAcYRQAAAAACEcYBQAAAADCEUYBAAAAgHCEUQAAAAAgHGEUAAAAAAhHGAUAAAAA%0AwhFGAQAAAIBwhFEAAAAAIBxhFAAAAAAIRxgFAAAAAMIRRgEAAACAcIRRAAAAACAcYRQAAAAA%0ACEcYBQAAAADCEUYBAAAAgHCEUQAAAAAgHGEUAAAAAAhHGAUAAAAAwhFGAQAAAIBwhFEAAAAA%0AIBxhFAAAAAAIRxgFAAAAAMIRRgEAAACAcIRRAAAAACAcYRQAAAAACEcYBQAAAADCEUYBAAAA%0AgHCEUQAAAAAgHGEUAAAAAAhHGAUAAAAAwhFGAQAAAIBwhFEAAAAAIBxhFAAAAAAIRxgFAAAA%0AAMIRRgEAAACAcIRRAAAAACAcYRQAAAAACEcYBQAAAADCEUYBAAAAgHCEUQAAAAAgHGEUAAAA%0AAAhHGAUAAAAAwhFGAQAAAIBwhFEAAAAAIBxhFAAAAAAIRxgFAAAAAMIRRgEAAACAcIRRAAAA%0AACAcYRQAAAAACEcYBQAAAADCEUYBAAAAgHCEUQAAAAAgHGEUAAAAAAhHGAUAAAAAwhFGAQAA%0AAIBwhFEAAAAAIBxhFAAAAAAIRxgFAAAAAMIRRgEAAACAcIRRAAAAACAcYRQAAAAACEcYBQAA%0AAADCEUYBAAAAgHCEUQAAAAAgHGEUAAAAAAhHGAUAAAAAwhFGAQAAAIBwhFEAAAAAIBxhFAAA%0AAAAIRxgFAAAAAMIRRgEAAACAcIRRAAAAACAcYRQAAAAACEcYBQAAAADCEUYBAAAAgHCEUQAA%0AAAAgHGEUAAAAAAhHGAUAAAAAwhFGAQAAAIBwhFEAAAAAIBxhFAAAAAAIRxgFAAAAAMIRRgEA%0AAACAcIRRAAAAACAcYRQAAAAACEcYBQAAAADCEUYBAAAAgHCEUQAAAAAgHGEUAAAAAAhHGAUA%0AAAAAwhFGAQAAAIBwhFEAAAAAIBxhFAAAAAAIRxgFAAAAAMIRRgEAAACAcIRRAAAAACAcYRQA%0AAAAACEcYBQAAAADCEUYBAAAAgHCEUQAAAAAgHGEUAAAAAAhHGAUAAAAAwhFGAQAAAIBwhFEA%0AAAAAIBxhFAAAAAAIRxgFAAAAAMIRRgEAAACAcIRRAAAAACAcYRQAAAAACEcYBQAAAADCEUYB%0AAAAAgHCEUQAAAAAgHGEUAAAAAAhHGAUAAAAAwhFGAQAAAIBwhFEAAAAAIBxhFAAAAAAIRxgF%0AAAAAAMIRRgEAAACAcIRRAAAAACAcYRQAAAAACEcYBQAAAADCEUYBAAAAgHCEUQAAAAAgHGEU%0AAAAAAAhHGAUAAAAAwhFGAQAAAIBwhFEAAAAAIBxhFAAAAAAIRxgFAAAAAMIRRgEAAACAcIRR%0AAAAAACAcYRQAAAAACEcYBQAAAADCEUYBAAAAgHCEUQAAAAAgHGEUAAAAAAhHGAUAAAAAwhFG%0AAQAAAIBwhFEAAAAAIBxhFAAAAAAIRxgFAAAAAMIRRgEAAACAcIRRAAAAACAcYRQAAAAACEcY%0ABQAAAADCEUYBAAAAgHCEUQAAAAAgHGEUAAAAAAhHGAUAAAAAwhFGAQAAAIBwhFEAAAAAIBxh%0AFAAAAAAIRxgFAAAAAMIRRgEAAACAcIRRAAAAACAcYRQAAAAACEcYBQAAAADCEUYBAAAAgHCE%0AUQAAAAAgHGEUAAAAAAhHGAUAAAAAwhFGAQAAAIBwhFEAAAAAIBxhFAAAAAAIRxgFAAAAAMIR%0ARgEAAACAcIRRAAAAACAcYRQAAAAACEcYBQAAAADCEUYBAAAAgHCEUQAAAAAgHGEUAAAAAAhH%0AGAUAAAAAwhFGAQAAAIBwhFEAAAAAIBxhFAAAAAAIRxgFAAAAAMIRRgEAAACAcIRRAAAAACAc%0AYRQAAAAACEcYBQAAAADCEUYBAAAAgHCEUQAAAAAgHGEUAAAAAAhHGAUAAAAAwhFGAQAAAIBw%0A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%0A43p64YUXhFHIFmG0sbv22mvPPvvsyy67bPHixalUavv27Xfeeedf/vKX22+/vX///tneLgM2%0AbtxYXFy8evXqjE9+55130gebN2/O+HAAAADCqqioaISjgNoSRhPg0EMPXbBgwe233z569OjP%0APvsslUpt2rTp0ksvnT59+p/+9KcOHTpke8F6KS0tnTZtWoP+imeffbZB5wMAABDK+vXrMzVq%0A3bp1mRoF1JYvX0qG3Nzc66677p///OcXb7CfPXt2165dp06dmsXF6q9r164N/Svy8/0BAAAA%0AgIxp0aJFpkbttddemRoF1JZglCSHHXbYwoULb7vttjFjxqRvHd28eXP//v2nT59+9913J/TW%0A0aKioiVLlrz99tsZnzxixIjy8vJUKrXPPvtkfDgAAABhdejQ4d///nemRmVkDlAHwmjC5Obm%0ADh069Jxzzrn00ktfeuml9Mm//e1vXbt2veOOOy655JLsrlc3xx577LHHHpvxsSUlJRmfCQAA%0AAF26dJk3b15GRh166KEZmQPUgUfpEyl96+itt97avHnz9Jn0raPnnHOOTycBAACABnXWWWfV%0Af0hBWWlubu4ZZ5xR/1FA3QijSZWXlzd8+PBXX331i/dapm8dffDBB7O4GAAAADRtp59+esuW%0ALQvKSus55yc/+Um7du0yshJQB8Josh1xxBGLFy++5ZZbam4d3bRp0yWXXFJYWOjWUQAAAGgI%0ALVq0GDx4cP3njBw5sv5DgDoTRhMvLy9vxIgRr7zyyjHHHFNzctasWW4dBQAAgAYyfPjw/fbb%0Ar843jRaUlfbq1evMM8/M7FZArQijTcSRRx754osvlpSU7HTraN++fT/88MPs7gYAAABNTKtW%0AraZOnZqXl1eHNlpQVtq2bdv777+/IRYDdp0w2nTk5eVdf/31y5Yt69GjR83JJ554olu3bkuX%0ALs3iYgAAAND0nHHGGRMmTEilUrVqowVlpc2bN3/sscc6d+7cUJsBu0YYbWq6du360ksvjR8/%0AvlmzZukzlZWVs2bNyu5WAAAA0PQMGTLk3nvvbdas2a600YKy0oKy0nbt2j377LMnn3zyblgP%0A+GbCaBOUl5c3atSoZcuWde/ePdu7AAAAQFN2xRVXzJs370c/+lG6e35lIa05X1hY+PLLL59w%0Awgm7fU3gK+RnewEayg9+8IOXXnrp1ltvHTt27Oeff57tdQAAAKBp6tmz57Jlyx5++OG77777%0A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%0AAQAAAIBwhFEAAAAAIBxhFAAAAAAIRxgFAAAAAMIRRgEAAACAcIRRAAAAACAcYRQAAAAACEcY%0ABQAAAADCEUYBAAAAgHCEUQAAAAAgHGEUAAAAAAhHGAUAAAAAwhFGAQAAAIBwhFEAAAAAIBxh%0AFAAAAAAIRxgFAAAAAMIRRgEAAACAcIRRAAAAACAcYRQAAAAACEcYBQAAAADCEUYBAAAAgHCE%0AUQAAAAAgHGEUAAAAAAhHGAUAAAAAwhFGAQAAAIBwhFEAAAAAIBxhFAAAAAAIRxgFAAAAAMIR%0ARgEAAACAcIRRAAAAACAcYRQAAAAACEcYBQAAAADCEUYBAAAAgHCEUQAAAAAgHGEUAAAAAAhH%0AGAUAAAAAwhFGAQAAAIBwhFEAAAAAIBxhFAAAAAAIRxgFAAAAAMIRRgEAAACAcIRRAAAAACAc%0AYRQAAAAACEcYBQAAAADCEUYBAAAAgHCEUQAAAAAgHGEUAAAAAAhHGAUAAAAAwhFGAQAAAIBw%0AhFEAAAAAIBxhFAAAAAAIRxgFAAAAAMIRRgEAAACAcIRRAAAAACAcYRQAAAAACEcYBQAAAADC%0AEUYBAAAAgHCEUQAAAAAgHGEUAAAAAAhHGAUAAAAAwhFGAQAAAIBwhFEAAAAAIBxhFAAAAAAI%0ARxgFAAAAAMIRRgEAAACAcIRRAAAAACAcYRQAAAAACEcYBQAAAADCEUYBAAAAgHCEUQAAAAAg%0AHGEUAAAAAAhHGAUAAAAAwhFGAQAAAIBwhFEAAAAAIBxhFAAAAAAIRxgFAAAAAMIRRgEAAACA%0AcPKzvQAAAAAJU1VVtWjRopkzZ65YsaKiomLz5s1t2rQ58MADjz766D59+nTv3j0nJyfbOwLA%0AtxBGQ3vxxRc3btyYPj777LOzuwwAAND4bd++/b777hs7dmxlZeUXz1dUVCxfvnzOnDnjxo3r%0A0qXLuHHj+vXrJ48C0JgJowmzfPnyuXPnrlq16v3330+lUp06dTr66KP79u3bunXrOkwbOXLk%0A/Pnz08fV1dWZXBQAAGhy3njjjaKiolWrVn3zZW+++eYvfvGLO+64469//WvHjh13z24AUFvC%0AaGIsXrx42LBhixcv/vJLv/71ry+88MLx48cfeOCBu38xAAAggrlz555//vkfffRR+sc999zz%0AZz/7We/evb///e+3bt36gw8+WL169Zw5c+bPn799+/ZUKrV48eJjjz32ySef7C7PEiUAACAA%0ASURBVNGjR1YXB4CvJowmwz333HP11VdXVVV95avbtm2bOnXqY489VlJSMmjQoN28GwAA0OQt%0AXbr03HPP3bp1ayqVysvLGzhw4G9/+9v27dvvdNm11167Zs2aG264Ydq0aalUqrKysnfv3kuX%0ALj3ooIOysDQAfCPfSp8Ajz/++JVXXvl1VbTGli1bBg8efNFFF23ZsmX3LAYAAESwfv368847%0AL11FW7Vq9eSTT951111frqJpBx988KOPPnrfffc1a9YslUpt3LixsLDQ/6QA0AgJo43dBx98%0AcOWVV+50slWrVt26dfvxj3/cpk2bnV565JFHfv7zn3/yySe7a0EAAKCJGzNmTPqrlpo1azZ7%0A9uyzzjrrW99y+eWXP/TQQ+kvX1q5cuVtt93W4FsCQC0Jo43d3XffXfPF8alU6rjjjnvmmWc+%0A/PDD5cuXv/LKKx988EF5efmoUaP23nvvmmsWLlx45plnpv+cCwAAUB+rVq164IEH0se33Xbb%0AiSeeuItv7Nev33XXXZc+njBhQvr7YwGg8RBGG7v77ruv5rhv374LFiw47bTT8vLyak527tx5%0A/PjxK1eu7N27d83JhQsXFhUVpT/yHAAAoM7uvffe9Od6HX744VdddVWt3lvzOaQff/zxI488%0A0iD7AUBdCaONWkVFRXl5efq4Xbt2f/7zn/fYY4+vvLJjx45z5swZPHhwzZmnnnqqtv/VAgAA%0AsJOZM2emD4YMGZKfX7vv723ZsuWAAQPSx08++WSGNwOA+hFGG7WXX3655njAgAEtW7b8hotz%0AcnImTZo0ZsyYmjP333//uHHjGnA/AACgSXvnnXfWrFmTSqVyc3MLCwvrMKFPnz7pgwULFmzb%0Ati2TywFA/dTuz33sZhs2bKg5PuWUU3blLWPHjv3oo48mT56c/vHGG2887LDD+vXr1xDrZcSn%0An3560003vf322xmfXHOz7Y4dOzI+HAAAInj33XfTB+3bt/+6r6H/ZkcddVRubu6OHTu2b9++%0Afv36Tp06ZXRBAKg7YbRR27RpU81xx44dd/FdkyZNevvtt9MPqlRXV/fv379z587HHHNMg6xY%0Ab1OmTPn973/foL/Cp7wDAEDdrFu3Ln3QoUOHuk3YY4892rZtm77no7KyUhgFoPHwKH1i5OTk%0A7PqVDz300FFHHZX+cevWrYWFhe+8806DrVYvbdu2behfUdsPQgIAANJqvuTg888/r/OQmifo%0A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%0ARgEAAACA4AijAAAAAEBwhFEAAAAAIDjCKAAAAAAQHGEUAAAAAAiOMAoAAAAABEcYBQAAAACC%0AI4wCAAAAAMERRgEAAACA4AijAAAAAEBwhFEAAAAAIDjCKAAAAAAQHGEUAAAAAAiOMAoAAAAA%0ABEcYBQAAAACCI4wCAAAAAMERRgEAAACA4KSX9gAAAJDSDh48+MorryxatOijjz7asmVLFEWN%0AGjVq0qRJ+/bt27VrV6lSpdIeEACA4kj1MPruu++ecsoppT1Fitq8efPq1avffvvtjRs3Zmdn%0A79y5My8v78CBA/n5+ZUqVfrWt75Vs2bNunXrNmvWrGXLlmeddVarVq3S0tJKe2oAgDJj165d%0Ao0ePfvTRR3fv3v3Fn/7hD3+oUaPGgAEDhg4dWqNGjZIfDwCAY5H4MHrdddeNHj26cuXKx7hO%0AQUHBgw8+OGzYsM8//zwhg5UbK1eufOKJJ/72t7/95z//OaoDa9eu3aFDh8suu6xDhw4VKvgW%0AhVKzoefAL93f7OmHS3gSnIvU4VyklC89Hc5FqfDSKF0zZswYPHjwjh07vuY5sXI6efLkhx56%0A6LLLLiux2QAAOHZpBQUFCV4xLe2UU075y1/+0qZNm2IvsmHDhiuuuOLVV1+NoijhE5Zdr776%0A6rBhw/75z38e4zotWrS44447+vTpU74/QNq6des333wziqKzzjpr9erVpT1OFH3177eF+V23%0AZDgXqcO5SClOR+pwLkpXfn7+bbfdNnr06PiejIyMDh06/OAHP6hfv34URTk5OStWrFi4cOGe%0APXtiT0hLS7vllltGjhzpr58BgKK7/vrrx48fH0XRddddN27cuNIeJzhJed/27rvv/uhHP7rj%0AjjsOHTpUjMOnTp16+umnx6ooMfv27RswYMB555137FU0iqL333+/b9++P/3pT3Nyco59NYqo%0AKL/iFv1pHAvnInUU/Vw4HclW9H/JzkWyORepoHAVzczMvP/++z/55JPZs2ffdNNNffv27du3%0A78033/z0009/8skno0ePjl1EX1BQMGrUqBEjRpTq4AAAHIWkfGI0vp2VlfX444+3atWqiMd+%0A/PHHV1111XPPPVd4p0+M7tu3r3Pnzn//+9+/9KcZGRknnnhivXr1qlevnpGRkZ6enpaW9vn/%0Ays7O3rRp06effvqlxzZp0uTll19u0aJFMscvNSn1idGj/d3Vh4CSx7lIHcVoOk5HkjgXqcO5%0ASAUzZsz45S9/Gds+88wzFyxY0KRJk695/saNG7t06fLWW29FUZSWlvbkk0/+4he/KIlBAYCy%0AzydGS1dyb760atWqrKyse++997rrrvvGq4pmz579u9/9Ljc3t/DOtm3bJnPAsmHgwIFHVNGm%0ATZt27979/PPPz8rKatiw4TeukJubu2zZstdff33OnDn//ve/4/s3bdrUsWPHf/3rX9WrV0/8%0A3PyvYvyWu6HnQL/oJoNzkTp80i11FO9ceGmkDucisXbu3Dl48ODY9plnnrlkyZKMjIyvP6Rp%0A06ZLliw599xz16xZU1BQMGjQoI4dO3pzBQCQ+hJ/Kf3cuXMbN24cf7hv374bb7zxggsu2LBh%0Aw1cdsnPnzj59+vTu3btwFa1evfqjjz76yiuvJHzCsmXp0qVTpkyJP2zQoMHs2bM/+OCDBx54%0A4OKLLy5KFY2iqFatWp06dbrvvvvefffdf/zjH1lZWfEfvf/++7fcckvi5+Z/Fbv+yEYJ51yU%0AA84F5Zv/TKWC0aNHx+62lJmZOX/+/G+sojEnnHDC/PnzYzF0+/btY8aMSe6UAAAkQuLDaNeu%0AXd95553rrruuYsWK8Z2vvvrq6aefXjjwxS1cuPB73/vek08+WXhnt27d1q9ff/XVV5fvuwMV%0AReE31m3atFm3bl3Pnj2P5Uv9zzvvvGXLlg0ZMiS+57HHHtu8efMxTQlwNI4l4ghAieVcpA7/%0APlPBwYMH//SnP8W2hw0bduKJJxb92GbNmg0dOjS2PWnSpAMHDiR+PgAAEiopN1/KyMgYN27c%0AihUrCt+YPi8vr3///hdffPHHH38c27Nnz54BAwZ07Nhxy5Yt8afVr19/9uzZc+bMKeJnIcu3%0ATz/9dOHChbHtzMzMefPm1axZ89iXTU9PHzduXPfu3WMPDx06dESYJlGO8bdcvyQnkHMBwDf6%0Axz/+sWvXriiKMjIyrr322qM9fMiQIVWrVo2iaNeuXUuWLEn8fAAAJFRSwmhM69atly9f/uCD%0AD55wwgnxnc8999z3vve92bNnL1269PTTT//jH/9Y+JDf/OY377zzTs+ePZM3VdmyfPnyQ4cO%0AxbavuOKKRo0aJWrltLS0++67L/6B3K+6sxNAwqnMkAxeWQmxePHi2Eb79u2rVKlytIdXqVLl%0A5z//eWx70aJFiZwMAIAkSO7NlypUqDB48OAePXoMHjx4zpw5sZ25ubm9e/dOS0srfLv5Fi1a%0A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%0AAEBwhFEAAAAAIDjCKAAAAAAQHGEUAAAAAAiOMAoAAAAABEcYBQAAAACCI4wCAAAAAMERRgEA%0AAACA4AijAAAAAEBwhFEAAAAAIDjCKAAAAAAQHGEUAAAAAAiOMAoAAAAABEcYBQAAAACCI4wC%0AAAAAAMERRgEAAACA4AijAAAAAEBwhFEAAAAAIDjCKAAAAAAQnPTSHoDS9M9//jM3Nze23blz%0A59IdBgAAAABKjDBaxqxZs2bRokXr16/ftm1bFEVNmjRp3bp19+7da9asWYzVhg0b9uqrr8a2%0ACwoKEjkoAAAAAKQwYbTMeOONN2666aY33njjiz+65pprLrvssnvvvbdx48YlPxgAAAAAlDm+%0AY7RsmDx5ctu2bb+0ikZRdPDgwccff7xly5YTJkwo4cEAAAAAoCwSRsuAOXPm/Pa3vz18+PDX%0AP23v3r1Dhgzp06fP3r17S2YwAAAAACijhNFUt3379t/+9rdH7KxWrdppp5121lln1apV64gf%0APfnkk+3bt8/LyyupAQEAAACg7BFGU90f//jH+I3joyg6++yzX3rppR07dqxZs2b16tXbt2//%0A8MMPb7311urVq8efs3Tp0osuuujzzz8vjXkBAAAAoAxw86VUN2XKlPh29+7dn3rqqUqVKhV+%0AQrNmze69995rrrmmf//+CxcujO1cunRpjx49FixYkJ7uFANwFD7//PO///3vq1atysnJyc3N%0ArV69eqNGjU477bQOHTpkZGSU9nQAAAAJo5qltOzs7A8//DC2Xa9evenTpx9RReMaNWr0/PPP%0AX3/99Q8++GBszwsvvHD11VcX7qoA8DXee++9u+66a968eXv27PniT48//viOHTvecccdZ555%0AZsnPBgAAkHAupU9pK1eujG/379//6z+qk5aWNn78+BEjRsT3TJ06deTIkUmcD4By4cCBA9df%0Af/2pp546Y8aML62iURTt379/3rx5WVlZV1xxhW+yBgAAygGfGE1pW7dujW+fd955RTnk7rvv%0A3r1794QJE2IPb7/99pYtW/bq1SsZ4wFQDmzbtq1Hjx5LliyJ78nMzLzwwgu//e1v16pVa/fu%0A3R988MHixYs/+eSTKIry8/OnT5++evXq+fPnn3TSSaU3NQAAwLESRlPazp0749uNGjUq4lHj%0Ax4/fuHHj/PnzoygqKCj49a9/3axZs+9///tJGRGAsuzTTz89//zz33777djDk08+eeTIkV27%0Adj3im1vy8/NffPHF22677c0334yiaO3atW3btl25cmX9+vVLYWgAAIBEcCl9mZGWllb0Zz7x%0AxBNnnHFG7OHnn39+ySWXfPTRR0kbDYAyKT8/v0+fPvEqevXVV69bt65Xr15f/D7rChUqdOzY%0A8V//+tfw4cNj/3+0efPmbt267d+/v6SHBgAASBBhNKVlZmbGt7ds2VL0AzMyMp599tkGDRrE%0AHn788ccdO3bcsWNHgucDoCybPn36c889F9sePnz4o48++lW3+IupUKHCPffcM3HixNjDZcuW%0APfDAA0mfEgAAIDmE0ZTWuHHj+PZrr712VMc2adJkwYIFVapUiT1cv359p06dPvvss0TOB0CZ%0A9fnnn99xxx2x7W7dut19991FPPB3v/vdgAEDYttjxozZvn17UuYDAABIMmE0pf3whz+Mb0+d%0AOvVor1hs06bNE088Eb8Gf9myZR07dnQrYQCiKJo1a9amTZuiKPrWt741YcKEon9hSxRFo0eP%0ArlOnThRFu3fvnjx5crJGBAAASCZhNKXVqlWrdevWse1NmzbdfPPNR7tCt27dxo4dG3+4dOnS%0Adu3abdiwIVETAlBGxe7RF0XRlVdeWfgChaKoXr36kCFDjlgHAACgbBFGU138csUoiiZMmDBw%0A4MC9e/ce1Qo33njjXXfdFX/45ptvZmVlzZs3L2EjAlDWHD58eNGiRbHt7t27F2OF+FErVqxw%0ANT0AAFAWpZf2AHyDvn37jh079r333os9nDhx4pw5c375y1+ee+65F198cRGvfLz99tsrVKgw%0AYsSI2MMdO3Z069btvPPOO6obOiVJQUHBnDlz3n///YSvvHXr1oSvCVA+fPLJJ3v27ImiKC0t%0A7ZxzzinGCt/97ndr1aqVm5tbUFCwcePG2rVrJ3pGAACA5BJGU13lypWnTZt23nnnHTp0KLYn%0AJydn7Nix48ePP6qvHB0+fHjDhg2vvvrq+DqvvPJKwqcthmnTpv3mN79J6j8iNzc3qesDlDk5%0AOTmxjczMzMqVKxdvkUaNGsX+A5udnZ2VlZWw4QAAAEqES+nLgHPOOWfGjBkVK1YsvLNevXpH%0AdaOMKIr69eu3cOHC+vXrJ3S6Y7Vt27Zk/yPiLRiAmAMHDsQ2jjvuuGIvUqlSpdjGwYMHEzAT%0AAABAyfKJ0bKhd+/etWvX7tev38aNG2N7itc3f/rTn65bt+6aa66ZNWtWQgcsvoEDB27fvj3+%0AvyuBFi9evGvXriiKYrdOBiCuYcOGsY1PPvnk0KFD6enFeT8Q/z6W+GoAAABliDBaZlxwwQXr%0A1q2bNm3a5MmT165dW+wPftaqVWvmzJlXXnnlnXfeuXz58sQOWQxVq1YdO3ZsMlZu3br1m2++%0AGUVRhQo+GQ3wf9SvXz89Pf3QoUP5+flvvfVWMS6E37Jly8cffxzbbtKkSaIHBAAASDphtCzJ%0AyMgYNGjQoEGDduzYcYy3AO7QoUOHDh1eeOGFVatWJWo8AMqK44477txzz4192fSCBQuKEUYX%0ALFhQUFAQRVHLli0bN26c8AkBAACSTRgtk2rWrFmzZs1jX6djx44dO3Y89nUAKHO6dOkSC6OT%0AJk268cYbq1WrVvRjDx06NGHChNh2165dkzEeAABAsrnEGABCdPnll59wwglRFG3btu2+++47%0AqmMffvjhd955J4qi9PT0fv36JWU+AACAJBNGASBEdevW/f3vfx/bvv/++59++ukiHvjaa6/d%0AfPPNse2rrrrq5JNPTsp8AAAASSaMAkCgbrzxxlNPPTWKooKCgj59+kyZMuUbD5k/f37nzp0P%0AHjwYRVGTJk3uuuuupE8JAACQHL5jtDybNm3anj17YtsDBw4s3WEASDVVq1ZdsGDBD37wg9zc%0A3AMHDvTv3//FF1+87777WrRo8cUnb9my5fbbb582bVp+fn4URVWqVJk3b16dOnVKfGoAAIDE%0AEEbLs2HDhm3dujW2LYwC8EXNmzdfuHBh165ds7OzoyiaPXv23Llz27Zt27Fjx+985zt16tTJ%0Azc398MMPFy5c+PLLL+/fvz92VGZm5syZM1u3bl2qswMAABwTYRQAgtamTZsVK1b84he/WLJk%0ASRRFhw4devnll19++eWvev7pp58+e/ZsXy0KAACUdb5jFABC17Bhw1dfffUbc2eTJk0ee+yx%0A1atXq6IAAEA54BOjAECUlpbWs2fPHj16rF69ev78+atXr960aVNubm5mZmbjxo1PO+20Sy65%0A5Mc//nGFCv5KFQAAKCeEUQDg/0tLS8vKysrKyirtQQAAAJLO5z4AAAAAgOAIowAAAABAcIRR%0AAAAAACA4wigAAAAAEBxhFAAAAAAIjjAKAAAAAAQnvbQHIImysrJyc3NLewoAAAAASDnCaHn2%0At7/9rbRHAAAAAIBU5FJ6AADg/7F37/Fezfnix9e+pOlCRewuqgkVJTlTSuqoGA9MKjU4bqmO%0A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%0AwuFVegAAAAAgOJ4YBcK1e/fuN954469//euGDRv27t3boEGDevXqdenS5YQTToh7NAAAACC9%0AhNFypl27dqeccsrhHrVixYply5Yl19dcc01pDwXlz+zZs8eMGfPnP/957969X/uj7Ozs9u3b%0A33TTTddcc012tsfqAQAAoGISRsu6MWPG3HfffXv27EluLlmypHXr1kOHDj3++ONLfpLhw4en%0AwuikSZNKf0ooP9asWXPLLbe89NJL/2yHoqKiuXPnzp07d8yYMb/+9a87dOiQyfEAAACAzPAw%0AVFl3xx13vPfee+ecc05y88CBA7/5zW+aNWs2YcKEeAeD8ujtt99u27Zt8Sp6/PHHd+vW7aab%0AbvrP//zPXr16nXTSSak/WrZs2Xnnnffkk0/GMSkAAACQXsJoOdC0adO333579OjR3/ve95Kf%0AbN26tW/fvpdccsm6devinQ3KkTfeeOOHP/zhF198kdw877zz3njjjfXr18+YMeOxxx775S9/%0A+fzzz69atWr58uV9+vRJvkS/f//+G264Ydy4cbEODgAAAJQ+YbR8yM7OvvPOO99777327dun%0APpw5c2aLFi0mTpwY42BQXqxateryyy/fv39/FEVVqlSZPHnya6+91rlz55ycnK/t2bJly//9%0A3/+dN29e/fr1k5/cddddL7/8cqYnBgAAANJJGC1PmjVrNmfOnFGjRqUeHd22bVufPn26devm%0A0VE4uL59+27ZsiWKomrVqr3++utXX331wfdv27btwoULTz755CiKCgsL+/Tps2PHjkwMCgAA%0AAGSEMFrOZGdnDxw48L333jv77LNTH7744oseHYWDmDFjxpw5c5LrCRMmFP/rcxD16tWbPn16%0A9erVoyjatGnTqFGj0jgiAAAAkFnCaLmUfHR05MiRlStXTn6SenR0/fr18c4GZdCIESOSix49%0Aevz4xz8u+YEtWrQYPHhwcv3www/v2bOn9IcDAAAA4iCMllc5OTmDBg16991327Ztm/ow+ejo%0A008/HeNgUNasW7duwYIFyfXQoUMP9/ABAwbUqlUriqJdu3a9+uqrpTsbAAAAEBdhtHw77bTT%0A3nnnnQcffDD16OjWrVuvu+667t27e3QUkmbNmpVIJKIoatKkyZlnnnm4h1etWvVHP/pRcj1z%0A5sxSHg4AAACISW7cA/Bd5eTk3H333d26devbt++iRYuSH/7xj3+cM2fO+PHje/fuHe94JbFw%0A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%0AOOOMM+6//35v2QMAAACklSdGIb02bNjQtWvXpUuXJjezs7N/+MMf9ujRo1WrVvXq1du3b9+G%0ADRvmzJkzderUZDYtLCy87777VqxYMXHixEqVKsU6OwAAAECFJYxCGu3Zs6dHjx6pKnreeeeN%0AHTu2VatWxfc59dRTO3fufN999/3xj3+88847P/300yiKpkyZUrNmzUcffTSGoQEAAAAC4FV6%0ASKObb7554cKFyfVdd9316quvfq2KFtetW7dFixZddNFFyc3HHnvsiSeeyMSUAAAAAOERRiFd%0AFixYMHHixOT69ttvf+ihh7KzD/E3rkaNGjNmzOjUqVNy8+677y4oKEjvlAAAAABBEkYhXQYN%0AGpT8DaWzzz579OjRJTyqUqVKzzzzTK1ataIo2rp166hRo9I4IgAAAECohFFIi1WrVr311lvJ%0A9ahRo3Jyckp+bF5e3uDBg5Prp556qqioqPTnAwAAAAibMApp8cILLyQXrVu37tix4+Ee3r9/%0A/8qVK0dRtHHjxgULFpTycAAAAADBE0YhLebMmZNcdOvW7QgOr169euqbRlNPngIAAABQWoRR%0ASIv8/PzkokWLFkd2htNPP/1rpwIAAACgtAijkBYbNmxILurUqXNkZ6hbt25ysX79+tKZCQAA%0AAIB/EEYhLapWrZpcfPnll0d2ht27dycX1apVK52ZAAAAAPgHYRTSol69esnF559/fmRnSB2Y%0AOhUAAAAApUUYhbRo0qRJcjF79uwjO8Mbb7yRXDRt2rRURgIAAAAgRRiFtOjatWtyMXPmzCN4%0Am37p0qWrVq2Koig7O/viiy8u5eEAAAAAgieMQlpccMEF1atXj6KooKBg/Pjxh3v4kCFDkotz%0AzjknLy+vlIcDAAAACJ4wCmlRtWrV2267LbkeMWLEhx9+WPJjp0yZMnPmzOT6nnvuKf3hAAAA%0AAIInjEK6DBo0qHbt2lEU7dy5s3v37uvWrSvJUe+8887111+fXHfp0uVHP/pRGkcEAAAACJUw%0ACulyzDHHTJw4MScnJ4qiVatWtW3bdv78+Qc/ZMKECeeff37yO0mPP/743/3ud5kYFAAAACA8%0Awiik0cUXXzxq1KjkOj8/v0OHDtddd92yZcu+tlthYeFrr73WqVOnvn377t27N4qiypUrP/fc%0Ac9///vczPDAAAABAIHLjHgAquAEDBhxzzDH9+/ffv39/UVHR008//fTTTzdu3PjMM8888cQT%0A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%0AtHQSlgQAIE/CKAAA/DAyMrJ69epbt25lx/nz5z969Ki4uHi88/39/alUanBwMDtWV1ffvn27%0AoKBgMnYFACAPPqUHAIAfGhoaclU0kUg0Njb+ooomEom5c+eePHkyN965c+fMmTN/434AAPyP%0AuDEKAAD/0NfXt2TJkk+fPmXHzZs3/yd/GzoyMlJdXX337t3sOH369Ewms2jRor9xUQAA8iaM%0AAgAAAADh+JQeAAAAAAhHGAUAAAAAwhFGAQAAAIBwhFEAAAAAIBxhFAAAAAAIRxgFAAAAAMIR%0ARgEAAACAcIRRAAAAACAcYRQAAAAACEcYBQAAAADCEUYBAAAAgHCEUQAAAAAgHGEUAAAAAAhH%0AGAUAAAAAwhFGAQAAAIBwhFEAAAAAIBxhFAAAAAAIRxgFAAAAAMIRRgEAAACAcIRRAAAAACAc%0AYRQAAAAACEcYBQAAAADCEUYBAAAAgHCEUQAAAAAgHGEUAAAAAAhHGAUAAAAAwhFGAQAAAIBw%0AhFEAAAAAIBxhFAAAAAAIRxgFAAAAAMIRRgEAAACAcIRRAAAAACAcYRQAAAAACEcYBQAAAADC%0AEUYBAAAAgHCEUQAAAAAgHGEUAAAAAAhHGAUAAAAAwhFGAQAAAIBwhFEAAAAAIBxhFAAAAAAI%0ARxgFAAAAAMIRRgEAAACAcIRRAAAAACAcYRQAAAAACEcYBQAAAADCEUYBAAAAgHCEUQAAAAAg%0AHGEUAAAAAAhHGAUAAAAAwhFGAQAAAIBwhFEAAAAAIBxhFAAAAAAIRxgFAAAAAMIRRgEAAACA%0AcIRRAAAAACAcYRQAAAAACEcYBQAAAADCEUYBAAAAgHCEUQAAAAAgHGEUAAAAAAhHGAUAAAAA%0AwhFGAQAAAIBwhFEAAAAAIBxhFAAAAAAIRxgFAAAAAMIRRgEAAACAcIRRAAAAACAcYRQAAAAA%0ACEcYBQAAAADCEUYBAAAAgHCEUQAAAAAgHGEUAAAAAAhHGAUAAAAAwhFGAQAAAIBwhFEAAAAA%0AIBxhFAAAAAAI5y+nTOoSe2MIogAAAABJRU5ErkJggg==" width="600" height="600">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 예제2의 다른구현</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">x</span><span class="o">=</span> <span class="m">-5</span><span class="o">:</span><span class="m">5</span> 
+<span class="n">x</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre> [1] -5 -4 -3 -2 -1  0  1  2  3  4  5</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">y</span><span class="o">=</span><span class="n">x</span><span class="o">*</span><span class="m">0</span>
+<span class="n">y</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre> [1] 0 0 0 0 0 0 0 0 0 0 0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">n</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 11</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="n">n</span><span class="p">){</span>
+    <span class="nf">if</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;</span><span class="m">0</span><span class="p">)</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="m">0</span> <span class="n">else</span> 
+        <span class="nf">if </span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&gt;</span><span class="m">2</span><span class="p">)</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="n">else</span> 
+            <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="m">1</span> 
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">y</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre> [1] 0 0 0 0 0 1 1 1 3 4 5</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> ifelse와 if~else는 성격이 조금 다름</p>
+<ul>
+<li>ifelse: 조건에 부합하는 새로운 벡터를 생성하는데 특화되어있음 </li>
+<li>if~else: 조건에 따라 코드의 실행흐름을 제어하는 성격의 문법 </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="switch">
+<a class="anchor" href="#switch" aria-hidden="true"><span class="octicon octicon-link"></span></a>switch<a class="anchor-link" href="#switch"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 예제1</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">switch</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span><span class="m">20</span><span class="p">,</span><span class="m">30</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 10</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">switch</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span><span class="m">20</span><span class="p">,</span><span class="m">30</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 20</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">switch</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span><span class="m">20</span><span class="p">,</span><span class="m">30</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 30</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 예제2</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">switch</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">),</span><span class="m">20</span><span class="p">,</span><span class="nf">c</span><span class="p">(</span><span class="m">30</span><span class="p">,</span><span class="m">40</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 1 2 3</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">switch</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">),</span><span class="m">20</span><span class="p">,</span><span class="nf">c</span><span class="p">(</span><span class="m">30</span><span class="p">,</span><span class="m">40</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 20</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">switch</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">),</span><span class="m">20</span><span class="p">,</span><span class="nf">c</span><span class="p">(</span><span class="m">30</span><span class="p">,</span><span class="m">40</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 30 40</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 예제3</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">switch</span><span class="p">(</span><span class="s">'a1'</span><span class="p">,</span> <span class="n">a1</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">),</span><span class="n">a2</span><span class="o">=</span><span class="m">20</span><span class="p">,</span><span class="n">a3</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">30</span><span class="p">,</span><span class="m">40</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 1 2 3</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">switch</span><span class="p">(</span><span class="s">'a2'</span><span class="p">,</span> <span class="n">a1</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">),</span><span class="n">a2</span><span class="o">=</span><span class="m">20</span><span class="p">,</span><span class="n">a3</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">30</span><span class="p">,</span><span class="m">40</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 20</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">switch</span><span class="p">(</span><span class="s">'a3'</span><span class="p">,</span> <span class="n">a1</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">),</span><span class="n">a2</span><span class="o">=</span><span class="m">20</span><span class="p">,</span><span class="n">a3</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">30</span><span class="p">,</span><span class="m">40</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 30 40</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 예제4</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>(예비학습)</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="m">1</span><span class="o">:</span><span class="m">10</span> 
+<span class="n">x</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre> [1]  1  2  3  4  5  6  7  8  9 10</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">c</span><span class="p">(</span>
+    <span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">),</span>
+    <span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="m">2</span><span class="p">),</span>
+    <span class="nf">mean</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">**</span><span class="m">2</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1]  5.50 38.50  8.25</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="m">38.50</span> <span class="o">-</span> <span class="m">5.50</span><span class="o">**</span><span class="m">2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 8.25</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>(예제시작)</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">switch</span><span class="p">(</span><span class="s">"f1"</span><span class="p">,</span> 
+       <span class="n">f1</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">),</span>
+       <span class="n">f2</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="m">2</span><span class="p">),</span>
+       <span class="n">f3</span><span class="o">=</span><span class="nf">mean</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">**</span><span class="m">2</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 5.5</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">switch</span><span class="p">(</span><span class="s">"f2"</span><span class="p">,</span> 
+       <span class="n">f1</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">),</span>
+       <span class="n">f2</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="m">2</span><span class="p">),</span>
+       <span class="n">f3</span><span class="o">=</span><span class="nf">mean</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">**</span><span class="m">2</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 38.5</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">switch</span><span class="p">(</span><span class="s">"f3"</span><span class="p">,</span> 
+       <span class="n">f1</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">),</span>
+       <span class="n">f2</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="m">2</span><span class="p">),</span>
+       <span class="n">f3</span><span class="o">=</span><span class="nf">mean</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">**</span><span class="m">2</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 8.25</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 예제5</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">myfun</span><span class="o">&lt;-</span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">){</span>
+    <span class="nf">switch</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> 
+       <span class="n">meann</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">),</span>
+       <span class="n">sqmeann</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="m">2</span><span class="p">),</span>
+       <span class="n">varr</span><span class="o">=</span><span class="nf">mean</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">**</span><span class="m">2</span><span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="m">1</span><span class="o">:</span><span class="m">5</span>
+<span class="nf">myfun</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="s">"meann"</span><span class="p">)</span>
+<span class="nf">myfun</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="s">"sqmeann"</span><span class="p">)</span>
+<span class="nf">myfun</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="s">"varr"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 3</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 11</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 2</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="repeat">
+<a class="anchor" href="#repeat" aria-hidden="true"><span class="octicon octicon-link"></span></a>repeat<a class="anchor-link" href="#repeat"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 예제1</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">tot</span><span class="o">=</span><span class="m">0</span> 
+<span class="n">i</span><span class="o">=</span><span class="m">1</span> 
+<span class="n">repeat</span><span class="p">{</span>
+    <span class="n">tot</span><span class="o">=</span><span class="n">tot</span><span class="o">+</span><span class="n">i</span> 
+    <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="m">+1</span>
+    <span class="nf">if </span><span class="p">(</span><span class="n">i</span><span class="o">&gt;</span><span class="m">100</span><span class="p">)</span> <span class="n">break</span> 
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">tot</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 5050</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 잘못된 예제1</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">tot</span><span class="o">=</span><span class="m">0</span> 
+<span class="n">i</span><span class="o">=</span><span class="m">1</span> 
+<span class="n">repeat</span><span class="p">{</span>
+    <span class="n">tot</span><span class="o">=</span><span class="n">tot</span><span class="o">+</span><span class="n">i</span> 
+    <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="m">+1</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="next">
+<a class="anchor" href="#next" aria-hidden="true"><span class="octicon octicon-link"></span></a>next<a class="anchor-link" href="#next"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 예제1</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">){</span>
+    <span class="nf">if</span><span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="m">3</span><span class="p">)</span> <span class="n">next</span> <span class="n">else</span> 
+        <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> 
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 1
+[1] 2
+[1] 4
+[1] 5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>break와 비교</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">){</span>
+    <span class="nf">if</span><span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="m">3</span><span class="p">)</span> <span class="n">break</span> <span class="n">else</span> 
+        <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> 
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 1
+[1] 2
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 예제2</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">i</span><span class="o">=</span><span class="m">0</span>
+<span class="n">repeat</span><span class="p">{</span>
+    <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="m">+1</span>
+    <span class="nf">if </span><span class="p">(</span><span class="n">i</span><span class="o">&gt;</span><span class="m">5</span><span class="p">)</span> <span class="n">break</span> 
+    <span class="nf">if </span><span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="m">3</span><span class="p">)</span> <span class="n">next</span> 
+    <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> 
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 1
+[1] 2
+[1] 4
+[1] 5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="요약">
+<a class="anchor" href="#%EC%9A%94%EC%95%BD" aria-hidden="true"><span class="octicon octicon-link"></span></a>요약<a class="anchor-link" href="#%EC%9A%94%EC%95%BD"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 조건: <strong>if</strong>, <strong>if~else</strong> / <strong>ifelse</strong>, switch</p>
+<p><code>-</code> 반복: <strong>for</strong>, while, repeat</p>
+<p><code>-</code> 루프탈출: break, next</p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="guebin/2021IR"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/2021IR/2021/10/06/Untitled.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/2021IR/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/2021IR/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/2021IR/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/guebin" title="guebin"><svg class="svg-icon grey"><use xlink:href="/2021IR/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
