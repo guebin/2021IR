@@ -2097,6 +2097,94 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong><em>(풀이)</em></strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>질문1: 확률이 0.5인 시행을 3번하여 3번 모두 성공하는 경우</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">sum</span><span class="p">(</span><span class="nf">rbinom</span><span class="p">(</span><span class="m">8000</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">3</span><span class="p">,</span><span class="n">p</span><span class="o">=</span><span class="m">0.5</span><span class="p">)</span><span class="o">==</span><span class="m">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+1034
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>질문2: 확률이 0.5인 시행을 3번하여 2번 성공하는 경우</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">sum</span><span class="p">(</span><span class="nf">rbinom</span><span class="p">(</span><span class="m">8000</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">3</span><span class="p">,</span><span class="n">p</span><span class="o">=</span><span class="m">0.5</span><span class="p">)</span><span class="o">==</span><span class="m">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+3044
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
