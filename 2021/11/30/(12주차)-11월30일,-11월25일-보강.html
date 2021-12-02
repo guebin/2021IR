@@ -4253,7 +4253,7 @@ Using compatibility `.name_repair`.
 <p>강화유리와 유리를 구분할 수 있는 유리 장인이 있다.</p>
 <p>이 유리장인은 80퍼센트의 확률로 강화유리를 고른다.</p>
 <p>총 10명의 참가자가 있고 이 참가자들은 (유리,강화유리)의 조합으로 이루어진 징검다리를 5번연속으로 건너야 한다.</p>
-<p>아래의 경우에 참가자들은 총 몇명이 살아남는가?</p>
+<p>아래의 경우에 참가자들은 평균적으로 몇명이 살아남겠는가?</p>
 
 </div>
 </div>
@@ -4278,6 +4278,98 @@ Using compatibility `.name_repair`.
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>1000번 시뮬레이션을 하여 결과를 추정하라.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong><em>(단, 일반인은 50%의 확률로 강화유리를 고를수 있다고 하자)</em></strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[예시]</strong> (1)의 시뮬레이션 결과가 아래와 같다고 하자.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>첫번째 징검다리: 유리장인이 강화유리 선택 </li>
+<li>두번째 징검다리: 유리장인이 강화유리 선택 </li>
+<li>세번째 징검다리: 유리장인이 일반유리 선택 $\to$ 유리장인 탈락 &amp; 일반인9는 당연히 강화유리를 선택 </li>
+<li>네번째 징검다리: 일반인9가 일반유리 선택 $\to$ 일반인9 탈락 &amp; 일반인8은 당연히 강화유리 선택 </li>
+<li>다섯번째 징검다리: 일반인8이 강화유리 선택 </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>이 경우는 일반인1,일반인2, $\dots$, 일반인8이 살아남으므로 8명이 살아남는다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[예시]</strong> (2)의 시뮬레이션 결과가 아래와 같다고 하자.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>첫번째 징검다리: 일반인9 일반유리 선택 $\to$ 일반인9 탈락 &amp; 일반인8은 강화유리 선택 </li>
+<li>두번째 징검다리: 일반인8 일반유리 선택 $\to$ 일반인8 탈락 &amp; 일반인7은 강화유리 선택 </li>
+<li>세번째 징검다리: 일반인7 일반유리 선택 $\to$ 일반인7 탈락 &amp; 일반인6은 강화유리 선택 </li>
+<li>네번째 징검다리: 일반인6 일반유리 선택 $\to$ 일반인6 탈락 &amp; 일반인5는 강화유리 선택 </li>
+<li>다섯번째 징검다리: 일반인5 일반유리 선택 $\to$ 일반인5 탈락 &amp; 일반인4는 강화유리 선택 </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>이 경우는 일반인4,일반인3,일반인2,일반인1,유리장인 이 살아남는다. (따라서 5명)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 즉 살아남을수 있는 최대인원수는 10명이며 최소인원수는 5명이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 유리장인이 100%의 확률로 강화유리를 구분한다면 (1)의 경우 항상 10명이 살아남는다. (즉 평균도 10명)</p>
 
 </div>
 </div>
