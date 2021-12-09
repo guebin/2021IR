@@ -1,0 +1,2681 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>(14주차) 12월9일 | R입문 (전북대학교 2021년 2학기)</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="(14주차) 12월9일" />
+<meta name="author" content="최규빈" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="징검다리3 문제풀이 (풀이2,3)" />
+<meta property="og:description" content="징검다리3 문제풀이 (풀이2,3)" />
+<link rel="canonical" href="https://guebin.github.io/2021IR/2021/12/08/Untitled.html" />
+<meta property="og:url" content="https://guebin.github.io/2021IR/2021/12/08/Untitled.html" />
+<meta property="og:site_name" content="R입문 (전북대학교 2021년 2학기)" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-12-08T00:00:00-06:00" />
+<script type="application/ld+json">
+{"description":"징검다리3 문제풀이 (풀이2,3)","url":"https://guebin.github.io/2021IR/2021/12/08/Untitled.html","@type":"BlogPosting","headline":"(14주차) 12월9일","dateModified":"2021-12-08T00:00:00-06:00","datePublished":"2021-12-08T00:00:00-06:00","author":{"@type":"Person","name":"최규빈"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://guebin.github.io/2021IR/2021/12/08/Untitled.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/2021IR/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://guebin.github.io/2021IR/feed.xml" title="R입문 (전북대학교 2021년 2학기)" /><link rel="shortcut icon" type="image/x-icon" href="/2021IR/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/2021IR/">R입문 (전북대학교 2021년 2학기)</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/2021IR/about/">About Me</a><a class="page-link" href="/2021IR/search/">Search</a><a class="page-link" href="/2021IR/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">(14주차) 12월9일</h1><p class="page-description">징검다리3 문제풀이 (풀이2,3)</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-12-08T00:00:00-06:00" itemprop="datePublished">
+        Dec 8, 2021
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">최규빈</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      9 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/guebin/2021IR/tree/master/_notebooks/Untitled.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/2021IR/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/guebin/2021IR/master?filepath=_notebooks%2FUntitled.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/2021IR/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/guebin/2021IR/blob/master/_notebooks/Untitled.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/2021IR/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h3"><a href="#강의영상">강의영상 </a></li>
+<li class="toc-entry toc-h3"><a href="#징검다리-문제-III.">징검다리 문제 III. </a></li>
+<li class="toc-entry toc-h3"><a href="#풀이2">풀이2 </a></li>
+<li class="toc-entry toc-h3"><a href="#풀이3">풀이3 </a></li>
+<li class="toc-entry toc-h3"><a href="#이러한-방식의-코딩스타일">이러한 방식의 코딩스타일 </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/Untitled.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="강의영상">
+<a class="anchor" href="#%EA%B0%95%EC%9D%98%EC%98%81%EC%83%81" aria-hidden="true"><span class="octicon octicon-link"></span></a>강의영상<a class="anchor-link" href="#%EA%B0%95%EC%9D%98%EC%98%81%EC%83%81"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>
+</p>
+<center class="youtube-iframe-wrapper">
+    <iframe width="730" height="315" src="https://www.youtube.com/embed/playlist?list=PLQqh36zP38-xPawXfrWKpYh-KqYoT9ZBf" frameborder="0" allowfullscreen=""></iframe>
+</center>
+
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="징검다리-문제-III.">
+<a class="anchor" href="#%EC%A7%95%EA%B2%80%EB%8B%A4%EB%A6%AC-%EB%AC%B8%EC%A0%9C-III." aria-hidden="true"><span class="octicon octicon-link"></span></a>징검다리 문제 III.<a class="anchor-link" href="#%EC%A7%95%EA%B2%80%EB%8B%A4%EB%A6%AC-%EB%AC%B8%EC%A0%9C-III."> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>강화유리와 유리를 구분할 수 있는 유리 장인이 있다.</p>
+<p>이 유리장인은 80퍼센트의 확률로 강화유리를 고른다.</p>
+<p>총 10명의 참가자가 있고 이 참가자들은 (유리,강화유리)의 조합으로 이루어진 징검다리를 5번연속으로 건너야 한다.</p>
+<p>아래의 경우에 참가자들은 평균적으로 몇명이 살아남겠는가?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>(1) 일반인1 - 일반인2 - .... - 일반인9 - 유리장인 || (강화유리, 유리)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>(2) 유리장인 - 일반인1 - 일반인2 - ... - 일반인9 || (강화유리, 유리)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>1000번 시뮬레이션을 하여 결과를 추정하라.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong><em>(단, 일반인은 50%의 확률로 강화유리를 고를수 있다고 하자)</em></strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[예시]</strong> (1)의 시뮬레이션 결과가 아래와 같다고 하자.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>첫번째 징검다리: 유리장인이 강화유리 선택 </li>
+<li>두번째 징검다리: 유리장인이 강화유리 선택 </li>
+<li>세번째 징검다리: 유리장인이 일반유리 선택 $\to$ 유리장인 탈락 &amp; 일반인9는 당연히 강화유리를 선택 </li>
+<li>네번째 징검다리: 일반인9가 일반유리 선택 $\to$ 일반인9 탈락 &amp; 일반인8은 당연히 강화유리 선택 </li>
+<li>다섯번째 징검다리: 일반인8이 강화유리 선택 </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>이 경우는 일반인8,일반인7, $\dots$, 일반인1이 살아남으므로 8명이 살아남는다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>[예시]</strong> (2)의 시뮬레이션 결과가 아래와 같다고 하자.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>첫번째 징검다리: 일반인9 일반유리 선택 $\to$ 일반인9 탈락 &amp; 일반인8은 강화유리 선택 </li>
+<li>두번째 징검다리: 일반인8 일반유리 선택 $\to$ 일반인8 탈락 &amp; 일반인7은 강화유리 선택 </li>
+<li>세번째 징검다리: 일반인7 일반유리 선택 $\to$ 일반인7 탈락 &amp; 일반인6은 강화유리 선택 </li>
+<li>네번째 징검다리: 일반인6 일반유리 선택 $\to$ 일반인6 탈락 &amp; 일반인5는 강화유리 선택 </li>
+<li>다섯번째 징검다리: 일반인5 일반유리 선택 $\to$ 일반인5 탈락 &amp; 일반인4는 강화유리 선택 </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>이 경우는 일반인4,일반인3,일반인2,일반인1,유리장인 이 살아남는다. (따라서 5명)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 즉 살아남을수 있는 최대인원수는 10명이며 최소인원수는 5명이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 유리장인이 100%의 확률로 강화유리를 구분한다면 (1)의 경우 항상 10명이 살아남는다. (즉 평균도 10명)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="풀이2">
+<a class="anchor" href="#%ED%92%80%EC%9D%B42" aria-hidden="true"><span class="octicon octicon-link"></span></a>풀이2<a class="anchor-link" href="#%ED%92%80%EC%9D%B42"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 아래와 같은 수식을 세울 수 있다.</p>
+<p><code>총 살아남은 사람의 수 = 5 + 장인의 성공횟수 + (5-장인의성공횟수-1)의 기회중에서 일반인의 성공횟수</code></p>
+<ul>
+<li>단 (5-장인의성공횟수-1)=&lt;0 이면 마지막항은 0으로 계산한다. </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 장인의 성공횟수를 $x$, 일반인의 성공횟수를 $y$라고 하자. 그러면 구하는것은 $5+x+y$이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 장인의 성공횟수</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">x_</span> <span class="o">=</span> <span class="nf">rbinom</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="m">0.8</span><span class="p">)</span>
+<span class="n">x_</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 0 1 1 1 1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">cumprod</span><span class="p">(</span><span class="n">x_</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 0 0 0 0 0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="nf">sum</span><span class="p">(</span><span class="nf">cumprod</span><span class="p">(</span><span class="n">x_</span><span class="p">))</span>
+<span class="n">x</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 일반인의 성공횟수</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">xx_</span> <span class="o">=</span> <span class="m">5</span><span class="o">-</span><span class="n">x</span><span class="m">-1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">xx_</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 4</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="nf">rbinom</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">xx_</span><span class="p">,</span> <span class="m">0.5</span><span class="p">)</span>
+<span class="n">y</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 2</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 살아남은 사람수는?</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="m">5</span><span class="o">+</span><span class="n">x</span><span class="o">+</span><span class="n">y</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 7</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 정리하면</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">rslt</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">()</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">10000</span><span class="p">){</span>
+    <span class="n">x</span><span class="o">=</span><span class="nf">sum</span><span class="p">(</span><span class="nf">cumprod</span><span class="p">(</span><span class="nf">rbinom</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="m">0.8</span><span class="p">)))</span>
+    <span class="n">xx_</span><span class="o">=</span><span class="m">5</span><span class="o">-</span><span class="n">x</span><span class="m">-1</span> 
+    <span class="nf">if </span><span class="p">(</span><span class="n">xx_</span><span class="o">&gt;</span><span class="m">0</span><span class="p">)</span> <span class="n">y</span> <span class="o">=</span> <span class="nf">rbinom</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">xx_</span><span class="p">,</span> <span class="m">0.5</span><span class="p">)</span> <span class="n">else</span> <span class="n">y</span><span class="o">=</span><span class="m">0</span> 
+    <span class="n">rslt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="m">5</span><span class="o">+</span><span class="n">x</span><span class="o">+</span><span class="n">y</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">mean</span><span class="p">(</span><span class="n">rslt</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 8.5169</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="풀이3">
+<a class="anchor" href="#%ED%92%80%EC%9D%B43" aria-hidden="true"><span class="octicon octicon-link"></span></a>풀이3<a class="anchor-link" href="#%ED%92%80%EC%9D%B43"> </a>
+</h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">ARR</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">'N1'</span><span class="p">,</span><span class="s">'N2'</span><span class="p">,</span><span class="s">'N3'</span><span class="p">,</span><span class="s">'N4'</span><span class="p">,</span><span class="s">'N5'</span><span class="p">,</span><span class="s">'N6'</span><span class="p">,</span><span class="s">'N7'</span><span class="p">,</span><span class="s">'N8'</span><span class="p">,</span><span class="s">'N9'</span><span class="p">,</span><span class="s">'A'</span><span class="p">)</span>
+<span class="n">ARR</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre> [1] "N1" "N2" "N3" "N4" "N5" "N6" "N7" "N8" "N9" "A" </pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">SURV</span> <span class="o">=</span> <span class="m">10</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">PLAYER</span> <span class="o">=</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span> 
+<span class="n">PLAYER</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] "A"</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">STAGE</span> <span class="o">=</span> <span class="m">0</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 첫시도</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">toss</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="nf">rbinom</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="n">p</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="n">as.logical</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">PROB</span> <span class="o">=</span> <span class="m">0.8</span> 
+<span class="n">TOSSRSLT</span> <span class="o">=</span> <span class="nf">toss</span><span class="p">(</span><span class="n">PROB</span><span class="p">)</span> 
+<span class="nf">if </span><span class="p">(</span><span class="n">TOSSRSLT</span><span class="o">==</span><span class="kc">TRUE</span><span class="p">){</span>
+    <span class="n">SURV</span> <span class="o">=</span> <span class="n">SURV</span> 
+    <span class="n">STAGE</span> <span class="o">=</span> <span class="n">STAGE</span> <span class="o">+</span> <span class="m">1</span> 
+    <span class="n">PLAYER</span> <span class="o">=</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span>
+<span class="p">}</span><span class="n">else</span><span class="p">{</span>
+    <span class="n">SURV</span> <span class="o">=</span> <span class="n">SURV</span> <span class="o">-</span> <span class="m">1</span> 
+    <span class="n">STAGE</span> <span class="o">=</span> <span class="n">STAGE</span> <span class="o">+</span> <span class="m">1</span> 
+    <span class="n">PLAYER</span> <span class="o">=</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="n">TOSSRSLT</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">SURV</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">STAGE</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">PLAYER</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] TRUE
+[1] 10
+[1] 1
+[1] "A"
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 코드를 간단히 수정하자.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">PROB</span> <span class="o">=</span> <span class="m">0.8</span> 
+<span class="n">TOSSRSLT</span> <span class="o">=</span> <span class="nf">toss</span><span class="p">(</span><span class="n">PROB</span><span class="p">)</span> 
+<span class="nf">if </span><span class="p">(</span><span class="n">TOSSRSLT</span><span class="o">==</span><span class="kc">FALSE</span><span class="p">)</span> <span class="n">SURV</span> <span class="o">=</span> <span class="n">SURV</span> <span class="o">-</span> <span class="m">1</span> 
+<span class="n">STAGE</span> <span class="o">=</span> <span class="n">STAGE</span> <span class="o">+</span> <span class="m">1</span> 
+<span class="n">PLAYER</span> <span class="o">=</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="n">TOSSRSLT</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">SURV</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">STAGE</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">PLAYER</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] FALSE
+[1] 9
+[1] 2
+[1] "N9"
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 다시 처음부터 보고싶다면?</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">SURV</span> <span class="o">=</span> <span class="m">10</span> 
+<span class="n">STAGE</span> <span class="o">=</span> <span class="m">0</span> 
+<span class="n">PLAYER</span> <span class="o">=</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">PROB</span> <span class="o">=</span> <span class="m">0.8</span> 
+<span class="n">TOSSRSLT</span> <span class="o">=</span> <span class="nf">toss</span><span class="p">(</span><span class="n">PROB</span><span class="p">)</span> 
+<span class="nf">if </span><span class="p">(</span><span class="n">TOSSRSLT</span><span class="o">==</span><span class="kc">FALSE</span><span class="p">)</span> <span class="n">SURV</span> <span class="o">=</span> <span class="n">SURV</span> <span class="o">-</span> <span class="m">1</span> 
+<span class="n">STAGE</span> <span class="o">=</span> <span class="n">STAGE</span> <span class="o">+</span> <span class="m">1</span> 
+<span class="n">PLAYER</span> <span class="o">=</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="n">TOSSRSLT</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">SURV</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">STAGE</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">PLAYER</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] FALSE
+[1] 9
+[1] 1
+[1] "N9"
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> reset을 하는 함수를 만들자.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">reset</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(){</span>
+    <span class="n">SURV</span> <span class="o">=</span> <span class="m">10</span>
+    <span class="n">STAGE</span> <span class="o">=</span> <span class="m">0</span> 
+    <span class="n">PLAYER</span> <span class="o">=</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>제대로 동작하지 않음 $\to$ <code>=</code>를 <code>&lt;&lt;-</code>로 수정해보자. </li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">reset</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(){</span>
+    <span class="n">SURV</span> <span class="o">&lt;&lt;-</span> <span class="m">10</span>
+    <span class="n">STAGE</span> <span class="o">&lt;&lt;-</span> <span class="m">0</span> 
+    <span class="n">PLAYER</span> <span class="o">&lt;&lt;-</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">reset</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="n">TOSSRSLT</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">SURV</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">STAGE</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">PLAYER</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] FALSE
+[1] 10
+[1] 0
+[1] "A"
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 출력함수의 기능을 묶어보자. $\to$ 출력(display)와 저장기능을 통합하여 record 함수 만듬</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">record</span> <span class="o">=</span> <span class="nf">function</span><span class="p">()</span> <span class="nf">list</span><span class="p">(</span><span class="n">TOSSRSLT</span><span class="o">=</span><span class="n">TOSSRSLT</span><span class="p">,</span> <span class="n">SURV</span><span class="o">=</span><span class="n">SURV</span><span class="p">,</span> <span class="n">STAGE</span><span class="o">=</span><span class="n">STAGE</span><span class="p">,</span> <span class="n">PLAYER</span><span class="o">=</span><span class="n">PLAYER</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">record</span><span class="p">()</span><span class="o">$</span><span class="n">SURV</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 10</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> reset + record 를 사용하고 결과를 살펴보면</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">reset</span><span class="p">()</span>
+<span class="nf">record</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>$TOSSRSLT
+[1] FALSE
+
+$SURV
+[1] 10
+
+$STAGE
+[1] 0
+
+$PLAYER
+[1] "A"
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>TOSSRSLT의 의미가 헷갈릴수 있으니 약간 수정하자. </li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">record</span> <span class="o">=</span> <span class="nf">function</span><span class="p">()</span> <span class="nf">list</span><span class="p">(</span><span class="n">PRE_TOSSRSLT</span><span class="o">=</span><span class="n">TOSSRSLT</span><span class="p">,</span> <span class="n">SURV</span><span class="o">=</span><span class="n">SURV</span><span class="p">,</span> <span class="n">STAGE</span><span class="o">=</span><span class="n">STAGE</span><span class="p">,</span> <span class="n">PLAYER</span><span class="o">=</span><span class="n">PLAYER</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">reset</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(){</span>
+    <span class="n">TOSSRSLT</span> <span class="o">&lt;&lt;-</span> <span class="kc">NA</span>
+    <span class="n">SURV</span> <span class="o">&lt;&lt;-</span> <span class="m">10</span>
+    <span class="n">STAGE</span> <span class="o">&lt;&lt;-</span> <span class="m">0</span> 
+    <span class="n">PLAYER</span> <span class="o">&lt;&lt;-</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">reset</span><span class="p">()</span>
+<span class="nf">record</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>$PRE_TOSSRSLT
+[1] NA
+
+$SURV
+[1] 10
+
+$STAGE
+[1] 0
+
+$PLAYER
+[1] "A"
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 지금까지 코드의 중간정리</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">ARR</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">'N1'</span><span class="p">,</span><span class="s">'N2'</span><span class="p">,</span><span class="s">'N3'</span><span class="p">,</span><span class="s">'N4'</span><span class="p">,</span><span class="s">'N5'</span><span class="p">,</span><span class="s">'N6'</span><span class="p">,</span><span class="s">'N7'</span><span class="p">,</span><span class="s">'N8'</span><span class="p">,</span><span class="s">'N9'</span><span class="p">,</span><span class="s">'A'</span><span class="p">)</span>
+<span class="n">SURV</span> <span class="o">=</span> <span class="m">10</span> 
+<span class="n">PLAYER</span> <span class="o">=</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span> 
+<span class="n">STAGE</span> <span class="o">=</span> <span class="m">0</span> 
+<span class="n">PROB</span> <span class="o">=</span> <span class="m">0.8</span> 
+<span class="n">TOSSRSLT</span> <span class="o">=</span> <span class="kc">NA</span>
+<span class="c1">### 변수들의 모음</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">toss</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="nf">rbinom</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="n">p</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="n">as.logical</span>
+<span class="n">reset</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(){</span>
+    <span class="n">TOSSRSLT</span> <span class="o">&lt;&lt;-</span> <span class="kc">NA</span>
+    <span class="n">SURV</span> <span class="o">&lt;&lt;-</span> <span class="m">10</span>
+    <span class="n">STAGE</span> <span class="o">&lt;&lt;-</span> <span class="m">0</span> 
+    <span class="n">PLAYER</span> <span class="o">&lt;&lt;-</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="n">record</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(){</span>
+    <span class="nf">list</span><span class="p">(</span><span class="n">PRE_TOSSRSLT</span><span class="o">=</span><span class="n">TOSSRSLT</span><span class="p">,</span> <span class="n">SURV</span><span class="o">=</span><span class="n">SURV</span><span class="p">,</span> <span class="n">STAGE</span><span class="o">=</span><span class="n">STAGE</span><span class="p">,</span> <span class="n">PLAYER</span><span class="o">=</span><span class="n">PLAYER</span><span class="p">)</span> 
+<span class="p">}</span>
+<span class="c1">### 함수들의 모음</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">PROB</span> <span class="o">=</span> <span class="m">0.8</span> 
+<span class="n">TOSSRSLT</span> <span class="o">=</span> <span class="nf">toss</span><span class="p">(</span><span class="n">PROB</span><span class="p">)</span> 
+<span class="nf">if </span><span class="p">(</span><span class="n">TOSSRSLT</span><span class="o">==</span><span class="kc">FALSE</span><span class="p">)</span> <span class="n">SURV</span> <span class="o">=</span> <span class="n">SURV</span> <span class="o">-</span> <span class="m">1</span> 
+<span class="n">STAGE</span> <span class="o">=</span> <span class="n">STAGE</span> <span class="o">+</span> <span class="m">1</span> 
+<span class="n">PLAYER</span> <span class="o">=</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span>
+<span class="c1">### body</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> PROB 가 항상 0.8인것은 아니며 사실 PLAYER=='A' 일 경우에만 0.8 이고 그외의 경우는 0.5 이다.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">ARR</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">'N1'</span><span class="p">,</span><span class="s">'N2'</span><span class="p">,</span><span class="s">'N3'</span><span class="p">,</span><span class="s">'N4'</span><span class="p">,</span><span class="s">'N5'</span><span class="p">,</span><span class="s">'N6'</span><span class="p">,</span><span class="s">'N7'</span><span class="p">,</span><span class="s">'N8'</span><span class="p">,</span><span class="s">'N9'</span><span class="p">,</span><span class="s">'A'</span><span class="p">)</span>
+<span class="n">SURV</span> <span class="o">=</span> <span class="m">10</span> 
+<span class="n">PLAYER</span> <span class="o">=</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span> 
+<span class="n">STAGE</span> <span class="o">=</span> <span class="m">0</span> 
+<span class="n">PROB</span> <span class="o">=</span> <span class="m">0.8</span> 
+<span class="n">TOSSRSLT</span> <span class="o">=</span> <span class="kc">NA</span>
+<span class="c1">### 변수들의 모음</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">toss</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="nf">rbinom</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="n">p</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="n">as.logical</span>
+<span class="n">reset</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(){</span>
+    <span class="n">TOSSRSLT</span> <span class="o">&lt;&lt;-</span> <span class="kc">NA</span>
+    <span class="n">SURV</span> <span class="o">&lt;&lt;-</span> <span class="m">10</span>
+    <span class="n">STAGE</span> <span class="o">&lt;&lt;-</span> <span class="m">0</span> 
+    <span class="n">PLAYER</span> <span class="o">&lt;&lt;-</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="n">record</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(){</span>
+    <span class="nf">list</span><span class="p">(</span><span class="n">PRE_TOSSRSLT</span><span class="o">=</span><span class="n">TOSSRSLT</span><span class="p">,</span> <span class="n">SURV</span><span class="o">=</span><span class="n">SURV</span><span class="p">,</span> <span class="n">STAGE</span><span class="o">=</span><span class="n">STAGE</span><span class="p">,</span> <span class="n">PLAYER</span><span class="o">=</span><span class="n">PLAYER</span><span class="p">)</span> 
+<span class="p">}</span>
+<span class="c1">### 함수들의 모음</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">PROB</span> <span class="o">=</span> <span class="m">0.5</span><span class="o">+</span> <span class="p">(</span><span class="n">PLAYER</span><span class="o">==</span><span class="s">'A'</span><span class="p">)</span><span class="o">*</span><span class="m">0.3</span> <span class="c1">#### 이부분을 수정했음 </span>
+<span class="n">TOSSRSLT</span> <span class="o">=</span> <span class="nf">toss</span><span class="p">(</span><span class="n">PROB</span><span class="p">)</span> 
+<span class="nf">if </span><span class="p">(</span><span class="n">TOSSRSLT</span><span class="o">==</span><span class="kc">FALSE</span><span class="p">)</span> <span class="n">SURV</span> <span class="o">=</span> <span class="n">SURV</span> <span class="o">-</span> <span class="m">1</span> 
+<span class="n">STAGE</span> <span class="o">=</span> <span class="n">STAGE</span> <span class="o">+</span> <span class="m">1</span> 
+<span class="n">PLAYER</span> <span class="o">=</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span>
+<span class="c1">### body</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> Test 해보자.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">reset</span><span class="p">()</span> 
+<span class="nf">record</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>$PRE_TOSSRSLT
+[1] NA
+
+$SURV
+[1] 10
+
+$STAGE
+[1] 0
+
+$PLAYER
+[1] "A"
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">PROB</span> <span class="o">=</span> <span class="m">0.5</span><span class="o">+</span> <span class="p">(</span><span class="n">PLAYER</span><span class="o">==</span><span class="s">'A'</span><span class="p">)</span><span class="o">*</span><span class="m">0.3</span> <span class="c1">#### 이부분을 수정했음 </span>
+<span class="n">TOSSRSLT</span> <span class="o">=</span> <span class="nf">toss</span><span class="p">(</span><span class="n">PROB</span><span class="p">)</span> 
+<span class="nf">if </span><span class="p">(</span><span class="n">TOSSRSLT</span><span class="o">==</span><span class="kc">FALSE</span><span class="p">)</span> <span class="n">SURV</span> <span class="o">=</span> <span class="n">SURV</span> <span class="o">-</span> <span class="m">1</span> 
+<span class="n">STAGE</span> <span class="o">=</span> <span class="n">STAGE</span> <span class="o">+</span> <span class="m">1</span> 
+<span class="n">PLAYER</span> <span class="o">=</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span>
+<span class="nf">record</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>$PRE_TOSSRSLT
+[1] TRUE
+
+$SURV
+[1] 10
+
+$STAGE
+[1] 1
+
+$PLAYER
+[1] "A"
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 스테이지를 진행하는 부분을 묶어서 함수로 처리하자.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">ARR</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">'N1'</span><span class="p">,</span><span class="s">'N2'</span><span class="p">,</span><span class="s">'N3'</span><span class="p">,</span><span class="s">'N4'</span><span class="p">,</span><span class="s">'N5'</span><span class="p">,</span><span class="s">'N6'</span><span class="p">,</span><span class="s">'N7'</span><span class="p">,</span><span class="s">'N8'</span><span class="p">,</span><span class="s">'N9'</span><span class="p">,</span><span class="s">'A'</span><span class="p">)</span>
+<span class="n">SURV</span> <span class="o">=</span> <span class="m">10</span> 
+<span class="n">PLAYER</span> <span class="o">=</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span> 
+<span class="n">STAGE</span> <span class="o">=</span> <span class="m">0</span> 
+<span class="n">PROB</span> <span class="o">=</span> <span class="m">0.8</span> 
+<span class="n">TOSSRSLT</span> <span class="o">=</span> <span class="kc">NA</span>
+<span class="c1">### 변수들의 모음</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">toss</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="nf">rbinom</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="n">p</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="n">as.logical</span>
+<span class="n">reset</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(){</span>
+    <span class="n">TOSSRSLT</span> <span class="o">&lt;&lt;-</span> <span class="kc">NA</span>
+    <span class="n">SURV</span> <span class="o">&lt;&lt;-</span> <span class="m">10</span>
+    <span class="n">STAGE</span> <span class="o">&lt;&lt;-</span> <span class="m">0</span> 
+    <span class="n">PLAYER</span> <span class="o">&lt;&lt;-</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="n">record</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(){</span>
+    <span class="nf">list</span><span class="p">(</span><span class="n">PRE_TOSSRSLT</span><span class="o">=</span><span class="n">TOSSRSLT</span><span class="p">,</span> <span class="n">SURV</span><span class="o">=</span><span class="n">SURV</span><span class="p">,</span> <span class="n">STAGE</span><span class="o">=</span><span class="n">STAGE</span><span class="p">,</span> <span class="n">PLAYER</span><span class="o">=</span><span class="n">PLAYER</span><span class="p">)</span> 
+<span class="p">}</span>
+<span class="n">go</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(){</span>
+    <span class="n">PROB</span> <span class="o">&lt;&lt;-</span> <span class="m">0.5</span><span class="o">+</span> <span class="p">(</span><span class="n">PLAYER</span><span class="o">==</span><span class="s">'A'</span><span class="p">)</span><span class="o">*</span><span class="m">0.3</span>
+    <span class="n">TOSSRSLT</span> <span class="o">&lt;&lt;-</span> <span class="nf">toss</span><span class="p">(</span><span class="n">PROB</span><span class="p">)</span> 
+    <span class="nf">if </span><span class="p">(</span><span class="n">TOSSRSLT</span><span class="o">==</span><span class="kc">FALSE</span><span class="p">)</span> <span class="n">SURV</span> <span class="o">&lt;&lt;-</span> <span class="n">SURV</span> <span class="o">-</span> <span class="m">1</span> 
+    <span class="n">STAGE</span> <span class="o">&lt;&lt;-</span> <span class="n">STAGE</span> <span class="o">+</span> <span class="m">1</span> 
+    <span class="n">PLAYER</span> <span class="o">&lt;&lt;-</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span>    
+<span class="p">}</span>    
+<span class="c1">### 함수들의 모음</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1">### body</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> test</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">reset</span><span class="p">()</span>
+<span class="nf">record</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>$PRE_TOSSRSLT
+[1] NA
+
+$SURV
+[1] 10
+
+$STAGE
+[1] 0
+
+$PLAYER
+[1] "A"
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">go</span><span class="p">()</span>
+<span class="nf">record</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>$PRE_TOSSRSLT
+[1] TRUE
+
+$SURV
+[1] 10
+
+$STAGE
+[1] 1
+
+$PLAYER
+[1] "A"
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 어차피 5번 시행을 하므로 go이외에 gogo함수를 따로 만들자.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">ARR</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">'N1'</span><span class="p">,</span><span class="s">'N2'</span><span class="p">,</span><span class="s">'N3'</span><span class="p">,</span><span class="s">'N4'</span><span class="p">,</span><span class="s">'N5'</span><span class="p">,</span><span class="s">'N6'</span><span class="p">,</span><span class="s">'N7'</span><span class="p">,</span><span class="s">'N8'</span><span class="p">,</span><span class="s">'N9'</span><span class="p">,</span><span class="s">'A'</span><span class="p">)</span>
+<span class="n">SURV</span> <span class="o">=</span> <span class="m">10</span> 
+<span class="n">PLAYER</span> <span class="o">=</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span> 
+<span class="n">STAGE</span> <span class="o">=</span> <span class="m">0</span> 
+<span class="n">PROB</span> <span class="o">=</span> <span class="m">0.8</span> 
+<span class="n">TOSSRSLT</span> <span class="o">=</span> <span class="kc">NA</span>
+<span class="c1">### 변수들의 모음</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">toss</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="nf">rbinom</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="n">p</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="n">as.logical</span>
+<span class="n">reset</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(){</span>
+    <span class="n">TOSSRSLT</span> <span class="o">&lt;&lt;-</span> <span class="kc">NA</span>
+    <span class="n">SURV</span> <span class="o">&lt;&lt;-</span> <span class="m">10</span>
+    <span class="n">STAGE</span> <span class="o">&lt;&lt;-</span> <span class="m">0</span> 
+    <span class="n">PLAYER</span> <span class="o">&lt;&lt;-</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="n">record</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(){</span>
+    <span class="nf">list</span><span class="p">(</span><span class="n">PRE_TOSSRSLT</span><span class="o">=</span><span class="n">TOSSRSLT</span><span class="p">,</span> <span class="n">SURV</span><span class="o">=</span><span class="n">SURV</span><span class="p">,</span> <span class="n">STAGE</span><span class="o">=</span><span class="n">STAGE</span><span class="p">,</span> <span class="n">PLAYER</span><span class="o">=</span><span class="n">PLAYER</span><span class="p">)</span> 
+<span class="p">}</span>
+<span class="n">go</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(){</span>
+    <span class="n">PROB</span> <span class="o">&lt;&lt;-</span> <span class="m">0.5</span><span class="o">+</span> <span class="p">(</span><span class="n">PLAYER</span><span class="o">==</span><span class="s">'A'</span><span class="p">)</span><span class="o">*</span><span class="m">0.3</span>
+    <span class="n">TOSSRSLT</span> <span class="o">&lt;&lt;-</span> <span class="nf">toss</span><span class="p">(</span><span class="n">PROB</span><span class="p">)</span> 
+    <span class="nf">if </span><span class="p">(</span><span class="n">TOSSRSLT</span><span class="o">==</span><span class="kc">FALSE</span><span class="p">)</span> <span class="n">SURV</span> <span class="o">&lt;&lt;-</span> <span class="n">SURV</span> <span class="o">-</span> <span class="m">1</span> 
+    <span class="n">STAGE</span> <span class="o">&lt;&lt;-</span> <span class="n">STAGE</span> <span class="o">+</span> <span class="m">1</span> 
+    <span class="n">PLAYER</span> <span class="o">&lt;&lt;-</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span>    
+<span class="p">}</span>
+<span class="n">gogo</span> <span class="o">=</span> <span class="nf">function</span><span class="p">()</span> <span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">)</span> <span class="nf">go</span><span class="p">()</span>
+<span class="c1">### 함수들의 모음</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> test</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">reset</span><span class="p">()</span>
+<span class="nf">record</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>$PRE_TOSSRSLT
+[1] NA
+
+$SURV
+[1] 10
+
+$STAGE
+[1] 0
+
+$PLAYER
+[1] "A"
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">gogo</span><span class="p">()</span>
+<span class="nf">record</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>$PRE_TOSSRSLT
+[1] TRUE
+
+$SURV
+[1] 8
+
+$STAGE
+[1] 5
+
+$PLAYER
+[1] "N8"
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 히스토리를 볼 수 있는 gogo함수를 만들어보자.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">gogo_history</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(){</span>
+    <span class="n">rslt_</span> <span class="o">=</span> <span class="nf">as_tibble</span><span class="p">(</span><span class="nf">record</span><span class="p">())</span> <span class="c1">## go를 시작하기전의 결과가 티블로 만들어짐 </span>
+    <span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">){</span>
+        <span class="nf">go</span><span class="p">()</span>
+        <span class="n">rslt_</span> <span class="o">=</span> <span class="nf">rbind</span><span class="p">(</span><span class="n">rslt_</span><span class="p">,</span> <span class="nf">as_tibble</span><span class="p">(</span><span class="nf">record</span><span class="p">()))</span> 
+    <span class="p">}</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">rslt_</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">reset</span><span class="p">()</span>
+<span class="nf">record</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>$PRE_TOSSRSLT
+[1] NA
+
+$SURV
+[1] 10
+
+$STAGE
+[1] 0
+
+$PLAYER
+[1] "A"
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">gogo_history</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre><span class="ansi-black-intense-fg"># A tibble: 6 × 4</span>
+  PRE_TOSSRSLT  SURV STAGE PLAYER
+  <span class="ansi-black-intense-fg">&lt;lgl&gt;</span>        <span class="ansi-black-intense-fg">&lt;dbl&gt;</span> <span class="ansi-black-intense-fg">&lt;dbl&gt;</span> <span class="ansi-black-intense-fg">&lt;chr&gt;</span> 
+<span class="ansi-black-intense-fg">1</span> <span class="ansi-red-fg">NA</span>              10     0 A     
+<span class="ansi-black-intense-fg">2</span> TRUE            10     1 A     
+<span class="ansi-black-intense-fg">3</span> TRUE            10     2 A     
+<span class="ansi-black-intense-fg">4</span> TRUE            10     3 A     
+<span class="ansi-black-intense-fg">5</span> FALSE            9     4 N9    
+<span class="ansi-black-intense-fg">6</span> TRUE             9     5 N9    
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 이제 simulate_once 라는 함수를 만들어서 시뮬레이션 결과를 저장하자.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">simulate_once</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(){</span>
+    <span class="nf">reset</span><span class="p">()</span>
+    <span class="nf">gogo</span><span class="p">()</span>
+    <span class="nf">return</span><span class="p">(</span><span class="nf">record</span><span class="p">()</span><span class="o">$</span><span class="n">SURV</span> <span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">simulate_once</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 7</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 따라서 답은</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">simrslt</span> <span class="o">=</span> <span class="nf">c</span><span class="p">()</span> 
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">100000</span><span class="p">)</span> <span class="n">simrslt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">simulate_once</span><span class="p">()</span> 
+<span class="nf">mean</span><span class="p">(</span><span class="n">simrslt</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 8.5041</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 코드를 최종적으로 정리하면</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">ARR</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">'N1'</span><span class="p">,</span><span class="s">'N2'</span><span class="p">,</span><span class="s">'N3'</span><span class="p">,</span><span class="s">'N4'</span><span class="p">,</span><span class="s">'N5'</span><span class="p">,</span><span class="s">'N6'</span><span class="p">,</span><span class="s">'N7'</span><span class="p">,</span><span class="s">'N8'</span><span class="p">,</span><span class="s">'N9'</span><span class="p">,</span><span class="s">'A'</span><span class="p">)</span>
+<span class="n">SURV</span> <span class="o">=</span> <span class="m">10</span> 
+<span class="n">PLAYER</span> <span class="o">=</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span> 
+<span class="n">STAGE</span> <span class="o">=</span> <span class="m">0</span> 
+<span class="n">PROB</span> <span class="o">=</span> <span class="m">0.8</span> 
+<span class="n">TOSSRSLT</span> <span class="o">=</span> <span class="kc">NA</span>
+<span class="c1">### 변수들의 모음</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">toss</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="nf">rbinom</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="n">p</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="n">as.logical</span>
+<span class="n">reset</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(){</span>
+    <span class="n">TOSSRSLT</span> <span class="o">&lt;&lt;-</span> <span class="kc">NA</span>
+    <span class="n">SURV</span> <span class="o">&lt;&lt;-</span> <span class="m">10</span>
+    <span class="n">STAGE</span> <span class="o">&lt;&lt;-</span> <span class="m">0</span> 
+    <span class="n">PLAYER</span> <span class="o">&lt;&lt;-</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="n">record</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(){</span>
+    <span class="nf">list</span><span class="p">(</span><span class="n">PRE_TOSSRSLT</span><span class="o">=</span><span class="n">TOSSRSLT</span><span class="p">,</span> <span class="n">SURV</span><span class="o">=</span><span class="n">SURV</span><span class="p">,</span> <span class="n">STAGE</span><span class="o">=</span><span class="n">STAGE</span><span class="p">,</span> <span class="n">PLAYER</span><span class="o">=</span><span class="n">PLAYER</span><span class="p">)</span> 
+<span class="p">}</span>
+<span class="n">go</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(){</span>
+    <span class="n">PROB</span> <span class="o">&lt;&lt;-</span> <span class="m">0.5</span><span class="o">+</span> <span class="p">(</span><span class="n">PLAYER</span><span class="o">==</span><span class="s">'A'</span><span class="p">)</span><span class="o">*</span><span class="m">0.3</span>
+    <span class="n">TOSSRSLT</span> <span class="o">&lt;&lt;-</span> <span class="nf">toss</span><span class="p">(</span><span class="n">PROB</span><span class="p">)</span> 
+    <span class="nf">if </span><span class="p">(</span><span class="n">TOSSRSLT</span><span class="o">==</span><span class="kc">FALSE</span><span class="p">)</span> <span class="n">SURV</span> <span class="o">&lt;&lt;-</span> <span class="n">SURV</span> <span class="o">-</span> <span class="m">1</span> 
+    <span class="n">STAGE</span> <span class="o">&lt;&lt;-</span> <span class="n">STAGE</span> <span class="o">+</span> <span class="m">1</span> 
+    <span class="n">PLAYER</span> <span class="o">&lt;&lt;-</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span>    
+<span class="p">}</span>
+<span class="n">gogo</span> <span class="o">=</span> <span class="nf">function</span><span class="p">()</span> <span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">)</span> <span class="nf">go</span><span class="p">()</span>
+
+<span class="n">gogo_history</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(){</span>
+    <span class="n">rslt_</span> <span class="o">=</span> <span class="nf">as_tibble</span><span class="p">(</span><span class="nf">record</span><span class="p">())</span> <span class="c1">## go를 시작하기전의 결과가 티블로 만들어짐 </span>
+    <span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">){</span>
+        <span class="nf">go</span><span class="p">()</span>
+        <span class="n">rslt_</span> <span class="o">=</span> <span class="nf">rbind</span><span class="p">(</span><span class="n">rslt_</span><span class="p">,</span> <span class="nf">as_tibble</span><span class="p">(</span><span class="nf">record</span><span class="p">()))</span> 
+    <span class="p">}</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">rslt_</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">simulate_once</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(){</span>
+    <span class="nf">reset</span><span class="p">()</span>
+    <span class="nf">gogo</span><span class="p">()</span>
+    <span class="nf">return</span><span class="p">(</span><span class="nf">record</span><span class="p">()</span><span class="o">$</span><span class="n">SURV</span> <span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">### 함수들의 모음</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">simrslt</span> <span class="o">=</span> <span class="nf">c</span><span class="p">()</span> 
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">100000</span><span class="p">)</span> <span class="n">simrslt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">simulate_once</span><span class="p">()</span> 
+<span class="nf">mean</span><span class="p">(</span><span class="n">simrslt</span><span class="p">)</span>
+<span class="c1">### body</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 8.50745</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="이러한-방식의-코딩스타일">
+<a class="anchor" href="#%EC%9D%B4%EB%9F%AC%ED%95%9C-%EB%B0%A9%EC%8B%9D%EC%9D%98-%EC%BD%94%EB%94%A9%EC%8A%A4%ED%83%80%EC%9D%BC" aria-hidden="true"><span class="octicon octicon-link"></span></a>이러한 방식의 코딩스타일<a class="anchor-link" href="#%EC%9D%B4%EB%9F%AC%ED%95%9C-%EB%B0%A9%EC%8B%9D%EC%9D%98-%EC%BD%94%EB%94%A9%EC%8A%A4%ED%83%80%EC%9D%BC"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 장점: 함수의 입력/출력을 상당부분 생략가능, 함수의 출력을 어딘가에 저장하는 번거로운 과정도 스킵가능, 구현이 쉬움</p>
+<p><code>-</code> 단점: 지정한 변수들과 함수의 목록을 한번에 파악하기 힘듬. 하나의 노트북에서 다른 풀이도 함께하다보면 변수이름들이 매우 헷갈릴수 있음.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 단점을 극복하기 위한 대안 (1) 하나의 노트북을 사용한다. (2) 변수나 함수들을 모두 초기화한다. (커널초기화) (3) 이 모든것을 하나의 함수로 묶는다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> (2) 변수나 함수들을 모두 초기화하는 방법</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">ls</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre> [1] "ARR"           "go"            "gogo"          "gogo_history" 
+ [5] "i"             "PLAYER"        "PROB"          "record"       
+ [9] "reset"         "simrslt"       "simulate_once" "STAGE"        
+[13] "SURV"          "toss"          "TOSSRSLT"     </pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">rm</span><span class="p">(</span><span class="n">list</span><span class="o">=</span><span class="nf">ls</span><span class="p">())</span> <span class="c1"># 현재 R환경에 있는 함수+변수를 삭제</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">ls</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>character(0)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>이제 R에는 더이상 함수나 변수가 없다. </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> (3) 이 모든것을 하나의 함수로 묶는방법</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">rm</span><span class="p">(</span><span class="n">list</span><span class="o">=</span><span class="nf">ls</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">ls</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>character(0)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">SIMULATE</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(){</span>
+<span class="c1">### 변수들의 모음</span>
+<span class="n">ARR</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">'N1'</span><span class="p">,</span><span class="s">'N2'</span><span class="p">,</span><span class="s">'N3'</span><span class="p">,</span><span class="s">'N4'</span><span class="p">,</span><span class="s">'N5'</span><span class="p">,</span><span class="s">'N6'</span><span class="p">,</span><span class="s">'N7'</span><span class="p">,</span><span class="s">'N8'</span><span class="p">,</span><span class="s">'N9'</span><span class="p">,</span><span class="s">'A'</span><span class="p">)</span>
+<span class="n">SURV</span> <span class="o">=</span> <span class="m">10</span> 
+<span class="n">PLAYER</span> <span class="o">=</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span> 
+<span class="n">STAGE</span> <span class="o">=</span> <span class="m">0</span> 
+<span class="n">PROB</span> <span class="o">=</span> <span class="m">0.8</span> 
+<span class="n">TOSSRSLT</span> <span class="o">=</span> <span class="kc">NA</span>
+
+<span class="c1">### Subfunction들의 모음 </span>
+<span class="n">toss</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="nf">rbinom</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="n">p</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="n">as.logical</span>
+<span class="n">reset</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(){</span>
+    <span class="n">TOSSRSLT</span> <span class="o">&lt;&lt;-</span> <span class="kc">NA</span>
+    <span class="n">SURV</span> <span class="o">&lt;&lt;-</span> <span class="m">10</span>
+    <span class="n">STAGE</span> <span class="o">&lt;&lt;-</span> <span class="m">0</span> 
+    <span class="n">PLAYER</span> <span class="o">&lt;&lt;-</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="n">record</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(){</span>
+    <span class="nf">list</span><span class="p">(</span><span class="n">PRE_TOSSRSLT</span><span class="o">=</span><span class="n">TOSSRSLT</span><span class="p">,</span> <span class="n">SURV</span><span class="o">=</span><span class="n">SURV</span><span class="p">,</span> <span class="n">STAGE</span><span class="o">=</span><span class="n">STAGE</span><span class="p">,</span> <span class="n">PLAYER</span><span class="o">=</span><span class="n">PLAYER</span><span class="p">)</span> 
+<span class="p">}</span>
+<span class="n">go</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(){</span>
+    <span class="n">PROB</span> <span class="o">&lt;&lt;-</span> <span class="m">0.5</span><span class="o">+</span> <span class="p">(</span><span class="n">PLAYER</span><span class="o">==</span><span class="s">'A'</span><span class="p">)</span><span class="o">*</span><span class="m">0.3</span>
+    <span class="n">TOSSRSLT</span> <span class="o">&lt;&lt;-</span> <span class="nf">toss</span><span class="p">(</span><span class="n">PROB</span><span class="p">)</span> 
+    <span class="nf">if </span><span class="p">(</span><span class="n">TOSSRSLT</span><span class="o">==</span><span class="kc">FALSE</span><span class="p">)</span> <span class="n">SURV</span> <span class="o">&lt;&lt;-</span> <span class="n">SURV</span> <span class="o">-</span> <span class="m">1</span> 
+    <span class="n">STAGE</span> <span class="o">&lt;&lt;-</span> <span class="n">STAGE</span> <span class="o">+</span> <span class="m">1</span> 
+    <span class="n">PLAYER</span> <span class="o">&lt;&lt;-</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span>    
+<span class="p">}</span>
+<span class="n">gogo</span> <span class="o">=</span> <span class="nf">function</span><span class="p">()</span> <span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">)</span> <span class="nf">go</span><span class="p">()</span>
+
+<span class="n">gogo_history</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(){</span>
+    <span class="n">rslt_</span> <span class="o">=</span> <span class="nf">as_tibble</span><span class="p">(</span><span class="nf">record</span><span class="p">())</span> <span class="c1">## go를 시작하기전의 결과가 티블로 만들어짐 </span>
+    <span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">){</span>
+        <span class="nf">go</span><span class="p">()</span>
+        <span class="n">rslt_</span> <span class="o">=</span> <span class="nf">rbind</span><span class="p">(</span><span class="n">rslt_</span><span class="p">,</span> <span class="nf">as_tibble</span><span class="p">(</span><span class="nf">record</span><span class="p">()))</span> 
+    <span class="p">}</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">rslt_</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">simulate_once</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(){</span>
+    <span class="nf">reset</span><span class="p">()</span>
+    <span class="nf">gogo</span><span class="p">()</span>
+    <span class="nf">return</span><span class="p">(</span><span class="nf">record</span><span class="p">()</span><span class="o">$</span><span class="n">SURV</span> <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">### BODY</span>
+<span class="n">simrslt</span> <span class="o">=</span> <span class="nf">c</span><span class="p">()</span> 
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">100000</span><span class="p">)</span> <span class="n">simrslt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">simulate_once</span><span class="p">()</span> 
+<span class="nf">mean</span><span class="p">(</span><span class="n">simrslt</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">ls</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] "SIMULATE"</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">SIMULATE</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 8.50904</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">ls</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] "SIMULATE"</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="guebin/2021IR"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/2021IR/2021/12/08/Untitled.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/2021IR/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/2021IR/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/2021IR/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/guebin" title="guebin"><svg class="svg-icon grey"><use xlink:href="/2021IR/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
