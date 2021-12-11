@@ -361,12 +361,12 @@ $${\bf X}=\begin{bmatrix}
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre><span class="ansi-bold">Rows: </span><span class="ansi-blue-fg">12294</span> <span class="ansi-bold">Columns: </span><span class="ansi-blue-fg">4</span>
+<pre><span class="ansi-bold">Rows: </span><span class="ansi-blue-fg">12294</span> <span class="ansi-bold">Columns: </span><span class="ansi-blue-fg">5</span>
 
 <span class="ansi-cyan-fg">──</span> <span class="ansi-bold">Column specification</span> <span class="ansi-cyan-fg">────────────────────────────────────────────────────────</span>
 <span class="ansi-bold">Delimiter:</span> &#34;,&#34;
 <span class="ansi-red-fg">chr</span> (1): prov
-<span class="ansi-green-fg">dbl</span> (3): year, month, newcases
+<span class="ansi-green-fg">dbl</span> (4): year, month, day, newcases
 
 
 <span class="ansi-cyan-fg">ℹ</span> Use <span class="ansi-black-fg ansi-white-bg">`spec()`</span> to retrieve the full column specification for this data.
@@ -381,61 +381,18 @@ $${\bf X}=\begin{bmatrix}
 
 <div class="output_html rendered_html output_subarea ">
 <table class="dataframe">
-<caption>A tibble: 6 × 4</caption>
+<caption>A tibble: 6 × 5</caption>
 <thead>
-	<tr><th scope="col">year</th><th scope="col">month</th><th scope="col">prov</th><th scope="col">newcases</th></tr>
-	<tr><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;chr&gt;</th><th scope="col">&lt;dbl&gt;</th></tr>
+	<tr><th scope="col">year</th><th scope="col">month</th><th scope="col">day</th><th scope="col">prov</th><th scope="col">newcases</th></tr>
+	<tr><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;chr&gt;</th><th scope="col">&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>2020</td><td>1</td><td>서울</td><td>0</td></tr>
-	<tr><td>2020</td><td>1</td><td>부산</td><td>0</td></tr>
-	<tr><td>2020</td><td>1</td><td>대구</td><td>0</td></tr>
-	<tr><td>2020</td><td>1</td><td>인천</td><td>1</td></tr>
-	<tr><td>2020</td><td>1</td><td>광주</td><td>0</td></tr>
-	<tr><td>2020</td><td>1</td><td>대전</td><td>0</td></tr>
-</tbody>
-</table>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">df</span> <span class="o">%&gt;%</span> <span class="nf">group_by</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">summarise</span><span class="p">(</span><span class="nf">mean</span><span class="p">(</span><span class="n">newcases</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-<table class="dataframe">
-<caption>A tibble: 2 × 2</caption>
-<thead>
-	<tr><th scope="col">year</th><th scope="col">mean(newcases)</th></tr>
-	<tr><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;dbl&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><td>2020</td><td> 9.722382</td></tr>
-	<tr><td>2021</td><td>65.622685</td></tr>
+	<tr><td>2020</td><td>1</td><td>20</td><td>서울</td><td>0</td></tr>
+	<tr><td>2020</td><td>1</td><td>20</td><td>부산</td><td>0</td></tr>
+	<tr><td>2020</td><td>1</td><td>20</td><td>대구</td><td>0</td></tr>
+	<tr><td>2020</td><td>1</td><td>20</td><td>인천</td><td>1</td></tr>
+	<tr><td>2020</td><td>1</td><td>20</td><td>광주</td><td>0</td></tr>
+	<tr><td>2020</td><td>1</td><td>20</td><td>대전</td><td>0</td></tr>
 </tbody>
 </table>
 
