@@ -306,7 +306,8 @@ $${\bf X}=\begin{bmatrix}
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">reav_csv</span><span class="p">(</span><span class="s">&#39;https://raw.githubusercontent.com/guebin/2021DV/master/_notebooks/covid19_20211202.csv&#39;</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&#39;https://raw.githubusercontent.com/guebin/2021IR/master/_notebooks/covid19.csv&#39;</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -318,12 +319,36 @@ $${\bf X}=\begin{bmatrix}
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-Error in reav_csv(&#34;https://raw.githubusercontent.com/guebin/2021DV/master/_notebooks/covid19_20211202.csv&#34;): could not find function &#34;reav_csv&#34;
-Traceback:
+<div class="output_subarea output_stream output_stderr output_text">
+<pre><span class="ansi-bold">Rows: </span><span class="ansi-blue-fg">12294</span> <span class="ansi-bold">Columns: </span><span class="ansi-blue-fg">4</span>
+
+<span class="ansi-cyan-fg">──</span> <span class="ansi-bold">Column specification</span> <span class="ansi-cyan-fg">────────────────────────────────────────────────────────</span>
+<span class="ansi-bold">Delimiter:</span> &#34;,&#34;
+<span class="ansi-red-fg">chr</span> (2): month, prov
+<span class="ansi-green-fg">dbl</span> (2): year, newcases
+
+
+<span class="ansi-cyan-fg">ℹ</span> Use <span class="ansi-black-fg ansi-white-bg">`spec()`</span> to retrieve the full column specification for this data.
+<span class="ansi-cyan-fg">ℹ</span> Specify the column types or set <span class="ansi-black-fg ansi-white-bg">`show_col_types = FALSE`</span> to quiet this message.
+
 </pre>
 </div>
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>  year month prov newcases
+1 2020 01    서울 0       
+2 2020 01    부산 0       
+3 2020 01    대구 0       
+4 2020 01    인천 1       
+5 2020 01    광주 0       
+6 2020 01    대전 0       </pre>
+</div>
+
 </div>
 
 </div>
