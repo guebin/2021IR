@@ -178,47 +178,6 @@ $$y_i= 1.5+ 5\sin(t_i)+ 0.5 \cos(4 t_i)+\epsilon_i, \quad i=1,2,\dots, 1000$$
 </div>
 </div>
 </div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">t</span><span class="o">=</span> <span class="m">2</span><span class="o">*</span><span class="kc">pi</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="o">/</span><span class="m">1000</span><span class="p">)</span>
-<span class="n">epsilon</span><span class="o">=</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">1000</span><span class="p">)</span>
-<span class="n">x1</span><span class="o">=</span> <span class="nf">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="n">x2</span><span class="o">=</span> <span class="m">0.5</span><span class="o">*</span><span class="nf">cos</span><span class="p">(</span><span class="m">4</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
-<span class="n">y</span><span class="o">=</span><span class="m">1.5+5</span><span class="o">*</span><span class="n">x1</span><span class="m">+3</span><span class="o">*</span><span class="n">x2</span><span class="o">+</span><span class="n">epsilon</span>
-<span class="nf">png</span><span class="p">(</span><span class="s">&#39;final_fig1.png&#39;</span><span class="p">,</span><span class="n">res</span><span class="o">=</span><span class="m">100</span><span class="p">)</span>
-<span class="nf">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="nf">dev.off</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea ">
-<pre>png 
-  2 </pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="2.">2.<a class="anchor-link" href="#2."> </a></h2>
