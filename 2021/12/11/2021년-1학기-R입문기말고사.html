@@ -96,7 +96,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      2 min read
     
 </span></p>
 
@@ -306,8 +306,49 @@ $${\bf X}=\begin{bmatrix}
 
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>── <span class="ansi-bold">Attaching packages</span> ─────────────────────────────────────── tidyverse 1.3.1 ──
+
+<span class="ansi-green-fg">✔</span> <span class="ansi-blue-fg">ggplot2</span> 3.3.5     <span class="ansi-green-fg">✔</span> <span class="ansi-blue-fg">purrr  </span> 0.3.4
+<span class="ansi-green-fg">✔</span> <span class="ansi-blue-fg">tibble </span> 3.1.6     <span class="ansi-green-fg">✔</span> <span class="ansi-blue-fg">dplyr  </span> 1.0.7
+<span class="ansi-green-fg">✔</span> <span class="ansi-blue-fg">tidyr  </span> 1.1.4     <span class="ansi-green-fg">✔</span> <span class="ansi-blue-fg">stringr</span> 1.4.0
+<span class="ansi-green-fg">✔</span> <span class="ansi-blue-fg">readr  </span> 2.1.1     <span class="ansi-green-fg">✔</span> <span class="ansi-blue-fg">forcats</span> 0.5.1
+
+── <span class="ansi-bold">Conflicts</span> ────────────────────────────────────────── tidyverse_conflicts() ──
+<span class="ansi-red-fg">✖</span> <span class="ansi-blue-fg">dplyr</span>::<span class="ansi-green-fg">filter()</span> masks <span class="ansi-blue-fg">stats</span>::filter()
+<span class="ansi-red-fg">✖</span> <span class="ansi-blue-fg">dplyr</span>::<span class="ansi-green-fg">lag()</span>    masks <span class="ansi-blue-fg">stats</span>::lag()
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&#39;https://raw.githubusercontent.com/guebin/2021IR/master/_notebooks/covid19.csv&#39;</span><span class="p">)</span>
-<span class="n">df</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -324,8 +365,8 @@ $${\bf X}=\begin{bmatrix}
 
 <span class="ansi-cyan-fg">──</span> <span class="ansi-bold">Column specification</span> <span class="ansi-cyan-fg">────────────────────────────────────────────────────────</span>
 <span class="ansi-bold">Delimiter:</span> &#34;,&#34;
-<span class="ansi-red-fg">chr</span> (2): month, prov
-<span class="ansi-green-fg">dbl</span> (2): year, newcases
+<span class="ansi-red-fg">chr</span> (1): prov
+<span class="ansi-green-fg">dbl</span> (3): year, month, newcases
 
 
 <span class="ansi-cyan-fg">ℹ</span> Use <span class="ansi-black-fg ansi-white-bg">`spec()`</span> to retrieve the full column specification for this data.
@@ -338,70 +379,66 @@ $${\bf X}=\begin{bmatrix}
 <div class="output_area">
 
 
+<div class="output_html rendered_html output_subarea ">
+<table class="dataframe">
+<caption>A tibble: 6 × 4</caption>
+<thead>
+	<tr><th scope="col">year</th><th scope="col">month</th><th scope="col">prov</th><th scope="col">newcases</th></tr>
+	<tr><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;chr&gt;</th><th scope="col">&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>2020</td><td>1</td><td>서울</td><td>0</td></tr>
+	<tr><td>2020</td><td>1</td><td>부산</td><td>0</td></tr>
+	<tr><td>2020</td><td>1</td><td>대구</td><td>0</td></tr>
+	<tr><td>2020</td><td>1</td><td>인천</td><td>1</td></tr>
+	<tr><td>2020</td><td>1</td><td>광주</td><td>0</td></tr>
+	<tr><td>2020</td><td>1</td><td>대전</td><td>0</td></tr>
+</tbody>
+</table>
 
-<div class="output_text output_subarea ">
-<pre>      year month prov newcases
-1     2020 01    서울 0       
-2     2020 01    부산 0       
-3     2020 01    대구 0       
-4     2020 01    인천 1       
-5     2020 01    광주 0       
-6     2020 01    대전 0       
-7     2020 01    울산 0       
-8     2020 01    세종 0       
-9     2020 01    경기 0       
-10    2020 01    강원 0       
-11    2020 01    충북 0       
-12    2020 01    충남 0       
-13    2020 01    전북 0       
-14    2020 01    전남 0       
-15    2020 01    경북 0       
-16    2020 01    경남 0       
-17    2020 01    제주 0       
-18    2020 01    검역 0       
-19    2020 01    서울 0       
-20    2020 01    부산 0       
-21    2020 01    대구 0       
-22    2020 01    인천 0       
-23    2020 01    광주 0       
-24    2020 01    대전 0       
-25    2020 01    울산 0       
-26    2020 01    세종 0       
-27    2020 01    경기 0       
-28    2020 01    강원 0       
-29    2020 01    충북 0       
-30    2020 01    충남 0       
-⋮     ⋮    ⋮     ⋮    ⋮       
-12265 2021 12    울산   17    
-12266 2021 12    세종   20    
-12267 2021 12    경기 1582    
-12268 2021 12    강원  105    
-12269 2021 12    충북   48    
-12270 2021 12    충남   96    
-12271 2021 12    전북   50    
-12272 2021 12    전남   40    
-12273 2021 12    경북   97    
-12274 2021 12    경남  127    
-12275 2021 12    제주   27    
-12276 2021 12    검역   20    
-12277 2021 12    서울 2268    
-12278 2021 12    부산  158    
-12279 2021 12    대구   70    
-12280 2021 12    인천  355    
-12281 2021 12    광주   39    
-12282 2021 12    대전  166    
-12283 2021 12    울산   18    
-12284 2021 12    세종    8    
-12285 2021 12    경기 1495    
-12286 2021 12    강원  145    
-12287 2021 12    충북   49    
-12288 2021 12    충남  149    
-12289 2021 12    전북   71    
-12290 2021 12    전남   39    
-12291 2021 12    경북  106    
-12292 2021 12    경남   94    
-12293 2021 12    제주   31    
-12294 2021 12    검역    5    </pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">df</span> <span class="o">%&gt;%</span> <span class="nf">group_by</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">summarise</span><span class="p">(</span><span class="nf">mean</span><span class="p">(</span><span class="n">newcases</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<table class="dataframe">
+<caption>A tibble: 2 × 2</caption>
+<thead>
+	<tr><th scope="col">year</th><th scope="col">mean(newcases)</th></tr>
+	<tr><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>2020</td><td> 9.722382</td></tr>
+	<tr><td>2021</td><td>65.622685</td></tr>
+</tbody>
+</table>
+
 </div>
 
 </div>
