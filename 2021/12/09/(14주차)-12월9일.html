@@ -96,7 +96,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      7 min read
+      9 min read
     
 </span></p>
 
@@ -356,11 +356,44 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">x_</span> <span class="o">=</span> <span class="nf">rbinom</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="m">0.8</span><span class="p">)</span>
 <span class="n">x_</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 1 1 1 0 1</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -381,6 +414,22 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 1 1 1 0 0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -392,10 +441,24 @@ window.onload = wrap_img;
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="nf">sum</span><span class="p">(</span><span class="nf">cumprod</span><span class="p">(</span><span class="n">x_</span><span class="p">))</span>
-<span class="n">x</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 3
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -434,10 +497,24 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">xx_</span>
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="n">xx_</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 1
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -459,6 +536,22 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -477,10 +570,24 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="m">5</span><span class="o">+</span><span class="n">x</span><span class="o">+</span><span class="n">y</span>
+<div class=" highlight hl-r"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="m">5</span><span class="o">+</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 9
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -532,6 +639,22 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 8.4895</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -556,6 +679,22 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre> [1] "N1" "N2" "N3" "N4" "N5" "N6" "N7" "N8" "N9" "A" </pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -594,6 +733,22 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] "A"</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -622,23 +777,6 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    
-
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -700,6 +838,23 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] TRUE
+[1] 10
+[1] 1
+[1] "A"
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -746,6 +901,23 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] TRUE
+[1] 10
+[1] 2
+[1] "A"
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -814,6 +986,23 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] TRUE
+[1] 10
+[1] 1
+[1] "A"
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -914,6 +1103,23 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] TRUE
+[1] 10
+[1] 0
+[1] "A"
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -949,10 +1155,24 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">record</span><span class="p">()</span><span class="o">$</span><span class="n">SURV</span>
+<div class=" highlight hl-r"><pre><span></span><span class="nf">record</span><span class="p">()</span><span class="o">$</span><span class="n">SURV</span> <span class="o">%&gt;%</span> <span class="n">print</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 10
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -979,6 +1199,33 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>$TOSSRSLT
+[1] TRUE
+
+$SURV
+[1] 10
+
+$STAGE
+[1] 0
+
+$PLAYER
+[1] "A"
+</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -1046,6 +1293,33 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>$PRE_TOSSRSLT
+[1] NA
+
+$SURV
+[1] 10
+
+$STAGE
+[1] 0
+
+$PLAYER
+[1] "A"
+</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -1235,6 +1509,33 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>$PRE_TOSSRSLT
+[1] NA
+
+$SURV
+[1] 10
+
+$STAGE
+[1] 0
+
+$PLAYER
+[1] "A"
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -1254,6 +1555,33 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>$PRE_TOSSRSLT
+[1] TRUE
+
+$SURV
+[1] 10
+
+$STAGE
+[1] 1
+
+$PLAYER
+[1] "A"
+</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -1365,6 +1693,33 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>$PRE_TOSSRSLT
+[1] NA
+
+$SURV
+[1] 10
+
+$STAGE
+[1] 0
+
+$PLAYER
+[1] "A"
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -1380,6 +1735,33 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>$PRE_TOSSRSLT
+[1] FALSE
+
+$SURV
+[1] 9
+
+$STAGE
+[1] 1
+
+$PLAYER
+[1] "N9"
+</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -1475,6 +1857,33 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>$PRE_TOSSRSLT
+[1] NA
+
+$SURV
+[1] 10
+
+$STAGE
+[1] 0
+
+$PLAYER
+[1] "A"
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -1490,6 +1899,33 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>$PRE_TOSSRSLT
+[1] TRUE
+
+$SURV
+[1] 9
+
+$STAGE
+[1] 5
+
+$PLAYER
+[1] "N9"
+</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -1543,6 +1979,33 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>$PRE_TOSSRSLT
+[1] NA
+
+$SURV
+[1] 10
+
+$STAGE
+[1] 0
+
+$PLAYER
+[1] "A"
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -1557,6 +2020,28 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre><span class="ansi-black-intense-fg"># A tibble: 6 × 4</span>
+  PRE_TOSSRSLT  SURV STAGE PLAYER
+  <span class="ansi-black-intense-fg">&lt;lgl&gt;</span>        <span class="ansi-black-intense-fg">&lt;dbl&gt;</span> <span class="ansi-black-intense-fg">&lt;dbl&gt;</span> <span class="ansi-black-intense-fg">&lt;chr&gt;</span> 
+<span class="ansi-black-intense-fg">1</span> <span class="ansi-red-fg">NA</span>              10     0 A     
+<span class="ansi-black-intense-fg">2</span> FALSE            9     1 N9    
+<span class="ansi-black-intense-fg">3</span> TRUE             9     2 N9    
+<span class="ansi-black-intense-fg">4</span> TRUE             9     3 N9    
+<span class="ansi-black-intense-fg">5</span> FALSE            8     4 N8    
+<span class="ansi-black-intense-fg">6</span> TRUE             8     5 N8    
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -1599,10 +2084,24 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">simulate_once</span><span class="p">()</span>
+<div class=" highlight hl-r"><pre><span></span><span class="nf">simulate_once</span><span class="p">()</span> <span class="o">%&gt;%</span> <span class="n">print</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 10
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -1626,10 +2125,24 @@ window.onload = wrap_img;
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">simrslt</span> <span class="o">=</span> <span class="nf">c</span><span class="p">()</span> 
 <span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">100000</span><span class="p">)</span> <span class="n">simrslt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">simulate_once</span><span class="p">()</span> 
-<span class="nf">mean</span><span class="p">(</span><span class="n">simrslt</span><span class="p">)</span>
+<span class="nf">mean</span><span class="p">(</span><span class="n">simrslt</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="n">print</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 8.51736
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -1644,23 +2157,6 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    
-
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -1743,11 +2239,27 @@ window.onload = wrap_img;
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">simrslt</span> <span class="o">=</span> <span class="nf">c</span><span class="p">()</span> 
 <span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">100000</span><span class="p">)</span> <span class="n">simrslt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">simulate_once</span><span class="p">()</span> 
-<span class="nf">mean</span><span class="p">(</span><span class="n">simrslt</span><span class="p">)</span>
+<span class="nf">mean</span><span class="p">(</span><span class="n">simrslt</span><span class="p">)</span> 
 <span class="c1">### body</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 8.50571</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -1795,10 +2307,30 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">ls</span><span class="p">()</span>
+<div class=" highlight hl-r"><pre><span></span><span class="nf">ls</span><span class="p">()</span> <span class="c1">## 현재 R에 저장된 변수목록을 출력</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre> [1] "ARR"           "go"            "gogo"          "gogo_history" 
+ [5] "i"             "PLAYER"        "PROB"          "record"       
+ [9] "reset"         "rslt"          "simrslt"       "simulate_once"
+[13] "STAGE"         "SURV"          "toss"          "TOSSRSLT"     
+[17] "x"             "x_"            "xx_"           "y"            </pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -1829,10 +2361,26 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">ls</span><span class="p">()</span>
+<div class=" highlight hl-r"><pre><span></span><span class="nf">ls</span><span class="p">()</span> <span class="c1">## 현재 R에 저장된 변수목록을 출력</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>character(0)</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -1888,9 +2436,35 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>character(0)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>일단 R환경은 깨끗한 상태임 </li>
+</ul>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -1970,9 +2544,35 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] "SIMULATE"</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>현재는 SIMULATE 하나만 저장되어있음 </li>
+</ul>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -1984,6 +2584,22 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 8.5075</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -2004,9 +2620,35 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] "SIMULATE"</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>실행한이후에도 SIMULATE 하나만 저장되어 있음 </li>
+</ul>
+
+</div>
+</div>
+</div>
 </div>
 
 <script type="application/vnd.jupyter.widget-state+json">
