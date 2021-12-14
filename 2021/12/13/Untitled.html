@@ -133,7 +133,175 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">ARR</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;N1&#39;</span><span class="p">,</span><span class="s">&#39;N2&#39;</span><span class="p">,</span><span class="s">&#39;N3&#39;</span><span class="p">,</span><span class="s">&#39;N4&#39;</span><span class="p">,</span><span class="s">&#39;N5&#39;</span><span class="p">,</span><span class="s">&#39;N6&#39;</span><span class="p">,</span><span class="s">&#39;N7&#39;</span><span class="p">,</span><span class="s">&#39;N8&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;N9&#39;</span><span class="p">)</span>
+<span class="n">SURV</span> <span class="o">=</span> <span class="m">10</span>
+<span class="n">PLAYER</span> <span class="o">=</span> <span class="n">ARR</span><span class="p">[</span><span class="n">SURV</span><span class="p">]</span>
+<span class="n">STAGE</span> <span class="o">=</span> <span class="m">0</span>
+
+<span class="n">simulate</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(){</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">20</span><span class="p">){</span>
+<span class="n">PROB</span> <span class="o">=</span> <span class="m">0.5</span><span class="o">+</span><span class="p">(</span><span class="n">PLAYER</span><span class="o">==</span><span class="s">&#39;A&#39;</span><span class="p">)</span><span class="o">*</span><span class="m">0.45</span>
+<span class="n">toss</span> <span class="o">=</span> <span class="nf">rbinom</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="n">PROB</span><span class="p">)</span>
+<span class="nf">if </span><span class="p">(</span><span class="n">toss</span><span class="o">==</span><span class="m">0</span><span class="p">)</span> <span class="n">SURV</span> <span class="o">&lt;&lt;-</span> <span class="n">SURV</span><span class="m">-1</span> <span class="c1">## &lt;&lt; 를 이용해야 함수밖의 변수가 변경됨 </span>
+<span class="n">STAGE</span> <span class="o">&lt;&lt;-</span> <span class="n">STAGE</span> <span class="o">+</span> <span class="m">1</span> <span class="c1">## &lt;&lt; 를 이용해야 함수밖의 변수가 변경됨</span>
+<span class="nf">if </span><span class="p">(</span><span class="n">SURV</span> <span class="o">==</span> <span class="m">0</span><span class="p">)</span> <span class="n">break</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="n">record</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(){</span>
+<span class="nf">list</span><span class="p">(</span><span class="n">SURV</span><span class="o">=</span><span class="n">SURV</span><span class="p">,</span> <span class="n">STAGE</span><span class="o">=</span><span class="n">STAGE</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">surv8</span> <span class="o">=</span> <span class="m">0</span>
+
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">100000</span><span class="p">)</span> <span class="p">{</span>
+<span class="nf">simulate</span><span class="p">()</span>
+<span class="nf">if </span><span class="p">(</span><span class="nf">record</span><span class="p">()</span><span class="o">$</span><span class="n">SURV</span> <span class="o">&gt;</span> <span class="m">7</span> <span class="o">&amp;</span> <span class="nf">record</span><span class="p">()</span><span class="o">$</span><span class="n">STAGE</span><span class="o">==</span><span class="m">20</span><span class="p">)</span> <span class="n">surv8</span> <span class="o">&lt;&lt;-</span> <span class="n">surv8</span> <span class="o">+</span> <span class="m">1</span>
+<span class="p">}</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">surv8</span><span class="p">)</span> <span class="c1">#:: 0이 나옵니다!</span>
+</pre></div>
+
+    </div>
 </div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">i</span><span class="o">=</span><span class="m">1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">simulate</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">record</span><span class="p">()</span><span class="o">$</span><span class="n">SURV</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+-999967
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">record</span><span class="p">()</span><span class="o">$</span><span class="n">STATE</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>NULL</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>reset을 시켜주는 함수가 없어서 이전결과가 누적됨  </li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {}, "version_major": 2, "version_minor": 0}
+</script>
 
 
 
