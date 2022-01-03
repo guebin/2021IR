@@ -93,7 +93,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -511,6 +511,527 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 참조: 하나의 메모리 주소에 변수의 이름을 바인딩하는 것을 참조라고 한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 에일리어싱: 하나의 메모리 주소에 여러개의 변수이름을 바인딩 하는 것을 에일리어싱이라고 한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="id,-value">id, value<a class="anchor-link" href="#id,-value"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 아래의 예제를 살펴보자.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">b</span><span class="o">=</span><span class="n">a</span>
+<span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>여기에서 a,b,c는 모두 같은 value를 가진다.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[1, 2, 3, 4]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[1, 2, 3, 4]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[1, 2, 3, 4]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>하지만 그 id까지 같은 것은 아니다.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(139851739924096, 139851739924096, 139851742724800)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 이제 다시 아래의 코드를 살펴보자.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> 
+<span class="n">b</span><span class="o">=</span><span class="n">a</span> 
+<span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">,</span><span class="n">b</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>([1, 2, 3, 4], [1, 2, 3])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(139851742145536, 139851743152000)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#51060;&#53552;&#45789;">&#51060;&#53552;&#45789;<a class="anchor-link" href="#&#51060;&#53552;&#45789;"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 참조의 개념은 확실하게 알겠음. 이제 아래의 예제를 살펴보자.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span> 
+<span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>139852067748208</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span><span class="o">=</span><span class="mi">4</span><span class="o">-</span><span class="mi">1</span>
+<span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>139852067748208</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>이게 왜 똑같지..?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>(해설) 파이썬의 경우 효율성을 위해서 -5~256까지의 정수를 미리 저장해둠.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>139852067748816</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 이제 아래의 예제를 살펴보자.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="o">+</span><span class="mi">2021</span>
+<span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>139851741177168</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span><span class="o">=</span><span class="mi">2023</span><span class="o">-</span><span class="mi">1</span>
+<span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>139851741254000</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="mi">2021</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>139851741254256</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 <script type="application/vnd.jupyter.widget-state+json">
