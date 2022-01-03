@@ -1,0 +1,78 @@
+##5-1
+x<-c(1,2,3,4,5,6,7)
+a<-cumprod(x)
+a[7]
+##5-2
+a<-function(x){
+  y=x/factorial(x)
+  y
+}
+b<-c()
+for (i in 0:1000){
+  b[i]<-a(i)
+}
+sum(b)
+exp(1)
+##5-3
+a<-c(rnorm(1000))
+sum(a>0)
+##5-4
+a<-rbinom(1000,size=1,prob=0.2)
+a
+sum(a==1)
+##5-5
+y=rnorm(5000,mean=1,sd=1)
+hist(y)
+##5-6
+x=-1000:1000/1000
+sum(x%%2==0)
+x
+##5-7
+sal<-c()
+sal[1]<-5000
+for(i in 2:10){
+  sal[i] = sal[i-1]*1.03
+}
+sal[10]
+##5-8
+f<-function(x){
+    y=ifelse(x>0,log(x),ifelse(x==0,print('음의 무한대'),print('x는 양수이어야 합니다.')))
+    y
+}
+##5-9
+df=tibble(X1=rnorm(100),X2=rnorm(100))
+head(df)
+df%>%mutate(Z=X1^2+X2^2)
+##5-10
+set.seed(1221)
+mat = rbinom(n=100,size=5,prob=0.5)
+dim(mat)=c(10,10)
+print(mat)
+apply(mat,1,sum)   #행합계
+apply(mat,2,sum)   #열합계
+##6-1
+x<-c() 
+x[1]=5 
+x[2]=5
+for(n in 3:50){
+    temp_ = mean(x[1:(n-1)])+1 
+    sum_ = temp_ * n # 1~n까지의 합 
+    x[n] = sum_ - sum(x[1:(n-1)])
+}
+x
+##6-4
+A=rbind(c(1,2,3,4),c(2,2,1,0),c(0,1,-1,0),c(3,1,-1,3))
+A
+b=c(1,9,4,7)
+dim(b)=c(4,1)
+b
+solve(A) %*% b
+
+##6-5
+df=read.csv("https://raw.githubusercontent.com/guebin/2021IR/master/_notebooks/round2.csv")
+X=as.matrix(df)
+A<-rbind(a,b)
+a<-c(cos(pi/4),-1*sin(pi/4))
+b<-c(sin(pi/4),cos(pi/4))
+X_ = X%*%A       
+plot(X_[,1],X_[,2])

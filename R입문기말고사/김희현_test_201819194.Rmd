@@ -1,0 +1,174 @@
+## 1번
+(1)rnorm()이용 벡터 생성
+```{r}
+epsilon <- c(rnorm(1000))
+head(epsilon)
+```
+
+
+(2)x1, x2
+```{r}
+sin_f <- function(i){sin((2*pi*i)/1000)}
+x1 <- c(sin_f(1:1000))
+head(x1)
+
+cos_f <- function(i){cos((8*pi*i)/1000)}
+x2 <- c(cos_f(1:1000))
+head(x2)
+```
+
+(3) scatter plot으로 시각화. 색은 'gray60'
+```{r}
+y_i <- function(i){1.5+5*x1+3*x2+epsilon}
+y <- c(y_i(1:1000))
+t_i <- function(i){((2*pi*i)/1000)}
+t <- c(t_i(1:1000))
+
+plot(t,y, col='gray60')
+```
+
+(4) cbind() 이용 1000×3 매트릭스 X
+```{r}
+x <- cbind(1,x1,x2)
+head(x)
+```
+
+(5)$X\beta$
+```{r}
+b <- matrix(c(1.5,5,3), nrow=3, ncol=1)
+b
+
+result <- x %*% b
+
+plot(t,y,col='gray60')
+lines(t,result,col='red',lwd=3)
+```
+
+(6)$\hat{\beta}$를 계산하고 계산결과 비교
+```{r}
+y_mat <- cbind(y)
+head(y_mat)
+
+mat <- solve(t(x) %*% x) %*% t(x) %*% y_mat
+mat
+```
+
+(7)$X\hat{\beta}$ 계산결과를 벡터화하고 시각화 결과에 푸른 점선으로 시각화
+```{r}
+result_mat <- x %*% mat
+head(result_mat)
+
+plot(t,y,col='gray60')
+lines(t,result,col='red',lwd=3)
+lines(t,result_mat,col='blue',lwd=3, lty=2)
+```
+
+\newpage
+## 2번
+(1) 몬테카를로 적분
+```{r}
+x=seq(from=-1.96, to=1.96, by=0.01)
+head(x)
+```
+
+```{r}
+y=(1/sqrt(2*pi))*exp((-1/2)*(x**2))
+head(y)
+```
+
+```{r pressure, echo=FALSE}
+plot(x,y,type='l')
+```
+
+```{r}
+xx=runif(10000)
+xx = xx*4-2
+yy=runif(10000)*0.4
+plot(xx,yy)
+lines(x,y,col='red',lwd=3)
+```
+
+```{r}
+test = function(xx,yy){
+    yy < (1/sqrt(2*pi))*exp((-1/2)*(xx**2))
+}
+print(c(xx[1],yy[1])) ## xx[1], yy[1] 의 값 = 무작위로 찍힌 값 
+print(1/sqrt(2*pi))*exp((-1/2)*(xx[1]**2)) ## xx[1]에 해당하는 붉은점의 값 
+test(xx[1],yy[1])
+```
+
+```{r}
+plot(xx,yy,col='gray')
+lines(x,y,col='red',lwd=3)
+points(xx[1],yy[1],col='blue')
+points(xx[1],(1/sqrt(2*pi))*exp((-1/2)*(xx[1]**2)),col='red')
+```
+
+```{r}
+tst = c()
+for (i in 1:10000) tst[i] = test(xx[i],yy[i])
+head(tst)
+```
+
+```{r}
+plot(xx,yy,col='gray')
+lines(x,y,col='red',lwd=3)
+points(xx[tst],yy[tst],col='red')
+```
+
+```{r}
+a <- sum(tst)
+a/10000* 1.6
+```
+
+
+
+(2) (-1.96, 1.96) 사이에 있는 확률변수를 count
+```{r}
+x <- rnorm(1000, mean=0, sd=1)  #표준정규분포에서 1000개의 확률변수를 생성
+length(which(x<=1.96) & which(x>=-1.96))
+```
+
+\newpage
+## 3번
+징검다리
+```{r}
+
+```
+
+
+\newpage
+## 4번
+```{r}
+library(tidyverse)
+df=read_csv('https://raw.githubusercontent.com/guebin/2021IR/master/_notebooks/covid19.csv')
+head(df)
+```
+
+(1) 2020년의 확진자(cases)총합과 2021년의 확진자(cases)총합
+```{r}
+print(colnames(df))
+
+c_2020 <- df[df$year==2020,]
+c_2021 <- df[df$year==2021,]
+```
+
+```{r}
+sum(c_2020$cases)
+sum(c_2021$cases)
+```
+
+(2)2020년 2월1일 ~ 2020년 2월15일까지의 기간동안 지역별 확진자의 합
+```{r}
+prov_sum <- df %>% group_by(prov) %>% filter(year==2020 & month==2 & day<16) %>% summarise(sum_cases=sum(cases))
+prov_sum
+```
+2020년 2월1일 ~ 2020년 2월15일 기간동안 가장 많은 확진자가 발견된 지역은 '경기' 이다.
+
+
+(3) 2020년 2월16일 ~ 2020년 2월29일까지의 기간동안 지역별 확진자의 합
+```{r}
+prov_sum2 <- df %>% group_by(prov) %>% filter(year==2020 & month==2 & day<30 & day>15) %>% summarise(sum_cases=sum(cases))
+prov_sum2
+```
+2020년 2월16일 ~ 2020년 2월29일까지의 기간동안 가장 많은 확진자가 발견된 지역은 '대구' 이다.

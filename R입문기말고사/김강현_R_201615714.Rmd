@@ -1,0 +1,43 @@
+---
+title: "R입문 기말고사"
+author: "김강현" (생물산업기계공학과,201615714)
+date: '2021 12 21 '
+output: pdf_document
+## 1-1
+e <- rnorm(1000)
+## 1-2
+
+##2-1
+x=seq(from=-1.96, to=1.96, by=0.01)
+y=1/sqrt(2*pi)*exp(-x^2/2)
+plot(x,y)
+xx= runif(n=10000,min=-2,max=2)
+yy= runif(n=10000, min=0.05, max=0.4)
+plot(xx,yy)
+lines(x,y,col='red',lwd=3)
+test = function(xx,yy){
+  yy < 1/sqrt(2*pi)*exp(-xx^2/2)
+}
+print(c(xx[1],yy[1]))
+print(1/sqrt(2*pi)*exp(-xx[1]^2/2))
+test(xx[1],yy[1])
+plot(xx,yy,col='grey')
+lines(x,y,col='red',lwd=3)
+points(xx[1],yy[1],col='blue')
+points(xx[1],(1/sqrt(2*pi)*exp(-xx[1]^2/2)),col='red')
+tst = c()
+for (i in 1:10000) tst[i] = test(xx[i],yy[i])
+head(tst)
+plot(xx,yy,col='gray')
+lines(x,y,col='red',lwd=3)
+points(xx[tst],yy[tst],col='red')
+sum(tst)
+sum(tst)/10000*(4*0.4)
+
+##2-2
+rnorm(1000)
+
+##5-1
+cumprod(7:1)
+##5-2
+

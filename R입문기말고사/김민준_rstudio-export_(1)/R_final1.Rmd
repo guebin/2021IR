@@ -1,0 +1,271 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newpage
+## 1번
+```{r}
+### 1-1
+epsilon_i<-rnorm(1000)
+head(epsilon_i)
+
+```
+
+```{r}
+### 1-2
+i=1:1000
+X1<- sin(2*pi*i/1000)
+j=1:1000
+X2<- cos(8*pi*j/1000)
+head(X1)
+head(X2)
+```
+
+```{r}
+###1-3
+epsilon_i<-rnorm(1000)
+k=1:1000
+t<- 2*pi*k/1000
+l=1:1000
+y<- 1.5 + 5*sin(2*pi*l/1000) + 3*cos(8*pi*l/1000) + epsilon_i
+plot(t,y,col='gray60')
+```
+
+```{r}
+###1-4
+X<- cbind(1,X1,X2)
+head(X)
+```
+
+```{r}
+###1-5
+β <-rbind(1.5,5,3)
+β
+m <- X %*% β
+plot(t,y,col='gray60')
+lines(t, m, col='red', lwd='6')
+```
+
+```{r}
+###1-6
+X<- cbind(1,X1,X2)
+Y<- cbind(y)
+a<- t(X)
+b<- solve(a %*% X)
+hatβ<- b %*% a %*% Y
+hatβ
+c(hatβ)
+c(β)
+```
+
+```{r}
+###1-7
+Xhatβ <- X %*% hatβ
+plot(t,y,col='gray60')
+lines(t,m,col='red',lwd='6')
+lines(t,Xhatβ, lty="dashed", col='blue', lwd='6')
+```
+
+\newpage
+## 2번
+```{r}
+### 2-1
+x=seq(from=-1.96, to=1.96, by=0.01)
+y=(1/sqrt(2*pi))*exp(-x^2/2)
+plot(x,y,type='l')
+xx=runif(10000)
+xx=xx*2
+yy=runif(10000)*0.4
+plot(xx,yy)
+lines(x,y,col='red',lwd=3)
+test=function(xx,yy){
+  yy< (1/sqrt(2*pi))*exp(-xx^2/2)
+}
+print(c(xx[1],yy[1]))
+print(1/sqrt(2*pi))*exp((-1/2)*xx[1]^2)
+tst=c()
+for(i in 1:10000) tst[i]= test(xx[i],yy[i])
+plot(xx,yy,col='gray')
+lines(x,y,col='red',lwd=3)
+points(xx[tst],yy[tst],col='red')
+sum(tst)
+sum(tst)/10000
+sum(tst)/10000*0.8*2
+```
+
+```{r}
+###2-2
+library(tidyverse)
+df<-c(rnorm(1000))
+head(df)
+tb=as_tibble(df)
+head(tb)
+tb2= tb %>% filter(df>-1.96,df<1.96) 
+head(tb2)
+nrow(tb2)
+```
+
+\newpage
+## 3번
+```{r}
+### TypeA
+APR=c('N1','N2','N3','N4','N5','N6','N7','N8','A','N10')
+SURV=10
+PLAYER=APR[SURV]
+STAGE=0
+PROB=0.5
+TOSSRSLT=NA
+library(tidyverse)
+toss=function(p) rbinom(n=1,size=1,prob=p) %>% as.logical
+
+reset=function(){
+  TOSSRSLT<<-NA
+  SURV<<- 10
+  STAGE<<- 0
+  PLAYER<<- APR[SURV]
+}
+
+record=function(){
+  list(PRE_TOSSRSLT=TOSSRSLT, SURV=SURV, STAGE=STAGE, PLAYER=PLAYER)
+}
+
+go= function(){
+  PROB<<- 0.5+(PLAYER=='A')*0.45
+  TOSSRSLT<<-toss(PROB)
+  if (TOSSRSLT==FALSE) SURV<<-SURV-1  
+  STAGE<<-STAGE+1
+  PLAYER<<-APR[SURV]
+}
+
+gogo=function(){
+      for(i in 1:20){ 
+        go() 
+       if (SURV==0) break
+  }
+}
+
+gogo_history=function() {
+  rslt_=as_tibble(record())
+  for(i in 1:20){
+    go()
+    rslt_=rbind(rslt_,as_tibble(record()))
+  }
+  print(rslt_)
+}
+
+simulate_once=function(){
+  reset()
+  gogo()
+  return(record()$SURV)
+}
+
+simrslt=c()
+for (i in 1:1000) simrslt[i]=simulate_once()
+mean(simrslt)
+```
+
+```{r}
+APR=c('N10','A','N8','N7','N6','N5','N4','N3','N2','N1')
+SURV=10
+PLAYER=APR[SURV]
+STAGE=0
+PROB=0.5
+TOSSRSLT=NA
+library(tidyverse)
+
+toss=function(p) rbinom(n=1,size=1,prob=p) %>% as.logical
+
+reset=function(){
+  TOSSRSLT<<-NA
+  SURV<<- 10
+  STAGE<<- 0
+  PLAYER<<- APR[SURV]
+}
+
+record=function(){
+  list(PRE_TOSSRSLT=TOSSRSLT, SURV=SURV, STAGE=STAGE, PLAYER=PLAYER)
+}
+
+go= function(){
+  PROB<<-0.5+(PLAYER=='A')*0.45
+  TOSSRSLT<<-toss(PROB)
+  if (TOSSRSLT==FALSE) SURV<<-SURV-1
+  STAGE<<-STAGE+1
+  PLAYER<<-APR[SURV]
+}
+
+gogo=function(){
+  for(i in 1:20){ 
+    go() 
+    if (SURV==0) break
+  }
+}
+
+gogo_history=function() {
+  rslt_=as_tibble(record())
+  for(i in 1:20){
+    go()
+    rslt_=rbind(rslt_,as_tibble(record()))
+  }
+  print(rslt_)
+}
+
+simulate_once=function(){
+  reset()
+  gogo()
+  return(record()$SURV)
+}
+
+simrslt=c()
+for (i in 1:1000) simrslt[i]=simulate_once()
+mean(simrslt)
+```
+
+```{r}
+## 따라서 8번 참가자는 TypeA에서 살아남을 확률이 높다.
+```
+
+\newpage
+## 4번
+```{r}
+df=read_csv('https://raw.githubusercontent.com/guebin/2021IR/master/_notebooks/covid19.csv')
+head(df)
+library(tidyverse)
+```
+
+```{r}
+###4-1
+df %>% filter(year==2020) %>% summarise(sum(cases))
+df %>% filter(year==2021) %>% summarise(sum(cases))
+```
+
+```{r}
+###4-2
+df %>% filter(year==2020 & month==2 & day<=15) %>% group_by(prov) %>% summarise(confirm=(sum(cases)))
+```
+
+```{r}
+## 따라서 가장 많은 확진자가 발견된 지역은 경기도다.
+```
+
+```{r}
+###4-3
+df %>% filter(year==2020 &month==2 & day>=16 & day<=29) %>% group_by(prov) %>% summarise(confirm=(sum(cases)))
+```
+
+```{r}
+## 따라서 가장 많은 확진자가 발견된 지역은 대구다.
+```
+
+\newpage
+## 5번
+```{r}
+## 5-1
+cumprod(1:7)
+```
+
+```{r}
+##5-2
+
+```
+```{r}

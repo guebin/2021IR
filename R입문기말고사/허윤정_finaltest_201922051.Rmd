@@ -1,0 +1,181 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## library
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+```
+## 1번
+### (1)
+```{r}
+epsilon=rnorm(1000)
+head(epsilon)
+```
+### (2)
+```{r}
+t=c()
+for(i in 1:1000) t[i] = 2*pi*i/1000
+
+x1=c()
+for(i in 1:1000) x1[i] = sin(t[i])
+
+x2=c()
+for(i in 1:1000) x2[i] = cos(4*t[i])
+
+head(x1);head(x2)
+```
+\newpage
+### (3)
+```{r}
+y=1.5+5*x1+3*x2+epsilon
+plot(t,y,col='gray60')
+```
+
+### (4)
+```{r}
+X=cbind(1,x1,x2)
+head(X)
+```
+\newpage
+### (5)
+```{r}
+Beta=rbind(1.5,5,3)
+Xbeta=c(X %*% Beta)
+
+plot(t,y,col='gray60')
+lines(t,Xbeta,col='red',lwd=3)
+```
+
+### (6)
+```{r}
+y=cbind(y)
+hatBeta=solve(t(X)%*%X)%*%t(X)%*%y
+hatBeta
+```
+$\boldsymbol{\hat\beta}$를 $\boldsymbol{\beta}$와 비교했을때 차이가 거의 없는 것을 볼 수 있다.
+
+\newpage
+### (7)
+```{r}
+XhatBeta=c(X %*% hatBeta)
+
+plot(t,y,col='gray60')
+lines(t,Xbeta,col='red',lwd=3)
+lines(t,XhatBeta,col='blue',lty=2,lwd=3)
+```
+
+\newpage
+## 2번
+### (1)
+$\int_{-1.96}^{1.96}\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}x^2}dx=2\int_{0}^{1.96}\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}x^2}dx$를 이용하여 구하였다.
+```{r}
+x=seq(from=0,to=1.96,by=0.01)
+y=1/sqrt(2*pi)*exp(-(x^2)/2)
+plot(x,y,type='l')
+
+xx=runif(10000)*2
+yy=runif(10000)*0.4
+test = function(xx,yy){
+    yy < 1/sqrt(2*pi)*exp(-(xx^2)/2)
+}
+tst = c()
+for (i in 1:10000) tst[i] = test(xx[i],yy[i])
+
+plot(xx,yy,col='gray')
+lines(x,y,col='red',lwd=3)
+points(xx[tst],yy[tst],col='red')
+
+2*(sum(tst)/10000*(2*0.4))
+```
+### (2)
+```{r}
+x=rnorm(1000)
+sum((-1.96< x & x < 1.96)==TRUE)
+```
+\newpage
+## 3번
+```{r}
+rm(list=ls())
+
+SIMULATE_TYPE1 = function(n){
+#변수
+    ARR=c('N1','N2','N3','N4','N5','N6','N7','N8','N9','N10')
+    SURV=10
+    PLAYER = ARR[SURV]
+    STAGE = 0 
+    PROB = 0.5
+    TOSSRSLT = NA
+
+#sub_function
+toss = function(p) rbinom(n=1,size=1,prob=p) %>% as.logical
+reset = function(){
+    TOSSRSLT <<- NA
+    SURV <<- 10
+    STAGE <<- 0 
+    PLAYER <<- ARR[SURV]
+}
+record = function(){
+    list(PRE_TOSSRSLT=TOSSRSLT, SURV=SURV, STAGE=STAGE, PLAYER=PLAYER) 
+}
+go = function(){
+    PROB <<- 0.5 + (PLAYER=='N9')*0.45
+TOSSRSLT <<- toss(PROB) 
+if (TOSSRSLT==FALSE) SURV <<- SURV - 1 
+STAGE <<- STAGE + 1 
+PLAYER <<- ARR[SURV]
+}
+gogo = function() for(i in 1:10) go()
+
+gogo_history = function(){
+    rslt_ = as_tibble(record())
+    for(i in 1:10){
+        go()
+        rslt_ = rbind(rslt_, as_tibble(record())) 
+    }
+    print(rslt_)
+}
+
+simulate_once = function(){
+    reset()
+    gogo()
+    return(record()$SURV )
+}
+
+#Body
+simrslt = c() 
+for (i in 1:10000) simrslt[i] = simulate_once()
+simrslt >= n #n명 이상 살아남는 경우
+}
+```
+Type1에서 8번 참가자가 생존하려면 최소 8명 이상이 생존해야한다.
+```{r}
+sum(SIMULATE_TYPE1(8))/10000
+```
+\newpage
+## 4번
+```{r}
+df=read_csv('https://raw.githubusercontent.com/guebin/2021IR/master/_notebooks/covid19.csv')
+head(df)
+```
+### (1)
+```{r}
+df %>% group_by(year) %>% summarise(sum(cases))
+```
+\newpage
+### (2)
+```{r}
+df %>%
+filter(year==2020 & month==2 & 1 <= day & day <= 15) %>%
+group_by(prov) %>%
+summarise(sum(cases))
+```
+따라서 2020년 2월 1일부터 202년 2월 15일까지 가장 많은 확진자가 발견된 지역은 경기이다.
+\newpage
+### (3)
+```{r}
+df %>%
+filter(year==2020 & month==2 & 16 <= day & day <= 29) %>%
+group_by(prov) %>%
+summarise(sum(cases))
+```
+따라서 2020년 2월 16일부터 2020년 2월 29일까지 가장 많은 확진자가 발견된 지역은 대구이다.

@@ -1,0 +1,231 @@
+##1번 문제
+
+```{r}
+library(tidyverse)
+```
+
+
+```{r}
+i=c(1:1000)
+t=2*pi*i/1000
+E= rnorm(1000)
+```
+
+```{r}
+x=c()
+for(i in 1:1000){
+    x[i]=sin(t[i])
+}
+xx=c()
+for(i in 1:1000){
+  xx[i]=cos(4*t[i])
+}
+y=c()
+for(i in 1:1000){
+  y[i]=1.5+5*sin(t[i])+3*cos(4*t[i])+E[i]
+}
+plot(t,y,col='gray60')
+```
+
+
+```{r}
+X=cbind(1,x,xx)
+B=rbind(1.5,5,3)
+XB=X %*% B
+plot(t,y,col='gray60')
+points(t,XB,col='red',lwd=5)
+```
+
+
+```{r}
+Y=rbind(y)
+B_=solve(t(X) %*% X) %*% t(X) %*% y
+XB_= X %*% B_
+plot(t,y,col='gray60')
+points(t,XB,col='red',lwd=5)
+points(t,XB_,col='blue',lty='dotted',lwd=0.3)
+```
+
+##2번 문제
+
+```{r}
+x=seq(from=-1.96,to=1.96,by=0.001)
+y=(exp(-x^2/2))/sqrt(2*pi)
+plot(x,y,type='l')
+```
+
+```{r}
+xx=runif(10000,min=-2,max=2)
+yy=runif(10000)*0.4
+plot(xx,yy)
+lines(x,y,col='red',lwd=3)
+```
+
+```{r}
+plot(xx,yy,col='gray')
+lines(x,y,col='red',lwd=3)
+points(xx[2],yy[2],col='blue')
+points(xx[2],(exp(-xx[2]^2/2))/sqrt(2*pi),col='red')
+```
+
+
+```{r}
+tst=c()
+for(i in 1:10000) tst[i]=test(xx[i],yy[i])
+sum(tst)
+plot(xx,yy,col='gray')
+lines(x,y,col='red',lwd=3)
+points(xx[tst],yy[tst],col='red')
+```
+
+
+```{r}
+E=rnorm(1000,mean=0,sd=1)
+sum(E<1.96 & E>-1.96)
+```
+
+
+##3번 문제
+
+```{r}
+ARR=c('P1','P2','P3','P4','P5','P6','P7','P8','A','P10')
+toss= function(p) rbinom(n=1,size=1,prob=p) %>% as.logical
+STAGE=0
+SURV=10
+PLAYER=ARR[SURV]
+reset = function(){
+    TOSSRSLT<<-NA
+    SURV<<-10
+    STAGE<<-0
+    PLAYER<<-ARR[SURV]
+}
+record = function(){
+    list(PRE_TOSSRSLT = TOSSRSLT, SURV = SURV,STAGE = STAGE, PLAYER = PLAYER)
+}
+go = function(){
+    PROB<<-0.5 + (PLAYER=='A')*0.45
+    TOSSRSLT<<-toss(PROB)
+    if(TOSSRSLT==FALSE) 
+        SURV<<-SURV-1
+        STAGE<<-STAGE+1
+        PLAYER<<-ARR[SURV]
+}
+gogo = function() for(i in 1:10) go()
+    
+    gogo_history = function(){
+    rslt_= as_tibble(record())
+    for(i in 1:10){
+        go()
+        rslt_ = rbind(rslt_ , as_tibble(record()))
+}
+print(rslt_)
+}  
+simulate_once = function(){
+    reset()
+    gogo()
+    return(record()$SURV)
+}
+```
+
+```{r}
+simrslt=c()
+for(i in 1:1000) simrslt[i]=simulate_once()
+mean(simrslt)
+```
+
+```{r}
+ARR=c('P1','A','P3','P4','P5','P6','P7','P8','P9','P10')
+toss= function(p) rbinom(n=1,size=1,prob=p) %>% as.logical
+STAGE=0
+SURV=10
+PLAYER=ARR[SURV]
+reset = function(){
+    TOSSRSLT<<-NA
+    SURV<<-10
+    STAGE<<-0
+    PLAYER<<-ARR[SURV]
+}
+record = function(){
+    list(PRE_TOSSRSLT = TOSSRSLT, SURV = SURV,STAGE = STAGE, PLAYER = PLAYER)
+}
+go = function(){
+    PROB<<-0.5 + (PLAYER=='A')*0.45
+    TOSSRSLT<<-toss(PROB)
+    if(TOSSRSLT==FALSE) 
+        SURV<<-SURV-1
+        STAGE<<-STAGE+1
+        PLAYER<<-ARR[SURV]
+}
+gogo = function() for(i in 1:10) go()
+    
+    gogo_history = function(){
+    rslt_= as_tibble(record())
+    for(i in 1:10){
+        go()
+        rslt_ = rbind(rslt_ , as_tibble(record()))
+}
+print(rslt_)
+}  
+simulate_once = function(){
+    reset()
+    gogo()
+    return(record()$SURV)
+}
+```
+
+```{r}
+simrslt=c()
+for(i in 1:1000) simrslt[i]=simulate_once()
+mean(simrslt)
+```
+
+첫번째 방법이 유리하다.
+
+
+##4번 문제
+
+```{r}
+df=read_csv('https://raw.githubusercontent.com/guebin/2021IR/master/_notebooks/covid19.csv')
+df
+```
+
+```{r}
+df  %>% filter(year=='2021') %>% summarise(sum=sum(cases))
+
+df %>% filter(years=='2020') %>% summarise(sum_=sum(cases))
+```
+
+
+```{r}
+df %>% filter(prov=='서울') %>% filter(year=='2021') %>% filter(month=='2') %>% filter(day=='c(1:15)') %>% summarise(sum=sum(cases))
+df %>% filter(prov=='경기') %>% filter(year=='2021') %>% filter(month=='2') %>% filter(day=='c(1:15)') %>% summarise(sum=sum(cases))
+df %>% filter(prov=='제주') %>% filter(year=='2021') %>% filter(month=='2') %>% filter(day=='c(1:15)') %>% summarise(sum=sum(cases))
+df %>% filter(prov=='울산') %>% filter(year=='2021') %>% filter(month=='2') %>% filter(day=='c(1:15)') %>% summarise(sum=sum(cases))
+df %>% filter(prov=='세종') %>% filter(year=='2021') %>% filter(month=='2') %>% filter(day=='c(1:15)') %>% summarise(sum=sum(cases))
+df %>% filter(prov=='강원') %>% filter(year=='2021') %>% filter(month=='2') %>% filter(day=='c(1:15)') %>% summarise(sum=sum(cases))
+df %>% filter(prov=='충남') %>% filter(year=='2021') %>% filter(month=='2') %>% filter(day=='c(1:15)') %>% summarise(sum=sum(cases))
+df %>% filter(prov=='충북') %>% filter(year=='2021') %>% filter(month=='2') %>% filter(day=='c(1:15)') %>% summarise(sum=sum(cases))
+df %>% filter(prov=='전북') %>% filter(year=='2021') %>% filter(month=='2') %>% filter(day=='c(1:15)') %>% summarise(sum=sum(cases))
+df %>% filter(prov=='전남') %>% filter(year=='2021') %>% filter(month=='2') %>% filter(day=='c(1:15)') %>% summarise(sum=sum(cases))
+df %>% filter(prov=='경남') %>% filter(year=='2021') %>% filter(month=='2') %>% filter(day=='c(1:15)') %>% summarise(sum=sum(cases))
+df %>% filter(prov=='경북') %>% filter(year=='2021') %>% filter(month=='2') %>% filter(day=='c(1:15)') %>% summarise(sum=sum(cases))
+df %>% filter(prov=='검역') %>% filter(year=='2021') %>% filter(month=='2') %>% filter(day=='c(1:15)') %>% summarise(sum=sum(cases))
+```
+
+```{r}
+df %>% filter(prov=='서울') %>% filter(year=='2021') %>% filter(month=='2') %>% filter(day=='c(16:28)') %>% summarise(sum=sum(cases))
+df %>% filter(prov=='경기') %>% filter(year=='2021') %>% filter(month=='2') %>% filter(day=='c(16:28)') %>% summarise(sum=sum(cases))
+df %>% filter(prov=='제주') %>% filter(year=='2021') %>% filter(month=='2') %>% filter(day=='c(16:28)') %>% summarise(sum=sum(cases))
+df %>% filter(prov=='울산') %>% filter(year=='2021') %>% filter(month=='2') %>% filter(day=='c(16:28)') %>% summarise(sum=sum(cases))
+df %>% filter(prov=='세종') %>% filter(year=='2021') %>% filter(month=='2') %>% filter(day=='c(16:28)') %>% summarise(sum=sum(cases))
+df %>% filter(prov=='강원') %>% filter(year=='2021') %>% filter(month=='2') %>% filter(day=='c(16:28)') %>% summarise(sum=sum(cases))
+df %>% filter(prov=='충남') %>% filter(year=='2021') %>% filter(month=='2') %>% filter(day=='c(16:28)') %>% summarise(sum=sum(cases))
+df %>% filter(prov=='충북') %>% filter(year=='2021') %>% filter(month=='2') %>% filter(day=='c(16:28)') %>% summarise(sum=sum(cases))
+df %>% filter(prov=='전북') %>% filter(year=='2021') %>% filter(month=='2') %>% filter(day=='c(16:28)') %>% summarise(sum=sum(cases))
+df %>% filter(prov=='전남') %>% filter(year=='2021') %>% filter(month=='2') %>% filter(day=='c(16:28)') %>% summarise(sum=sum(cases))
+df %>% filter(prov=='경남') %>% filter(year=='2021') %>% filter(month=='2') %>% filter(day=='c(16:28)') %>% summarise(sum=sum(cases))
+df %>% filter(prov=='경북') %>% filter(year=='2021') %>% filter(month=='2') %>% filter(day=='c(16:28)') %>% summarise(sum=sum(cases))
+df %>% filter(prov=='검역') %>% filter(year=='2021') %>% filter(month=='2') %>% filter(day=='c(16:28)') %>% summarise(sum=sum(cases))
+```
+
+

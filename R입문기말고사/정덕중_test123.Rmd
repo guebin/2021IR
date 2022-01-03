@@ -1,0 +1,244 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 1번문제풀이
+
+
+# (1)
+```{r}
+epsilon=rnorm(1000)
+head(epsilon)
+```
+# (2)
+```{r}
+t<-c()
+for(i in 1:1000) t[i]=2*pi*i/1000
+x_1<-c()
+x_1 = sin(t)
+x_2<-c()
+x_2 = cos(4*t)
+```
+- x_1
+```{r}
+head(x_1) 
+```
+- x_2
+```{r}
+head(x_2)
+```
+# (4)
+```{r}
+head(cbind(1,x_1,x_2))
+```
+
+
+
+## 2번문제풀이
+
+
+# (1)
+```{r}
+x=seq(from=-1.96, to=1.96, by=0.01)
+y=(1/sqrt(2*pi))*exp((-1/2)*x^2)
+xx= runif(10000,min=-1.96,max=1.96)
+yy= runif(10000,min=0.05,max=0.40)
+plot(xx,yy)
+lines(x,y,col='red',lwd=3)
+test = function(xx,yy){
+    yy < (1/sqrt(2*pi))*exp((-1/2)*xx^2)
+}
+tst = c()
+for (i in 1:10000) tst[i] = test(xx[i],yy[i])
+head(tst)
+sum(tst)
+```
+
+# (2)
+```{r}
+x <- rnorm(1000)
+sum(x<1.96 & x>-1.96)
+```
+
+## 3번문제풀이
+
+
+```{r}
+library(tidyverse)
+df=read_csv('https://raw.githubusercontent.com/guebin/2021IR/master/_notebooks/covid19.csv')
+head(df)
+```
+
+## 4번 문제풀이
+
+
+# (1) 
+- 2020년의 확진자(cases)총합
+```{r}
+df %>% filter(year == '2020')  %>% summarise(sum_value1=sum(cases))
+```
+- 2021년의 확진자(cases)총합
+```{r}
+df %>% filter(year == '2021')  %>% summarise(sum_value2=sum(cases))
+```
+
+
+#(2)
+- 2020년2월1일~2020년2월15일 기간 서울에서 발생한 확진자의 합
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '서울' )%>% filter(day == 1:15)%>% summarise(sum_서울=sum(cases))
+```
+- 2020년2월1일~2020년2월15일 기간 부산에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '부산' ) %>% filter(day == 1:15) %>% summarise(sum_부산=sum(cases))
+```
+- 2020년2월1일~2020년2월15일 기간 대구에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '대구' ) %>% filter(day == 1:15) %>% summarise(sum_대구=sum(cases))
+```
+- 2020년2월1일~2020년2월15일 기간 인천에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '인천' ) %>% filter(day == 1:15) %>% summarise(sum_인천=sum(cases))
+```
+- 2020년2월1일~2020년2월15일 기간 광주에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '광주' ) %>% filter(day == 1:15) %>% summarise(sum_광주=sum(cases))
+```
+- 2020년2월1일~2020년2월15일 기간 울산에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '울산' ) %>% filter(day == 1:15) %>% summarise(sum_울산=sum(cases))
+```
+- 2020년2월1일~2020년2월15일 기간 세종에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '세종' ) %>% filter(day == 1:15) %>% summarise(sum_세종=sum(cases))
+```
+- 2020년2월1일~2020년2월15일 기간 경기에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '경기' ) %>% filter(day == 1:15) %>% summarise(sum_경기=sum(cases))
+```
+- 2020년2월1일~2020년2월15일 기간 강원에서 발생한 환자수
+```{r}
+df %>% filter(year == '2021' & month == '2' & prov == '강원' ) %>% filter(day == 1:15) %>% summarise(sum_강원=sum(cases))
+```
+- 2020년2월1일~2020년2월15일 기간 충북에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '충북' ) %>% filter(day == 1:15) %>% summarise(sum_충북=sum(cases))
+```
+- 2020년2월1일~2020년2월15일 기간 충남에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '충남' ) %>% filter(day == 1:15) %>% summarise(sum_충남=sum(cases))
+```
+- 2020년2월1일~2020년2월15일 기간 전북에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '전북' ) %>% filter(day == 1:15) %>% summarise(sum_전북=sum(cases))
+```
+- 2020년2월1일~2020년2월15일 기간 전남에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '전남' ) %>% filter(day == 1:15) %>% summarise(sum_전남=sum(cases))
+```
+- 2020년2월1일~2020년2월15일 기간 경북에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '경북' ) %>% filter(day == 1:15) %>% summarise(sum_경북=sum(cases))
+```
+-2020년2월1일~2020년2월15일 기간 경남에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '경남' ) %>% filter(day == 1:15) %>% summarise(sum_경남=sum(cases))
+```
+- 2020년2월1일~2020년2월15일 기간 제주에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '제주' ) %>% filter(day == 1:15) %>% summarise(sum_제주=sum(cases))
+
+```
+
+
+강원이 78명으로 가장 많다.
+
+
+
+# (3)
+- 2020년2월16일~2020년2월29일 기간 서울에서 발생한 확진자의 합
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '서울' & cases ) 
+2+2+5+2+3+4+7+8+10+7+12
+```
+- 2020년2월16일~2020년2월29일 기간 부산에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '부산' & cases ) %>% summarise(sum_value=sum(cases))
+```
+- 2020년2월16일~2020년2월29일 기간 대구에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '대구' & cases ) %>% summarise(sum_value=sum(cases))
+```
+- 2020년2월16일~2020년2월29일 기간 인천에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '인천' & cases ) %>% summarise(sum_value=sum(cases))
+```
+- 2020년2월16일~2020년2월29일 기간 광주에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '광주' )
+```
+- 2020년2월16일~2020년2월29일 기간 울산에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '울산' & cases ) %>% summarise(sum_value=sum(cases))
+```
+- 2020년2월16일~2020년2월29일 기간 세종에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '세종' & cases ) %>% summarise(sum_value=sum(cases))
+```
+- 2020년2월16일~2020년2월29일 기간 경기에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '경기' )
+```
+- 2020년2월16일~2020년2월29일 기간 강원에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '강원' )
+```
+- 2020년2월16일~2020년2월29일 기간 충북에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '충북' & cases ) %>% summarise(sum_value=sum(cases))
+```
+- 2020년2월16일~2020년2월29일 기간 충남에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '충남' & cases ) %>% summarise(sum_value=sum(cases))
+```
+- 2020년2월16일~2020년2월29일 기간 전북에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '전북' & cases ) %>% summarise(sum_value=sum(cases))
+```
+- 2020년2월16일~2020년2월29일 기간 전남에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '전남' ) 
+```
+- 2020년2월16일~2020년2월29일 기간 경북에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '경북'  & cases ) %>% summarise(sum_value=sum(cases))
+```
+- 2020년2월16일~2020년2월29일 기간 경남에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '경남'  & cases ) %>% summarise(sum_value=sum(cases))
+```
+- 2020년2월16일~2020년2월29일 기간 제주에서 발생한 환자수
+```{r}
+df %>% filter(year == '2020' & month == '2' & prov == '제주'  & cases ) %>% summarise(sum_value=sum(cases))
+```
+
+가장많은 곳은 대구로 2055명이다
+
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

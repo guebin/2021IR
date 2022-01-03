@@ -1,0 +1,137 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 1번풀이
+
+```{r}
+t<-c()
+for(i in 1:1000) t[i]=((2*pi*i)/1000)
+
+E<-rnorm(1000, mean=0, sd=1)
+
+x_1=c()
+for(i in 1:1000)x_1[i]=sin(t[i])
+
+x_2=c()
+for(i in 1:1000)x_2[i]=cos(4*t[i])
+
+y<-c()
+for(i in 1:1000)y[i]=1.5+5*x_1[i]+3*x_2[i]+E[i]
+
+plot(t,y,col='gray60')
+
+D<-rep(1,1000)
+X<-cbind(D,x_1,x_2)
+
+PETA<-c(1.5,5,3)
+beta<-cbind(PETA)
+Xbeta<-X%*%beta
+V<-as.vector(Xbeta)
+
+lines(t,V,lwd=3,col='red')
+
+
+ymat<-matrix(y, byrow=FALSE, ncol=1)
+
+Xt<-t(X)
+XTT<-Xt%*%X
+Xtt<-solve(XTT)
+Xttt<-Xtt%*%Xt
+betahat<-Xttt%*%ymat
+finvec<-X%*%betahat
+
+VV<-as.vector(finvec)
+
+lines(t,VV,col='blue',lty=3,lwd=4)
+
+```
+
+
+##2번풀이
+```{r}
+xx<-runif(10000)
+xx<-xx*1.96
+yy<-runif(10000)
+plot(xx,yy,col='gray')
+
+x<-seq(from=0, to=2, by=0.01)
+y<-(1/sqrt(2*pi))*exp(-x^2/2)
+lines(x,y,col='red',lwd=3)
+
+test = function(xx,yy){
+  yy < (1/sqrt(2*pi))*exp(-(xx)^2/2)
+}
+
+print(c(xx[1],yy[1]))
+test(xx[1],yy[1])
+
+tst=c()
+for(i in 1:10000) tst[i]=test(xx[i],yy[i])
+points(xx[tst],yy[tst],col='red')
+sum(tst)
+2420/10000*1.96 # 주어진 적분은 우함수 적분이므로 2를 곱해야함
+0.47432*2
+```
+
+##3번풀이
+```{r}
+cur_num = 1 #(현재 선택중인 사람 번호)
+cur_bri = 0 #(현재 최선두의 징검다리 위치)
+counter = 0 #(8번 생존횟수)
+
+CT=0
+while(CT==10000000){
+while(cur_bri<21){
+  if (rbinom(1,1,0.5)==1){ #1나오면 생존, 사람 번호는 그대로, 징검다리는 한 칸 앞
+    cur_num=cur_num+0
+    cur_bri=cur_bri+1
+  }else{
+    cur_num=cur_num+1 #0나오면 사망, 사람 번호 +1, 징검다리는 뒷사람이 실패한 것을 봤으므로 +1
+    cur_bri=cur_bri+1
+  }
+}
+if(cur_num<=8){
+  counter=counter+1
+}
+ #TypeB에서 8번 생존
+CT=CT+1
+}
+counter
+
+
+TR10<-0.5^20 # 10명 생존
+
+TR9<-c()
+for(i in 1:19)TR9[i]=0.5^i*0.95^(20-i) # 9명 생존
+
+TR8 <- c()
+#0.5^n*0.95^k*0.05*0.5^(20-n-k-1) 8명 생존, 0<=k<18
+#0.5^(19-k)*0.95^k*0.05  식 간단히
+for(i in 0:18)TR8[i]=0.5^(19-i)*0.95^(i)*0.05
+
+#다 더하면 TypeA에서 8번 사람 생존률
+FinTR<-TR10+sum(TR9)+sum(TR8)
+FinTR*1000
+#TypeA는 시행을 10000000회 했음에도 생존이 1번도 나오지 않고
+#TypeB는 그보다 적게 1000번 시행했을 때 약 419번 생존하므로
+#TypeB가 생존확률이 더 높다.
+```
+
+##4번 풀이
+```{r}
+install.packages("tidyverse")
+library(tidyverse)
+df=read_csv('https://raw.githubusercontent.com/guebin/2021IR/master/_notebooks/covid19.csv')
+install.packages("tidyverse")
+head(df)
+glimpse(df)
+df%>%group_by(year)%>%summarize(Totl0=sum(cases))
+60726+396886 # 1번 답
+
+df%>%filter(year==2020, month==2,day>=1&day<=15)%>%
+  group_by(prov)%>%summarize(Totl1=sum(cases)) #2번 답
+
+df%>%filter(year==2020, month==2,day>=16&day<=29)%>%
+  group_by(prov)%>%summarize(Totlt3=sum(cases)) #3번 답
+```
