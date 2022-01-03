@@ -1,0 +1,154 @@
+---
+title: "R입문 기말고사"
+author: "김현아"
+date: "12/21/2021"
+fontsize: 12pt
+output: 
+ pdf_document:
+   includes:
+     in_header: head.tex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### 1번
+## (1)
+```{r}
+epsilon= rnorm(100)
+head(epsilon)
+```
+
+
+## (2)
+```{r}
+t<- 2*(1:1000)*pi/1000
+head(t)
+x1<- sin(t)
+head(x1)
+x2<- cos(4*t)
+head(x2)
+```
+
+## (3)
+```{r}
+y= 1.5+ 5*x1+ 3*x2+ epsilon
+head(y)
+plot(t,y,col='gray60')
+```
+
+## (4)
+```{r} 
+tmp= rep(1,1000)
+X= cbind(tmp,x1,x2)
+print(head(X))
+```
+
+## (5)
+```{R}
+beta=rbind(1.5,5,3)
+beta
+Xbeta= X %*% beta
+head(Xbeta)
+plot(t,y,col='gray 60')
+lines(t,Xbeta, col='red', lwd=3)
+```
+
+
+## (6)
+```{r}
+beta_hat= solve(t(X) %*% X) %*% t(X) %*% y
+beta_hat
+```
+
+## (7)
+```{r}
+Xbeta_hat= X %*% beta_hat
+plot(t,y,col='gray 60')
+lines(t,Xbeta, col='red', lwd=3)
+lines(t,Xbeta_hat,col='blue', lty=2, lwd=3)
+```
+
+
+## 2번
+### (1)
+```{R}
+x=seq(-1.96,1.96,0.01)
+y=(1/sqrt(2*pi))*exp(-0.5*x^2)
+plot(x,y,type='l')
+xx=runif(10000,-1.96,1.96)
+yy=runif(10000,0,0.40)
+plot(xx,yy)
+plot(xx,yy)
+lines(x,y,type='l',col='red',lwd=3)
+test= function(xx,yy){
+  yy< (1/sqrt(2*pi))*exp(-0.5*xx^2)
+}
+tst=c()
+for(i in 1:10000) tst[i]= test(xx[i],yy[i])
+plot(xx,yy,col='gray')
+lines(x,y,col='red',lwd=3)
+points(xx[tst],yy[tst],col='red')
+sum(tst)
+sum(tst)/10000 * 1.568
+```
+
+### (2)
+```{R}
+arr_rnorm= rnorm(1000)
+count=0
+for(i in 1:1000){
+  if(arr_rnorm[i]< 1.96 && arr_rnorm[i] > -1.96)
+    count=count+1
+}
+count
+```
+
+
+## 3번
+### (B)
+```{R}
+prob<- 0
+for(i in 20:13){
+  prob<- prob + dbinom(i,20,0.5)
+  print(prob)
+}
+```
+따라서 8번참가자가 생존할 확률 0.131588
+
+
+
+
+## 4번
+
+```{r}
+library(tidyverse)
+```
+
+
+```{r}
+df=read_csv('https://raw.githubusercontent.com/guebin/2021IR/master/_notebooks/covid19.csv')
+```
+
+
+### (1)
+```{r}
+df %>% group_by(year) %>% summarise(cases_sum=sum(cases))
+```
+
+
+### (2)
+```{r}
+df %>% filter(year==2020, month==2, day<16) %>% 
+  group_by(prov) %>% summarise(cases_sum= sum(cases)) %>%
+  arrange(desc(cases_sum))
+```
+
+
+### (3)
+```{r}
+df %>% filter(year==2020, month==2, 15<day) %>%
+  group_by(prov) %>% summarise(cases_sum= sum(cases)) %>%
+  arrange(desc(cases_sum))
+```

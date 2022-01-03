@@ -1,0 +1,180 @@
+---
+title: "R입문 기말고사"
+author: "이주영 (201919281)"
+fontsize: 12pt
+output: 
+  pdf_document: 
+    includes:
+      in_header: head.tex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 1번
+
+### (1)
+```{r}
+epsilon = rnorm(1000)
+```
+
+### (2)
+```{r}
+x1 <- c()
+for (i in 1:1000) x1[i] = sin(2*pi*i/1000)
+
+x2 <- c()
+for (i in 1:1000) x2[i] = cos(8*pi*i/1000)
+
+y = c()
+for (i in 1:1000) y[i] = 1.5 + 5*x1[i] + 3*x2[i] + epsilon[i]
+```
+
+### (3)
+```{r}
+t<-c()
+for (i in 1:1000) t[i]=2*pi*i/1000
+
+plot(t,y, col='gray60')
+```
+
+### (4)
+```{r}
+X= cbind(1,x1,x2)
+head(X)
+```
+
+### (5)
+```{r}
+B=rbind(1.5,5,3)
+B
+```
+
+```{r}
+x=X%*%B
+x_=x[,1]
+
+plot(t,y, col='gray60')
+lines(t,x_, col='red', lwd=4)
+```
+
+### (6)
+```{r}
+Y=cbind(y)
+B_hat = solve(t(X)%*%X) %*% t(X) %*% Y
+B_hat
+```
+
+### (7)
+```{r}
+x=X%*%B
+x_=x[,1]
+
+hat_=X %*% B_hat
+XB_hat=hat_[,1]
+
+plot(t,y, col='gray60')
+lines(t,x_, col='red', lwd=4)
+lines(t,XB_hat, lty=2, col='blue', lwd=4)
+```
+
+\newpage
+## 2번
+
+### (1)
+```{r}
+x=seq(from=-1.96, to=1.96, by=0.01)
+y=1/sqrt(2*pi) * exp(-x^2/2)
+
+plot(x,y,type='l')
+```
+- 그래프가 대칭이므로 0부터 1.96의 넓이를 구한 뒤 2배를 해주자.
+
+```{r}
+x=seq(from=0, to=1.96, by=0.01)
+y=1/sqrt(2*pi) * exp(-x^2/2)
+
+plot(x,y,type='l')
+
+xx=runif(10000)*2
+yy=runif(10000)*2
+
+plot(xx,yy)
+lines(x,y,col='red', lwd=3)
+
+test = function(xx,yy){
+    yy < 1/sqrt(2*pi) * exp(-xx^2/2)
+}
+
+tst = c()
+for (i in 1:10000) tst[i] = test(xx[i],yy[i])
+
+plot(xx,yy,col='gray')
+lines(x,y,col='red',lwd=3)
+points(xx[tst],yy[tst],col='red')
+
+sum(tst)*2
+sum(tst)*2/10000 *4
+```
+
+### (2)
+```{r}
+library(tidyverse)
+v1=rnorm(1000)
+t2=tibble(v1) %>% filter(v1>-1.96, v1<1.96)
+nrow(t2)
+```
+
+\newpage
+## 3번
+
+### Type A
+```{r}
+rslt<-c()
+for (i in 1:17) rslt[i]=sum(rbinom(1000, size=20, 0.5)==i) * sum(rbinom(1000, size=20, 0.95)==18-i)
+sum(rslt)
+
+sum(rbinom(1000, size=20, 0.5)==18) + sum(rbinom(1000, size=20, 0.5)==19) + sum(rbinom(1000, size=20, 0.5)==20) + sum(rbinom(1000, size=20, 0.95)==18) + sum(rbinom(1000, size=20, 0.95)==19) + sum(rslt)
+```
+
+### Type B
+```{r}
+sum(rbinom(1000, size=20, 0.5)==13) + sum(rbinom(1000, size=20, 0.5)==14) + sum(rbinom(1000, size=20, 0.5)==15) + sum(rbinom(1000, size=20, 0.5)==16) + sum(rbinom(1000, size=20, 0.5)==17) + sum(rbinom(1000, size=20, 0.5)==18) + sum(rbinom(1000, size=20, 0.5)==19) + sum(rbinom(1000, size=20, 0.5)==20)
+```
+
+\newpage
+## 4번
+
+```{r}
+library(tidyverse)
+
+df=read_csv('https://raw.githubusercontent.com/guebin/2021IR/master/_notebooks/covid19.csv')
+
+head(df)
+```
+
+### (1)
+```{r}
+df2 = df %>% filter(year==2020)
+df2['cases']%>%sum()
+
+df3 = df %>% filter(year==2021)
+df3['cases'] %>% sum()
+```
+
+### (2)
+```{r}
+df3= df %>% filter(year==2020, month==2, day>=1, day<=15)
+
+df3 %>% group_by(prov) %>% summarise(sum_=sum(cases))
+```
+- 경기가 가장 많은 확진자가 발생했다.
+
+### (3)
+```{r}
+df4= df %>% filter(year==2020, month==2, day>=16, day<=29)
+
+df4 %>% group_by(prov) %>% summarise(sum_=sum(cases))
+```
+- 대구가 가장 많은 확진자가 발생했다.

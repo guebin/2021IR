@@ -1,0 +1,237 @@
+---
+title: "R입문 기말고사"
+author: "김채연(202115791)"
+date: "12/21/2021"
+fontsize: 12pt
+output: 
+ pdf_document:
+   include:
+     in_header: head.tex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+## 1번 문제
+
+
+### (1)
+
+```{r}
+A <- rnorm(1000)
+
+print(head(A))
+
+```
+
+
+### (2)
+
+```{r}
+t <- c()
+for(i in 1:1000)t[i] <- 2*pi*i/1000
+
+```
+
+```{r}
+x1 <- c()
+for(i in 1:1000) x1[i] <- sin(2*t[i])
+print(head(x1))
+
+```
+
+```{r}
+x2 <- c()
+for(i in 1:1000) x2[i] <- cos(4*t[i])
+print(head(x2))
+```
+
+\newpage
+### (3)
+
+```{r}
+y <- c()
+for(i in 1:1000) y[i] <- 1.5+ 5*x1[i] + 3*x2[i] + A[i]
+```
+```{r}
+plot(t,y,col="gray60")
+```
+
+
+### (4)
+
+```{r}
+x=cbind(1,x1,x2)
+print(head(x))
+```
+
+\newpage
+### (5)
+
+```{r}
+b <- c(1.5,5,3)
+xb <- x%*%b
+print(head(xb))
+```
+```{r}
+plot(t,y,col="gray60")
+lines(t, xb, col="red",lwd=4)
+```
+
+
+\newpage
+### (6)
+
+```{r}
+b_ <- solve(t(x)%*%x)%*%t(x)%*%y
+print(b_)
+```
+
+
+### (7)
+
+```{r}
+xb_ <- x%*%b_
+
+plot(t,y,col="gray60")
+lines(t, xb, col="red",lwd=5)
+lines(t,xb_,col="blue",lty=2,lwd=5)
+```
+
+
+\newpage
+
+## 2번문제
+
+### (1)
+```{r}
+x=seq(-1.96,1.96,0.01)
+y=exp(-1/2*x^2)/sqrt(2*pi)
+plot(x,y)
+```
+
+```{r}
+xx= runif(10000,-1.96,1.96)
+yy= runif(10000,0.05,0.40)
+
+```
+```{r}
+tst=sum(yy < exp(-1/2*xx^2)/sqrt(2*pi))
+```
+$$\frac{s}{(1.96+1.96)*(0.40-0.05)} \approx \frac{tst}{10000}$$
+```{r}
+tst/10000 * (1.96*2*(0.4-0.05))
+```
+
+\newpage
+### (2)
+
+```{r}
+a <- rnorm(1000)
+```
+```{r}
+count=0
+for (i in 1:1000){
+  if(-1.96 < a[i] & a[i] <1.96)
+   count=count+1
+ }
+ count
+```
+
+\newpage
+
+## 3번 문제
+
+### type A
+-10번과 9번이 건넌 다리의 개수 
+```{r}
+rslt_ <- c()
+for (i in 1:1000){
+  x=sum(cumprod(rbinom(20,size=1,0.5)))
+  xx_=19-x
+  if (xx_>0) y= sum(cumprod(rbinom(xx_,size=1,0.95))) else y=0
+  rslt_[i]=x+y
+}
+```
+
+-남은 다리를 8번이 모두 건널 확률 
+```{r}
+rslt<- c()
+for( i in 1:1000){
+  if(19-rslt_[i]==0) rslt[i]=1 else rslt[i]=0.5^(19- rslt_[i])
+}
+sum(rslt)/1000
+```
+### type B
+
+```{r}
+B <- c()
+for(i in 1:10){
+ B[i]= sum(rbinom(1000,size=20,p=0.5)== i)
+}
+```
+```{r}
+sum(B[1:7])/1000
+```
+
+따라서 8번 참가자는 Type A의 경우에 살아남을 확률이 더 높다.
+
+\newpage
+
+## 4번문제
+
+
+```{r}
+library(tidyverse)
+```
+\newpage
+### (1)
+```{r}
+df=read_csv('https://raw.githubusercontent.com/guebin/2021IR/master/_notebooks/covid19.csv')
+head(df)
+```
+
+
+-2020년의 확진자 총합
+```{r}
+df %>% filter(year==2020) -> df2020
+sum(df2020$cases)
+```
+
+
+
+-2021년의 확진자 총합
+```{r}
+df %>% filter(year==2021) -> df2021
+sum(df2021$cases)
+```
+
+\newpage
+
+### (2)
+
+```{r}
+df %>% 
+group_by(prov)%>%
+filter(year==2020 & month==2 & 1<=day & day<= 15 )%>%
+summarise(cases_sum=sum(cases,na.rm=TRUE))
+```
+
+따라서 가장 많은 확진자가 발견된 지역은 경기이다.
+
+\newpage
+### (3)
+
+```{r}
+df %>% 
+group_by(prov)%>%
+filter(year==2020 & month==2 & 16<=day & day<= 29 )%>%
+summarise(cases_sum=sum(cases,na.rm=TRUE))
+```
+
+따라서 가장 많은 확진자가 발견된 지역은 대구이다.
+
+

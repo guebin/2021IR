@@ -1,0 +1,153 @@
+#기말고사
+#5번
+#(1)
+cumprod(c(1,2,3,4,5,6,7))
+
+#(2)
+exp(1)
+
+sum_<-0
+for(i in 1:50){
+  sum_[i]<-i/factorial(i)
+}
+sum(sum_)    
+`-` 비슷한 결과가 나옴!
+  
+#(3)
+sum(rnorm(1000) >= 0)
+  
+#(4)
+sum(rbinom(1000,size=1,prob=0.2))
+
+#(5)
+x=rnorm(1000)
+hist(x)
+y=rnorm(5000)
+hist(y)
+
+#(6)
+x=-1000:1000/1000
+head(x)
+x[2]
+xa<-c()
+
+for(i in 1:1000){
+  xa[i]<-x[2*i]
+}
+xa
+sum(xa)
+
+#(7)
+a<-c()
+a[1]<-5000
+for(i in 2:10){
+  a[i]<-a[i-1]*1.03
+}
+a[10]
+
+#(8)
+x<- -10
+if(x>0){
+  print(log(x))
+}else{
+  if(x==0){
+    print("음의 무한대")
+  }else{
+    print("x는 양수이어야 합니다.")
+  }
+}
+
+#(9)
+df=tibble(X1=rnorm(100),X2=rnorm(100))
+head(df)
+
+x1<-df[,1]
+x2<-df[,2]
+
+dff<-df %>% mutate(z=x1^2+x2^2)
+dff
+
+#(10)
+set.seed(1221)
+mat = rbinom(n=100,size=5,prob=0.5)
+dim(mat)=c(10,10)
+print(mat)
+
+`-` 각 행의 합
+rowSums(mat)
+`-` 각 열의 합
+colSums(mat)
+
+#6번
+#(1)
+x<-c()
+x[1]<-5
+x[2]<-5
+for(n in 3:50){
+  temp_<-mean(x[1:(n-1)])+1
+  sum_<-temp_*n
+  x[n]<-sum_-sum(x[1:(n-1)])
+}
+
+x[50]
+
+
+
+#(2)
+x<-rep(FALSE,100)
+f<-function(x) !x
+for(i in 2:50){
+  x[(1:100)%%i==0] = !(x[(1:100)%%i==0])
+}
+sum(x)
+
+#(3)
+runif(n=10,min=-1,max=1)
+
+tibble(
+  x=runif(n=10,min=-1,max=1),
+  y=runif(n=10,min=-1,max=1)
+)
+
+#수학 공식에서 x제곱 + y제곱 은 반지름(r)제곱임
+
+tibble(
+  x=runif(n=1000,min=-1,max=1),
+  y=runif(n=1000,min=-1,max=1),
+  circle=ifelse(x^2+y^2<=1,1,0)
+) %>% ggplot(aes(x=x,y=y,col=as_factor(circle)))+
+  geom_point()+
+  scale_color_manual(values=c('#cdcdcd','#70c3d6'))+
+  coord_equal()+
+  guides(color=FALSE)
+
+tibble(
+  x=runif(n=1000,min=-1,max=1),
+  y=runif(n=1000,min=-1,max=1),
+  circle=ifelse(x^2+y^2<=1,1,0)
+) %>% filter(circle==1) %>%
+  summarise(pi=format(4*n()/1000,difits=5))
+
+#즉 파이 값인 3.14와 유사
+#(4)
+a<-matrix(c(1,2,3,4,2,2,1,0,0,1,-1,0,3,1,-1,3),ncol=4,byrow=T)
+a
+b<-matrix(c(1,9,4,7),ncol=1)
+b
+solve(a,b)
+
+#(5)
+df=read.csv("https://raw.githubusercontent.com/guebin/2021IR/master/_notebooks/round2.csv")
+X=as.matrix(df)
+head(X)
+a<-c(cos(pi/4),-sin(pi/4))
+b<-c(sin(pi/4),cos(pi/4))
+ab<-rbind(a,b)
+ab
+library(tidyverse)
+xx<-X %*% ab
+xx
+x1<-xx[,1]
+x2<-xx[,2]
+
+plot(x1,x2)
