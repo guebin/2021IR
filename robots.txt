@@ -1,1 +1,1 @@
-Sitemap: https://guebin.github.io/2021IR/sitemap.xml
+Sitemap: https://guebin.github.io/IR2021/sitemap.xml
