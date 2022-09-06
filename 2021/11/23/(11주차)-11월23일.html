@@ -1,0 +1,2226 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>(11주차) 11월23일 | R입문 (전북대학교 2021년 2학기)</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="(11주차) 11월23일" />
+<meta name="author" content="최규빈" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="징검다리 문제풀이" />
+<meta property="og:description" content="징검다리 문제풀이" />
+<link rel="canonical" href="https://guebin.github.io/IR2021/2021/11/23/(11%EC%A3%BC%EC%B0%A8)-11%EC%9B%9423%EC%9D%BC.html" />
+<meta property="og:url" content="https://guebin.github.io/IR2021/2021/11/23/(11%EC%A3%BC%EC%B0%A8)-11%EC%9B%9423%EC%9D%BC.html" />
+<meta property="og:site_name" content="R입문 (전북대학교 2021년 2학기)" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-11-23T00:00:00-06:00" />
+<script type="application/ld+json">
+{"description":"징검다리 문제풀이","url":"https://guebin.github.io/IR2021/2021/11/23/(11%EC%A3%BC%EC%B0%A8)-11%EC%9B%9423%EC%9D%BC.html","@type":"BlogPosting","headline":"(11주차) 11월23일","dateModified":"2021-11-23T00:00:00-06:00","datePublished":"2021-11-23T00:00:00-06:00","author":{"@type":"Person","name":"최규빈"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://guebin.github.io/IR2021/2021/11/23/(11%EC%A3%BC%EC%B0%A8)-11%EC%9B%9423%EC%9D%BC.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/IR2021/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://guebin.github.io/IR2021/feed.xml" title="R입문 (전북대학교 2021년 2학기)" /><link rel="shortcut icon" type="image/x-icon" href="/IR2021/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/IR2021/">R입문 (전북대학교 2021년 2학기)</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/IR2021/about/">About Me</a><a class="page-link" href="/IR2021/search/">Search</a><a class="page-link" href="/IR2021/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">(11주차) 11월23일</h1><p class="page-description">징검다리 문제풀이</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-11-23T00:00:00-06:00" itemprop="datePublished">
+        Nov 23, 2021
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">최규빈</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      9 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/guebin/IR2021/tree/master/_notebooks/2021-11-23-(11주차) 11월23일.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/IR2021/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/guebin/IR2021/blob/master/_notebooks/2021-11-23-(11주차) 11월23일.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/IR2021/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h3"><a href="#강의영상">강의영상 </a></li>
+<li class="toc-entry toc-h3"><a href="#징검다리문제풀이">징검다리문제풀이 </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#(풀이1)">(풀이1) </a></li>
+<li class="toc-entry toc-h4"><a href="#(풀이2)">(풀이2) </a></li>
+<li class="toc-entry toc-h4"><a href="#(풀이3)">(풀이3) </a></li>
+<li class="toc-entry toc-h4"><a href="#(풀이4)">(풀이4) </a></li>
+<li class="toc-entry toc-h4"><a href="#(풀이5)">(풀이5) </a></li>
+<li class="toc-entry toc-h4"><a href="#(풀이6)">(풀이6) </a></li>
+<li class="toc-entry toc-h4"><a href="#(풀이7)">(풀이7) </a></li>
+<li class="toc-entry toc-h4"><a href="#(풀이8)-for문을-하나도-사용하지-않은-풀이">(풀이8) for문을 하나도 사용하지 않은 풀이 </a></li>
+<li class="toc-entry toc-h4"><a href="#(풀이9)">(풀이9) </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#숙제">숙제 </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-11-23-(11주차) 11월23일.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="강의영상">
+<a class="anchor" href="#%EA%B0%95%EC%9D%98%EC%98%81%EC%83%81" aria-hidden="true"><span class="octicon octicon-link"></span></a>강의영상<a class="anchor-link" href="#%EA%B0%95%EC%9D%98%EC%98%81%EC%83%81"> </a>
+</h3>
+<p>
+</p>
+<center class="youtube-iframe-wrapper">
+    <iframe width="730" height="315" src="https://www.youtube.com/embed/playlist?list=PLQqh36zP38-z7k3ibhZqzuqUl5QSEQrrr" frameborder="0" allowfullscreen=""></iframe>
+</center>
+
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> (1/3) 징검다리 문제풀이</p>
+<p><code>-</code> (2/3) 징검다리 문제풀이</p>
+<p><code>-</code> (3/3) 징검다리 문제풀이</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="징검다리문제풀이">
+<a class="anchor" href="#%EC%A7%95%EA%B2%80%EB%8B%A4%EB%A6%AC%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4" aria-hidden="true"><span class="octicon octicon-link"></span></a>징검다리문제풀이<a class="anchor-link" href="#%EC%A7%95%EA%B2%80%EB%8B%A4%EB%A6%AC%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="(풀이1)">
+<a class="anchor" href="#(%ED%92%80%EC%9D%B41)" aria-hidden="true"><span class="octicon octicon-link"></span></a>(풀이1)<a class="anchor-link" href="#(%ED%92%80%EC%9D%B41)"> </a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> (유리, 강화유리)</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">set</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">'tempered glass'</span><span class="p">,</span><span class="s">'glass'</span><span class="p">)</span>
+<span class="n">set</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] "tempered glass" "glass"         </pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> <code>sample</code>을 이용하여 0.8의 확률로 강화유리를 뽑음</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">sample</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">set</span><span class="p">,</span> <span class="n">prob</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0.8</span><span class="p">,</span><span class="m">0.2</span><span class="p">),</span><span class="n">replace</span><span class="o">=</span><span class="bp">T</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] "tempered glass" "tempered glass" "tempered glass" "glass"         
+[5] "tempered glass"</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 함수로 보기좋게 만들자.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">simulate_once</span> <span class="o">=</span> <span class="nf">function</span><span class="p">()</span> <span class="nf">sample</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">set</span><span class="p">,</span> <span class="n">prob</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0.8</span><span class="p">,</span><span class="m">0.2</span><span class="p">),</span><span class="n">replace</span><span class="o">=</span><span class="bp">T</span><span class="p">)</span> <span class="c1">#입력이 없는 함수</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">simulate_once</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] "glass"          "tempered glass" "tempered glass" "tempered glass"
+[5] "tempered glass"</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 뽑은결과를 바탕으로 사망유무를 판단</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nf">simulate_once</span><span class="p">()</span>
+<span class="n">a</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] "tempered glass" "tempered glass" "tempered glass" "glass"         
+[5] "tempered glass"</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span> <span class="o">&amp;</span> 
+<span class="n">a</span><span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span> <span class="o">&amp;</span> 
+<span class="n">a</span><span class="p">[</span><span class="m">3</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span> <span class="o">&amp;</span> 
+<span class="n">a</span><span class="p">[</span><span class="m">4</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span> <span class="o">&amp;</span> 
+<span class="n">a</span><span class="p">[</span><span class="m">5</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] FALSE</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>조건</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 위의 조건이 참이면 b=1, 참이 아니라면 b=0</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">if </span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span> <span class="o">&amp;</span>
+    <span class="n">a</span><span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span> <span class="o">&amp;</span> 
+    <span class="n">a</span><span class="p">[</span><span class="m">3</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span> <span class="o">&amp;</span> 
+    <span class="n">a</span><span class="p">[</span><span class="m">4</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span> <span class="o">&amp;</span> 
+    <span class="n">a</span><span class="p">[</span><span class="m">5</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span><span class="p">){</span>
+    <span class="n">b</span><span class="o">=</span><span class="m">1</span>
+    <span class="p">}</span><span class="n">else</span><span class="p">{</span>
+    <span class="n">b</span><span class="o">=</span><span class="m">0</span><span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">b</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 함수로 정리하자.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">test</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">a</span><span class="p">){</span>
+    <span class="nf">if </span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span> <span class="o">&amp;</span>
+        <span class="n">a</span><span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span> <span class="o">&amp;</span> 
+        <span class="n">a</span><span class="p">[</span><span class="m">3</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span> <span class="o">&amp;</span> 
+        <span class="n">a</span><span class="p">[</span><span class="m">4</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span> <span class="o">&amp;</span> 
+        <span class="n">a</span><span class="p">[</span><span class="m">5</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span><span class="p">)</span> <span class="n">b</span><span class="o">=</span><span class="m">1</span> <span class="n">else</span> <span class="n">b</span><span class="o">=</span><span class="m">0</span> 
+    <span class="n">b</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="nf">simulate_once</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nf">test</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] "tempered glass" "tempered glass" "tempered glass" "tempered glass"
+[5] "tempered glass"
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 답을 구해보자</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">sum_</span> <span class="o">=</span> <span class="m">0</span> 
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span> <span class="n">sum_</span> <span class="o">=</span> <span class="n">sum_</span> <span class="o">+</span> <span class="nf">test</span><span class="p">(</span><span class="nf">simulate_once</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">sum_</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 322</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="(풀이2)">
+<a class="anchor" href="#(%ED%92%80%EC%9D%B42)" aria-hidden="true"><span class="octicon octicon-link"></span></a>(풀이2)<a class="anchor-link" href="#(%ED%92%80%EC%9D%B42)"> </a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 시행결과를 벡터로하는 편이 좋겠다.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">set</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">'tempered glass'</span><span class="p">,</span><span class="s">'glass'</span><span class="p">)</span>
+<span class="n">simulate_once</span> <span class="o">=</span> <span class="nf">function</span><span class="p">()</span> <span class="nf">sample</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">set</span><span class="p">,</span> <span class="n">prob</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0.8</span><span class="p">,</span><span class="m">0.2</span><span class="p">),</span><span class="n">replace</span><span class="o">=</span><span class="bp">T</span><span class="p">)</span> <span class="c1">#입력이 없는 함수</span>
+<span class="n">test</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">a</span><span class="p">){</span>
+    <span class="nf">if </span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span> <span class="o">&amp;</span>
+        <span class="n">a</span><span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span> <span class="o">&amp;</span> 
+        <span class="n">a</span><span class="p">[</span><span class="m">3</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span> <span class="o">&amp;</span> 
+        <span class="n">a</span><span class="p">[</span><span class="m">4</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span> <span class="o">&amp;</span> 
+        <span class="n">a</span><span class="p">[</span><span class="m">5</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span><span class="p">)</span> <span class="n">b</span><span class="o">=</span><span class="m">1</span> <span class="n">else</span> <span class="n">b</span><span class="o">=</span><span class="m">0</span> 
+    <span class="n">b</span>
+<span class="p">}</span>
+<span class="c1"># sum_ = 0 </span>
+<span class="c1"># for (i in 1:1000) sum_ = sum_ + test(simulate_once())  컨트롤+/ (Rstudio: 컨트롤+쉬프트+c) </span>
+<span class="n">rslt</span> <span class="o">=</span> <span class="nf">c</span><span class="p">()</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span> <span class="n">rslt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">test</span><span class="p">(</span><span class="nf">simulate_once</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">rslt</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>  [1] 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 1 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0
+ [38] 0 0 0 1 0 0 0 1 1 0 0 1 0 1 0 0 1 0 1 0 1 0 0 0 0 1 0 0 1 0 0 0 0 0 0 1 1
+ [75] 0 1 1 1 1 0 1 1 1 0 1 0 0 1 0 1 1 0 1 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 1 1 0
+[112] 0 0 1 0 1 0 1 0 1 0 0 0 0 1 0 0 0 1 1 1 0 1 0 0 0 0 0 1 0 0 0 1 0 0 0 1 1
+[149] 1 0 0 0 0 1 0 0 1 1 1 0 0 1 1 1 0 1 0 1 0 0 1 0 1 1 0 1 0 1 0 0 1 1 1 0 0
+[186] 0 1 0 0 1 0 0 1 0 0 0 0 0 1 0
+ [ reached getOption("max.print") -- omitted 800 entries ]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">sum</span><span class="p">(</span><span class="n">rslt</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 317</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="(풀이3)">
+<a class="anchor" href="#(%ED%92%80%EC%9D%B43)" aria-hidden="true"><span class="octicon octicon-link"></span></a>(풀이3)<a class="anchor-link" href="#(%ED%92%80%EC%9D%B43)"> </a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 시뮬레이션 결과를 매트릭스에 저장하면 더 디버깅이 용이하다.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">mat</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1000</span><span class="o">*</span><span class="m">5</span><span class="p">)</span> 
+<span class="nf">dim</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span><span class="m">5</span><span class="p">)</span> 
+<span class="nf">head</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>     [,1] [,2] [,3] [,4] [,5]
+[1,] 0    0    0    0    0   
+[2,] 0    0    0    0    0   
+[3,] 0    0    0    0    0   
+[4,] 0    0    0    0    0   
+[5,] 0    0    0    0    0   
+[6,] 0    0    0    0    0   </pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">mat</span><span class="p">[</span><span class="m">1</span><span class="p">,]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 0 0 0 0 0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">mat</span><span class="p">[</span><span class="m">1</span><span class="p">,]</span> <span class="o">=</span> <span class="nf">simulate_once</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">head</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>     [,1]  [,2]           [,3]           [,4]           [,5] 
+[1,] glass tempered glass tempered glass tempered glass glass
+[2,] 0     0              0              0              0    
+[3,] 0     0              0              0              0    
+[4,] 0     0              0              0              0    
+[5,] 0     0              0              0              0    
+[6,] 0     0              0              0              0    </pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span> <span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">,]</span> <span class="o">=</span> <span class="nf">simulate_once</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">head</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>     [,1]           [,2]           [,3]           [,4]           [,5]          
+[1,] tempered glass tempered glass tempered glass tempered glass tempered glass
+[2,] glass          tempered glass tempered glass tempered glass glass         
+[3,] tempered glass tempered glass tempered glass tempered glass tempered glass
+[4,] tempered glass tempered glass tempered glass tempered glass tempered glass
+[5,] tempered glass tempered glass glass          glass          tempered glass
+[6,] tempered glass tempered glass tempered glass glass          tempered glass</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">rslt</span><span class="o">=</span><span class="nf">c</span><span class="p">()</span> 
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span> <span class="n">rslt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">test</span><span class="p">(</span><span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">,])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">rslt</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 1 0 1 1 0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">mat</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">,]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>     [,1]           [,2]           [,3]           [,4]           [,5]          
+[1,] tempered glass tempered glass tempered glass tempered glass tempered glass
+[2,] glass          tempered glass tempered glass tempered glass glass         
+[3,] tempered glass tempered glass tempered glass tempered glass tempered glass
+[4,] tempered glass tempered glass tempered glass tempered glass tempered glass
+[5,] tempered glass tempered glass glass          glass          tempered glass</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 정리하면</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">set</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">'tempered glass'</span><span class="p">,</span><span class="s">'glass'</span><span class="p">)</span>
+<span class="n">simulate_once</span> <span class="o">=</span> <span class="nf">function</span><span class="p">()</span> <span class="nf">sample</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">set</span><span class="p">,</span> <span class="n">prob</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0.8</span><span class="p">,</span><span class="m">0.2</span><span class="p">),</span><span class="n">replace</span><span class="o">=</span><span class="bp">T</span><span class="p">)</span> <span class="c1">#입력이 없는 함수</span>
+<span class="n">test</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">a</span><span class="p">){</span>
+    <span class="nf">if </span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span> <span class="o">&amp;</span>
+        <span class="n">a</span><span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span> <span class="o">&amp;</span> 
+        <span class="n">a</span><span class="p">[</span><span class="m">3</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span> <span class="o">&amp;</span> 
+        <span class="n">a</span><span class="p">[</span><span class="m">4</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span> <span class="o">&amp;</span> 
+        <span class="n">a</span><span class="p">[</span><span class="m">5</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span><span class="p">)</span> <span class="n">b</span><span class="o">=</span><span class="m">1</span> <span class="n">else</span> <span class="n">b</span><span class="o">=</span><span class="m">0</span> 
+    <span class="n">b</span>
+<span class="p">}</span>
+<span class="n">mat</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1000</span><span class="o">*</span><span class="m">5</span><span class="p">)</span> 
+<span class="nf">dim</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span><span class="m">5</span><span class="p">)</span> 
+<span class="n">rslt</span> <span class="o">=</span> <span class="nf">c</span><span class="p">()</span>
+<span class="c1"># for (i in 1:1000) rslt[i] = test(simulate_once())</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">){</span>
+    <span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">,]</span> <span class="o">=</span> <span class="nf">simulate_once</span><span class="p">()</span> 
+    <span class="n">rslt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">test</span><span class="p">(</span><span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">,])</span>
+<span class="p">}</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">rslt</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 329</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="(풀이4)">
+<a class="anchor" href="#(%ED%92%80%EC%9D%B44)" aria-hidden="true"><span class="octicon octicon-link"></span></a>(풀이4)<a class="anchor-link" href="#(%ED%92%80%EC%9D%B44)"> </a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 어차피 mat 매트릭스만 만들면 되니까</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">set</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">'tempered glass'</span><span class="p">,</span><span class="s">'glass'</span><span class="p">)</span>
+<span class="n">mat</span><span class="o">=</span> <span class="nf">sample</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">1000</span><span class="o">*</span><span class="m">5</span><span class="p">,</span> <span class="n">set</span><span class="p">,</span> <span class="n">prob</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0.8</span><span class="p">,</span><span class="m">0.2</span><span class="p">),</span><span class="n">replace</span><span class="o">=</span><span class="bp">T</span><span class="p">)</span> <span class="c1">#입력이 없는 함수</span>
+<span class="nf">dim</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">head</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>     [,1]           [,2]           [,3]           [,4]           [,5]          
+[1,] glass          tempered glass glass          tempered glass tempered glass
+[2,] tempered glass tempered glass glass          tempered glass glass         
+[3,] tempered glass tempered glass tempered glass glass          glass         
+[4,] tempered glass tempered glass tempered glass glass          tempered glass
+[5,] tempered glass tempered glass tempered glass tempered glass tempered glass
+[6,] tempered glass tempered glass tempered glass tempered glass tempered glass</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">test</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">a</span><span class="p">){</span>
+    <span class="nf">if </span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span> <span class="o">&amp;</span>
+        <span class="n">a</span><span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span> <span class="o">&amp;</span> 
+        <span class="n">a</span><span class="p">[</span><span class="m">3</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span> <span class="o">&amp;</span> 
+        <span class="n">a</span><span class="p">[</span><span class="m">4</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span> <span class="o">&amp;</span> 
+        <span class="n">a</span><span class="p">[</span><span class="m">5</span><span class="p">]</span> <span class="o">==</span> <span class="s">"tempered glass"</span><span class="p">)</span> <span class="n">b</span><span class="o">=</span><span class="m">1</span> <span class="n">else</span> <span class="n">b</span><span class="o">=</span><span class="m">0</span> 
+    <span class="n">b</span>
+<span class="p">}</span>
+<span class="n">rslt</span> <span class="o">=</span> <span class="nf">c</span><span class="p">()</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">){</span>
+    <span class="n">rslt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">test</span><span class="p">(</span><span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">,])</span>
+<span class="p">}</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">rslt</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 326</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="(풀이5)">
+<a class="anchor" href="#(%ED%92%80%EC%9D%B45)" aria-hidden="true"><span class="octicon octicon-link"></span></a>(풀이5)<a class="anchor-link" href="#(%ED%92%80%EC%9D%B45)"> </a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 매트릭스의 원소가 꼭 문자열일 필요는 없는것 같음</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">set</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="p">)</span>
+<span class="n">mat</span><span class="o">=</span> <span class="nf">sample</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">1000</span><span class="o">*</span><span class="m">5</span><span class="p">,</span> <span class="n">set</span><span class="p">,</span> <span class="n">prob</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0.8</span><span class="p">,</span><span class="m">0.2</span><span class="p">),</span><span class="n">replace</span><span class="o">=</span><span class="bp">T</span><span class="p">)</span> <span class="c1">#입력이 없는 함수</span>
+<span class="nf">dim</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">head</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>     [,1] [,2] [,3] [,4] [,5]
+[1,] 1    1    1    1    1   
+[2,] 1    0    1    1    1   
+[3,] 1    1    1    1    1   
+[4,] 0    1    1    0    1   
+[5,] 1    1    1    1    1   
+[6,] 0    1    1    1    1   </pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">test</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">a</span><span class="p">){</span>
+    <span class="nf">if </span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="o">==</span> <span class="m">1</span> <span class="o">&amp;</span>
+        <span class="n">a</span><span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="o">==</span> <span class="m">1</span> <span class="o">&amp;</span> 
+        <span class="n">a</span><span class="p">[</span><span class="m">3</span><span class="p">]</span> <span class="o">==</span> <span class="m">1</span> <span class="o">&amp;</span> 
+        <span class="n">a</span><span class="p">[</span><span class="m">4</span><span class="p">]</span> <span class="o">==</span> <span class="m">1</span> <span class="o">&amp;</span> 
+        <span class="n">a</span><span class="p">[</span><span class="m">5</span><span class="p">]</span> <span class="o">==</span> <span class="m">1</span><span class="p">)</span> <span class="n">b</span><span class="o">=</span><span class="m">1</span> <span class="n">else</span> <span class="n">b</span><span class="o">=</span><span class="m">0</span> 
+    <span class="n">b</span>
+<span class="p">}</span>
+<span class="n">rslt</span> <span class="o">=</span> <span class="nf">c</span><span class="p">()</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">){</span>
+    <span class="n">rslt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">test</span><span class="p">(</span><span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">,])</span>
+<span class="p">}</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">rslt</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 355</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 조건도 아래와 같이 간소화할 수있다.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">test</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">a</span><span class="p">){</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">==</span><span class="m">5</span><span class="p">)</span> <span class="n">b</span><span class="o">=</span><span class="m">1</span> <span class="n">else</span> <span class="n">b</span><span class="o">=</span><span class="m">0</span> 
+    <span class="n">b</span>
+<span class="p">}</span>
+<span class="n">rslt</span> <span class="o">=</span> <span class="nf">c</span><span class="p">()</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">){</span>
+    <span class="n">rslt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">test</span><span class="p">(</span><span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">,])</span>
+<span class="p">}</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">rslt</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 355</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 아래와 같이 바꿔도 가능</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">test</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">a</span><span class="p">){</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nf">prod</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">==</span><span class="m">1</span><span class="p">)</span> <span class="n">b</span><span class="o">=</span><span class="m">1</span> <span class="n">else</span> <span class="n">b</span><span class="o">=</span><span class="m">0</span> 
+    <span class="n">b</span>
+<span class="p">}</span>
+<span class="n">rslt</span> <span class="o">=</span> <span class="nf">c</span><span class="p">()</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">){</span>
+    <span class="n">rslt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">test</span><span class="p">(</span><span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">,])</span>
+<span class="p">}</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">rslt</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 355</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> test함수 자체도 아래와 같이 간소화 가능</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">test</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">a</span><span class="p">){</span>
+    <span class="nf">prod</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">))</span><span class="o">==</span><span class="m">1</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 정리하면</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">set</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="p">)</span>
+<span class="n">mat</span><span class="o">=</span> <span class="nf">sample</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">1000</span><span class="o">*</span><span class="m">5</span><span class="p">,</span> <span class="n">set</span><span class="p">,</span> <span class="n">prob</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0.8</span><span class="p">,</span><span class="m">0.2</span><span class="p">),</span><span class="n">replace</span><span class="o">=</span><span class="bp">T</span><span class="p">)</span> <span class="c1">#입력이 없는 함수</span>
+<span class="nf">dim</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span><span class="m">5</span><span class="p">)</span> 
+<span class="nf">head</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>     [,1] [,2] [,3] [,4] [,5]
+[1,] 1    1    1    1    1   
+[2,] 1    1    1    0    1   
+[3,] 0    0    1    1    1   
+[4,] 1    1    1    1    1   
+[5,] 1    0    1    0    1   
+[6,] 0    1    0    1    1   </pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">test</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="nf">prod</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">==</span><span class="m">1</span>
+<span class="n">rslt</span> <span class="o">=</span> <span class="nf">c</span><span class="p">()</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">){</span>
+    <span class="n">rslt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">test</span><span class="p">(</span><span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">,])</span>
+<span class="p">}</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">rslt</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 334</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="(풀이6)">
+<a class="anchor" href="#(%ED%92%80%EC%9D%B46)" aria-hidden="true"><span class="octicon octicon-link"></span></a>(풀이6)<a class="anchor-link" href="#(%ED%92%80%EC%9D%B46)"> </a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 숫자로 만들고 보니까 베르누이로 뽑아도 괜찮을 것 같다.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">rbinom</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="m">0.8</span><span class="p">)</span> <span class="c1"># 하나의행</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 1 1 1 1 1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>set을 만들 필요가 없음 </li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">mat</span> <span class="o">=</span> <span class="nf">rbinom</span><span class="p">(</span><span class="m">1000</span><span class="o">*</span><span class="m">5</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="m">0.8</span><span class="p">)</span> 
+<span class="nf">dim</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span><span class="m">5</span><span class="p">)</span> 
+<span class="nf">head</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>     [,1] [,2] [,3] [,4] [,5]
+[1,] 1    1    1    1    0   
+[2,] 1    1    1    1    1   
+[3,] 1    1    1    1    1   
+[4,] 1    1    0    1    1   
+[5,] 1    1    1    1    0   
+[6,] 1    1    1    1    1   </pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">test</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="nf">prod</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">==</span><span class="m">1</span>
+<span class="n">rslt</span> <span class="o">=</span> <span class="nf">c</span><span class="p">()</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">){</span>
+    <span class="n">rslt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">test</span><span class="p">(</span><span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">,])</span>
+<span class="p">}</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">rslt</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 341</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="(풀이7)">
+<a class="anchor" href="#(%ED%92%80%EC%9D%B47)" aria-hidden="true"><span class="octicon octicon-link"></span></a>(풀이7)<a class="anchor-link" href="#(%ED%92%80%EC%9D%B47)"> </a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 매트릭스 옆에 결과를 붙여보자.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">mat</span> <span class="o">=</span> <span class="nf">rbinom</span><span class="p">(</span><span class="m">1000</span><span class="o">*</span><span class="m">5</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="m">0.8</span><span class="p">)</span> 
+<span class="nf">dim</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span><span class="m">5</span><span class="p">)</span> 
+<span class="nf">head</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>     [,1] [,2] [,3] [,4] [,5]
+[1,] 1    1    1    1    1   
+[2,] 1    0    1    1    1   
+[3,] 1    1    1    0    1   
+[4,] 1    1    0    0    1   
+[5,] 1    0    0    1    0   
+[6,] 0    1    1    0    1   </pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">test</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="nf">prod</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">==</span><span class="m">1</span>
+<span class="n">rslt</span> <span class="o">=</span> <span class="nf">c</span><span class="p">()</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">){</span>
+    <span class="n">rslt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">test</span><span class="p">(</span><span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">,])</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">cbind</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span><span class="n">rslt</span><span class="p">)[</span><span class="m">1</span><span class="o">:</span><span class="m">20</span><span class="p">,]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>                rslt
+ [1,] 1 1 1 1 1 1   
+ [2,] 1 0 1 1 1 0   
+ [3,] 1 1 1 0 1 0   
+ [4,] 1 1 0 0 1 0   
+ [5,] 1 0 0 1 0 0   
+ [6,] 0 1 1 0 1 0   
+ [7,] 1 1 0 0 1 0   
+ [8,] 0 1 1 1 1 0   
+ [9,] 1 1 1 1 1 1   
+[10,] 0 1 1 0 1 0   
+[11,] 1 1 1 0 1 0   
+[12,] 0 1 1 1 0 0   
+[13,] 1 1 1 1 1 1   
+[14,] 1 1 1 0 0 0   
+[15,] 1 1 1 1 1 1   
+[16,] 1 1 1 1 1 1   
+[17,] 1 1 1 1 1 1   
+[18,] 1 1 1 1 1 1   
+[19,] 0 1 1 1 1 0   
+[20,] 0 1 1 1 0 0   </pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="(풀이8)-for문을-하나도-사용하지-않은-풀이">
+<a class="anchor" href="#(%ED%92%80%EC%9D%B48)-for%EB%AC%B8%EC%9D%84-%ED%95%98%EB%82%98%EB%8F%84-%EC%82%AC%EC%9A%A9%ED%95%98%EC%A7%80-%EC%95%8A%EC%9D%80-%ED%92%80%EC%9D%B4" aria-hidden="true"><span class="octicon octicon-link"></span></a>(풀이8) for문을 하나도 사용하지 않은 풀이<a class="anchor-link" href="#(%ED%92%80%EC%9D%B48)-for%EB%AC%B8%EC%9D%84-%ED%95%98%EB%82%98%EB%8F%84-%EC%82%AC%EC%9A%A9%ED%95%98%EC%A7%80-%EC%95%8A%EC%9D%80-%ED%92%80%EC%9D%B4"> </a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 매트릭스의 각 row에 어떠한 함수를 반복적으로 적용하는 형태임 $\to$ apply</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">mat</span> <span class="o">=</span> <span class="nf">rbinom</span><span class="p">(</span><span class="m">1000</span><span class="o">*</span><span class="m">5</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">prob</span><span class="o">=</span><span class="m">0.8</span><span class="p">)</span> 
+<span class="nf">dim</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span><span class="m">5</span><span class="p">)</span> 
+<span class="nf">head</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>     [,1] [,2] [,3] [,4] [,5]
+[1,] 0    1    1    1    1   
+[2,] 0    1    0    1    1   
+[3,] 1    1    0    1    1   
+[4,] 1    1    1    1    1   
+[5,] 0    1    1    0    0   
+[6,] 1    1    0    1    1   </pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">sum</span><span class="p">(</span><span class="nf">apply</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="n">test</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 331</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">apply</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="n">test</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="n">sum</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 331</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">mat</span> <span class="o">%&gt;%</span> <span class="nf">apply</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="n">test</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="n">sum</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 331</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="(풀이9)">
+<a class="anchor" href="#(%ED%92%80%EC%9D%B49)" aria-hidden="true"><span class="octicon octicon-link"></span></a>(풀이9)<a class="anchor-link" href="#(%ED%92%80%EC%9D%B49)"> </a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> 바이노미알 이용: 어차피 베르누이의 합은 바이노미알이라고 했음</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">sum</span><span class="p">(</span><span class="nf">rbinom</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">5</span><span class="p">,</span><span class="n">p</span><span class="o">=</span><span class="m">0.8</span><span class="p">)</span><span class="o">==</span><span class="m">5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[1] 344</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="숙제">
+<a class="anchor" href="#%EC%88%99%EC%A0%9C" aria-hidden="true"><span class="octicon octicon-link"></span></a>숙제<a class="anchor-link" href="#%EC%88%99%EC%A0%9C"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>징검다리 문제</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>강화유리와 유리를 랜덤으로 찍는 참가자가 2명 있다고 하자. (따라서 강화유리를 고를 확률이 50%이다.)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>(강화유리, 유리)의 징검다리가 3개 있다고 하자. (따라서 총 6개의 유리가 있고, 3번연속으로 강화유리를 고르면 2명 모두 살아남는다)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>8000번의 시뮬레이션을 하였을 경우 아래의 질문에 답하라.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>(질문1) 2명 모두 살아남는 경우는 몇번인가? 약 1000번</p>
+<p>(질문2) 1명만 살아남는 경우는 몇번정도인가? 약 3000번 정도..</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong><em>(풀이)</em></strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>질문1: 확률이 0.5인 시행을 3번하여 3번 모두 성공하는 경우</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">sum</span><span class="p">(</span><span class="nf">rbinom</span><span class="p">(</span><span class="m">8000</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">3</span><span class="p">,</span><span class="n">p</span><span class="o">=</span><span class="m">0.5</span><span class="p">)</span><span class="o">==</span><span class="m">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+1034
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>질문2: 확률이 0.5인 시행을 3번하여 2번 성공하는 경우</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">sum</span><span class="p">(</span><span class="nf">rbinom</span><span class="p">(</span><span class="m">8000</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">3</span><span class="p">,</span><span class="n">p</span><span class="o">=</span><span class="m">0.5</span><span class="p">)</span><span class="o">==</span><span class="m">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+3044
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="guebin/IR2021"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/IR2021/2021/11/23/(11%EC%A3%BC%EC%B0%A8)-11%EC%9B%9423%EC%9D%BC.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/IR2021/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/IR2021/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/IR2021/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p></p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/guebin" target="_blank" title="guebin"><svg class="svg-icon grey"><use xlink:href="/IR2021/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
